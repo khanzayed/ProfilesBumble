@@ -1,0 +1,657 @@
+[
+    {
+        "userID": 4394,
+        "blueTiePin": "ajinkyak",
+        "userFirstName": "Ajinkya",
+        "userLastName": "Kulthe",
+        "userGender": "male",
+        "userImage": "https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4394_1542014761.jpg",
+        "thumbnailImage": "https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4394_1542014761.jpg",
+        "userCountry": "India",
+        "userState": "Maharashtra",
+        "userCity": "Mumbai",
+        "userAbout": "An ideator at heart who loves working on innovative ideas. I believe crafting and executing path-breaking ideas is the only way to invent the future. I'm looking for professionals who share my passion and hunger for visionary ideas.",
+        "shareURL": "Ajiy8EA",
+        "baseCityID": 1,
+        "userAge": 20,
+        "userIndustry": [
+            {
+                "userIndustryID": 4977,
+                "industryID": 12,
+                "industryName": "Information Technology (IT)"
+            }
+        ],
+        "objectives": [
+            {
+                "pLevel": 3,
+                "objectiveTitle": "Exchange Ideas",
+                "description": "Discover & Interact with professionals having similar interests",
+                "objectiveID": 1
+            },
+            {
+                "pLevel": 3,
+                "objectiveTitle": "Strategic Partnerships",
+                "description": "Meet professionals to collaborate with, for ventures and projects",
+                "objectiveID": 2
+            }
+        ],
+        "skillwithEndorsement": [
+            {
+                "skillSets": "Marketing Strategy",
+                "endorsement": 0,
+                "subSkillID": 417
+            },
+            {
+                "skillSets": "Marketing Research",
+                "endorsement": 0,
+                "subSkillID": 418
+            },
+            {
+                "skillSets": "Marketing Analysis",
+                "endorsement": 0,
+                "subSkillID": 419
+            },
+            {
+                "skillSets": "Rural Marketing",
+                "endorsement": 0,
+                "subSkillID": 3471
+            },
+            {
+                "skillSets": "Online Marketing Associate-Certification",
+                "endorsement": 0,
+                "subSkillID": 3543
+            },
+            {
+                "skillSets": "HubSpot Marketing Software-Certification",
+                "endorsement": 0,
+                "subSkillID": 3539
+            },
+            {
+                "skillSets": "emfluence Marketing Platform Software",
+                "endorsement": 0,
+                "subSkillID": 3346
+            },
+            {
+                "skillSets": "Affiliate Marketing and Advertising",
+                "endorsement": 0,
+                "subSkillID": 2498
+            }
+        ],
+        "userWorkHistory": [
+            {
+                "workID": 5425,
+                "currentCompany": 1,
+                "userDesignation": "Brand Ambassador",
+                "userCompany": "BlueTie",
+                "workFromMonth": null,
+                "workFromYear": null,
+                "workToMonth": null,
+                "workToYear": null,
+                "dateAdded": "2018-11-12T09:26:01.000Z",
+                "dateModified": "2018-11-12T09:26:01.000Z",
+                "status": 1
+            }
+        ],
+        "userDegree": [
+            {
+                "educationID": 981,
+                "userDegree": "M Tech",
+                "userUniversity": "MIT Pune",
+                "educationYear": 2011
+            }
+        ],
+        "userLink": [
+            {
+                "userDocLinkID": 1754,
+                "title": "My Search Engine",
+                "linkUrl": "http://www.google.com"
+            }
+        ],
+        "userDocument": [
+            {
+                "userDocLinkID": 1768,
+                "title": "whatsapp overview",
+                "linkUrl": "https://s3-ap-south-1.amazonaws.com/bluetie.local.documents/WhatsApp-Security-Whitepaper_1542024579.pdf"
+            }
+        ],
+        "userAchivement": [
+            {
+                "achivementID": 904,
+                "achivementTitle": "Google Adwords Certification"
+            }
+        ]
+    },
+    {
+        "userID": 4377,
+        "blueTiePin": "zayedkhan",
+        "userFirstName": "Zayed",
+        "userLastName": "Khan",
+        "userGender": "",
+        "userImage": "https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4377_1541746509.jpg",
+        "thumbnailImage": "https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4377_1541746509.jpg",
+        "userCountry": "India",
+        "userState": "Maharashtra",
+        "userCity": "Mumbai",
+        "userAbout": "An ideator at heart who loves working on innovative ideas. I believe crafting and executing path-breaking ideas is the only way to invent the future. I'm looking for professionals who share my passion and hunger for visionary ideas.",
+        "shareURL": "ZayacaT",
+        "baseCityID": 1,
+        "userAge": 2018,
+        "userIndustry": [
+            {
+                "userIndustryID": 4946,
+                "industryID": 12,
+                "industryName": "Information Technology (IT)"
+            }
+        ],
+        "objectives": [
+            {
+                "pLevel": 3,
+                "objectiveTitle": "Exchange Ideas",
+                "description": "Discover & Interact with professionals having similar interests",
+                "objectiveID": 1
+            },
+            {
+                "pLevel": 1,
+                "objectiveTitle": "Explore Job Opportunities",
+                "description": "Meet professionals looking to hire talent",
+                "objectiveID": 4
+            },
+            {
+                "pLevel": 2,
+                "objectiveTitle": "Seek Mentorship",
+                "description": "Meet experts who can mentor you in your professional journey",
+                "objectiveID": 6
+            }
+        ],
+        "skillwithEndorsement": [
+            {
+                "skillSets": "Native iOS Development",
+                "endorsement": 0,
+                "subSkillID": 1452
+            },
+            {
+                "skillSets": "Swift-iOS Development Language",
+                "endorsement": 0,
+                "subSkillID": 1451
+            }
+        ],
+        "userWorkHistory": [
+            {
+                "workID": 5402,
+                "currentCompany": 1,
+                "userDesignation": "IOS Developer",
+                "userCompany": "BlueTie Global Pvt Ltd",
+                "workFromMonth": null,
+                "workFromYear": null,
+                "workToMonth": null,
+                "workToYear": null,
+                "dateAdded": "2018-11-09T06:55:09.000Z",
+                "dateModified": "2018-11-09T06:55:09.000Z",
+                "status": 1
+            }
+        ],
+        "userDegree": [],
+        "userLink": [],
+        "userDocument": [],
+        "userAchivement": []
+    },
+    {
+        "userID": 4368,
+        "blueTiePin": "jaddvrpbi",
+        "userFirstName": "dheeraj",
+        "userLastName": "jadhav",
+        "userGender": "Male",
+        "userImage": "https://s3.ap-south-1.amazonaws.com/bluetie.local.users/profile_4368_1541317114499.jpg",
+        "thumbnailImage": "https://s3.ap-south-1.amazonaws.com/bluetie.local.users/profile_4368_1541317114499.jpg",
+        "userCountry": "India",
+        "userState": "Maharashtra",
+        "userCity": "Mumbai",
+        "userAbout": "An ideator at heart who loves working on innovative ideas. I believe crafting and executing path-breaking ideas is the only way to invent the future. I'm looking for professionals who share my passion and hunger for visionary ideas.",
+        "shareURL": "dhe5Pp3",
+        "baseCityID": 1,
+        "userAge": 2018,
+        "userIndustry": [
+            {
+                "userIndustryID": 4934,
+                "industryID": 12,
+                "industryName": "Information Technology (IT)"
+            }
+        ],
+        "objectives": [
+            {
+                "pLevel": 3,
+                "objectiveTitle": "Exchange Ideas",
+                "description": "Discover & Interact with professionals having similar interests",
+                "objectiveID": 1
+            }
+        ],
+        "skillwithEndorsement": [
+            {
+                "skillSets": "Google Android Studio-Development Tool",
+                "endorsement": 0,
+                "subSkillID": 1433
+            },
+            {
+                "skillSets": "PhoneGap Android Development",
+                "endorsement": 0,
+                "subSkillID": 1340
+            },
+            {
+                "skillSets": "Native Android Development",
+                "endorsement": 0,
+                "subSkillID": 1339
+            }
+        ],
+        "userWorkHistory": [
+            {
+                "workID": 5391,
+                "currentCompany": 1,
+                "userDesignation": "Android",
+                "userCompany": "Bt",
+                "workFromMonth": null,
+                "workFromYear": null,
+                "workToMonth": null,
+                "workToYear": null,
+                "dateAdded": "2018-11-04T07:38:35.000Z",
+                "dateModified": "2018-11-04T07:38:35.000Z",
+                "status": 1
+            }
+        ],
+        "userDegree": [],
+        "userLink": [],
+        "userDocument": [],
+        "userAchivement": []
+    },
+    {
+        "userID": 4397,
+        "blueTiePin": "shivasingh",
+        "userFirstName": "shiva",
+        "userLastName": "singh",
+        "userGender": "",
+        "userImage": "https://s3.ap-south-1.amazonaws.com/bluetie.local.users/profile_4397_1542089663557.jpg",
+        "thumbnailImage": "https://s3.ap-south-1.amazonaws.com/bluetie.local.users/profile_4397_1542089663557.jpg",
+        "userCountry": "India",
+        "userState": "Maharashtra",
+        "userCity": "Mumbai",
+        "userAbout": null,
+        "shareURL": "shiV7id",
+        "baseCityID": 1,
+        "userAge": 2018,
+        "userIndustry": [
+            {
+                "userIndustryID": 4978,
+                "industryID": 12,
+                "industryName": "Information Technology (IT)"
+            },
+            {
+                "userIndustryID": 4968,
+                "industryID": 6,
+                "industryName": "Environment, Health and Safety (EHS)"
+            }
+        ],
+        "objectives": [
+            {
+                "pLevel": 1,
+                "objectiveTitle": "Explore Job Opportunities",
+                "description": "Meet professionals looking to hire talent",
+                "objectiveID": 4
+            },
+            {
+                "pLevel": 2,
+                "objectiveTitle": "Hire Talent",
+                "description": "Meet & hire individuals who are looking for work opportunities",
+                "objectiveID": 3
+            }
+        ],
+        "skillwithEndorsement": [
+            {
+                "skillSets": "Certified Medical Administrative Assistant (CMAA)-Certification",
+                "endorsement": 0,
+                "subSkillID": 1209
+            },
+            {
+                "skillSets": "Certified Public Accountant (CPA)",
+                "endorsement": 0,
+                "subSkillID": 155
+            }
+        ],
+        "userWorkHistory": [
+            {
+                "workID": 5428,
+                "currentCompany": 1,
+                "userDesignation": "Admin",
+                "userCompany": "Self",
+                "workFromMonth": null,
+                "workFromYear": null,
+                "workToMonth": null,
+                "workToYear": null,
+                "dateAdded": "2018-11-12T11:02:53.000Z",
+                "dateModified": "2018-11-12T11:02:53.000Z",
+                "status": 1
+            }
+        ],
+        "userDegree": [],
+        "userLink": [],
+        "userDocument": [],
+        "userAchivement": []
+    },
+    {
+        "userID": 4380,
+        "blueTiePin": "lalitdeshmuk",
+        "userFirstName": "Lalit",
+        "userLastName": "Deshmukh",
+        "userGender": "",
+        "userImage": "https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4380_1541761285.jpg",
+        "thumbnailImage": "https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4380_1541761285.jpg",
+        "userCountry": "India",
+        "userState": "Maharashtra",
+        "userCity": "Mumbai",
+        "userAbout": null,
+        "shareURL": "Lal9f1T",
+        "baseCityID": 1,
+        "userAge": 2018,
+        "userIndustry": [
+            {
+                "userIndustryID": 4949,
+                "industryID": 12,
+                "industryName": "Information Technology (IT)"
+            }
+        ],
+        "objectives": [
+            {
+                "pLevel": 3,
+                "objectiveTitle": "Strategic Partnerships",
+                "description": "Meet professionals to collaborate with, for ventures and projects",
+                "objectiveID": 2
+            },
+            {
+                "pLevel": 2,
+                "objectiveTitle": "Hire Talent",
+                "description": "Meet & hire individuals who are looking for work opportunities",
+                "objectiveID": 3
+            },
+            {
+                "pLevel": 1,
+                "objectiveTitle": "Explore Job Opportunities",
+                "description": "Meet professionals looking to hire talent",
+                "objectiveID": 4
+            }
+        ],
+        "skillwithEndorsement": [
+            {
+                "skillSets": "Swift-iOS Development Language",
+                "endorsement": 0,
+                "subSkillID": 1451
+            },
+            {
+                "skillSets": "Native iOS Development",
+                "endorsement": 0,
+                "subSkillID": 1452
+            },
+            {
+                "skillSets": "UI/UX Designing",
+                "endorsement": 0,
+                "subSkillID": 1495
+            }
+        ],
+        "userWorkHistory": [
+            {
+                "workID": 5406,
+                "currentCompany": 1,
+                "userDesignation": "iOS App Developer",
+                "userCompany": "Company",
+                "workFromMonth": null,
+                "workFromYear": null,
+                "workToMonth": null,
+                "workToYear": null,
+                "dateAdded": "2018-11-09T11:01:25.000Z",
+                "dateModified": "2018-11-09T11:01:25.000Z",
+                "status": 1
+            }
+        ],
+        "userDegree": [],
+        "userLink": [],
+        "userDocument": [],
+        "userAchivement": []
+    },
+    {
+        "userID": 4375,
+        "blueTiePin": "gauravr593",
+        "userFirstName": "Gaurav",
+        "userLastName": "Reddy",
+        "userGender": "",
+        "userImage": "https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4375_1541422839.jpg",
+        "thumbnailImage": "https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4375_1541422839.jpg",
+        "userCountry": "India",
+        "userState": "Maharashtra",
+        "userCity": "Mumbai",
+        "userAbout": "",
+        "shareURL": "gau075c8",
+        "baseCityID": 1,
+        "userAge": 2018,
+        "userIndustry": [
+            {
+                "userIndustryID": 4943,
+                "industryID": 12,
+                "industryName": "Information Technology (IT)"
+            }
+        ],
+        "objectives": [
+            {
+                "pLevel": 2,
+                "objectiveTitle": "Hire Talent",
+                "description": "Meet & hire individuals who are looking for work opportunities",
+                "objectiveID": 3
+            },
+            {
+                "pLevel": 3,
+                "objectiveTitle": "Exchange Ideas",
+                "description": "Discover & Interact with professionals having similar interests",
+                "objectiveID": 1
+            },
+            {
+                "pLevel": 2,
+                "objectiveTitle": "Seek Mentorship",
+                "description": "Meet experts who can mentor you in your professional journey",
+                "objectiveID": 6
+            }
+        ],
+        "skillwithEndorsement": [
+            {
+                "skillSets": "Grey Box Testing Methods",
+                "endorsement": 0,
+                "subSkillID": 1463
+            },
+            {
+                "skillSets": "Usability Testing Methods",
+                "endorsement": 0,
+                "subSkillID": 1469
+            },
+            {
+                "skillSets": "Stress Testing Methods",
+                "endorsement": 0,
+                "subSkillID": 1467
+            },
+            {
+                "skillSets": "ATTEST Software",
+                "endorsement": 0,
+                "subSkillID": 3590
+            },
+            {
+                "skillSets": "CDMA Testing",
+                "endorsement": 0,
+                "subSkillID": 2935
+            },
+            {
+                "skillSets": "Security Testing Methods",
+                "endorsement": 0,
+                "subSkillID": 1465
+            },
+            {
+                "skillSets": "ECU-TEST Software",
+                "endorsement": 0,
+                "subSkillID": 1619
+            },
+            {
+                "skillSets": "System Testing Methods",
+                "endorsement": 0,
+                "subSkillID": 1468
+            }
+        ],
+        "userWorkHistory": [
+            {
+                "workID": 5399,
+                "currentCompany": 1,
+                "userDesignation": "Software Tester",
+                "userCompany": "Bak",
+                "workFromMonth": null,
+                "workFromYear": null,
+                "workToMonth": null,
+                "workToYear": null,
+                "dateAdded": "2018-11-05T13:00:39.000Z",
+                "dateModified": "2018-11-05T13:00:39.000Z",
+                "status": 1
+            }
+        ],
+        "userDegree": [],
+        "userLink": [],
+        "userDocument": [],
+        "userAchivement": []
+    },
+    {
+        "userID": 4361,
+        "blueTiePin": "rganesh633",
+        "userFirstName": "Rahul",
+        "userLastName": "Ganesh",
+        "userGender": "",
+        "userImage": "https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4361_1541158368.jpg",
+        "thumbnailImage": "https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4361_1541158368.jpg",
+        "userCountry": "India",
+        "userState": "Maharashtra",
+        "userCity": "Mumbai",
+        "userAbout": "",
+        "shareURL": "raha3e2d",
+        "baseCityID": 1,
+        "userAge": 2018,
+        "userIndustry": [
+            {
+                "userIndustryID": 4931,
+                "industryID": 12,
+                "industryName": "Information Technology (IT)"
+            }
+        ],
+        "objectives": [
+            {
+                "pLevel": 1,
+                "objectiveTitle": "Provide Mentorship",
+                "description": "Meet and mentor professionals seeking your guidance",
+                "objectiveID": 7
+            },
+            {
+                "pLevel": 1,
+                "objectiveTitle": "Explore Job Opportunities",
+                "description": "Meet professionals looking to hire talent",
+                "objectiveID": 4
+            }
+        ],
+        "skillwithEndorsement": [
+            {
+                "skillSets": "Oracle User Productivity Kit Software",
+                "endorsement": 0,
+                "subSkillID": 1757
+            },
+            {
+                "skillSets": "User Datagram Protocol (UDP) Management",
+                "endorsement": 0,
+                "subSkillID": 3120
+            }
+        ],
+        "userWorkHistory": [
+            {
+                "workID": 5382,
+                "currentCompany": 1,
+                "userDesignation": "UX Team Lead",
+                "userCompany": "BlueTie ",
+                "workFromMonth": null,
+                "workFromYear": null,
+                "workToMonth": null,
+                "workToYear": null,
+                "dateAdded": "2018-11-02T11:32:48.000Z",
+                "dateModified": "2018-11-02T11:32:48.000Z",
+                "status": 1
+            }
+        ],
+        "userDegree": [],
+        "userLink": [],
+        "userDocument": [],
+        "userAchivement": []
+    },
+    {
+        "userID": 4383,
+        "blueTiePin": "andi",
+        "userFirstName": "Andre",
+        "userLastName": "Jason",
+        "userGender": "",
+        "userImage": "https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4383_1542004501.jpg",
+        "thumbnailImage": "https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4383_1542004501.jpg",
+        "userCountry": "India",
+        "userState": "Maharashtra",
+        "userCity": "Mumbai",
+        "userAbout": "",
+        "shareURL": "andbea52",
+        "baseCityID": 1,
+        "userAge": 2018,
+        "userIndustry": [
+            {
+                "userIndustryID": 4951,
+                "industryID": 12,
+                "industryName": "Information Technology (IT)"
+            }
+        ],
+        "objectives": [
+            {
+                "pLevel": 3,
+                "objectiveTitle": "Exchange Ideas",
+                "description": "Discover & Interact with professionals having similar interests",
+                "objectiveID": 1
+            },
+            {
+                "pLevel": 1,
+                "objectiveTitle": "Seek Funding",
+                "description": "Meet investors looking to fund your business idea",
+                "objectiveID": 9
+            }
+        ],
+        "skillwithEndorsement": [
+            {
+                "skillSets": "UI/UX Designing",
+                "endorsement": 0,
+                "subSkillID": 1495
+            },
+            {
+                "skillSets": "Graphic Designing",
+                "endorsement": 0,
+                "subSkillID": 2622
+            }
+        ],
+        "userWorkHistory": [
+            {
+                "workID": 5411,
+                "currentCompany": 1,
+                "userDesignation": "Designer",
+                "userCompany": "Echo soft",
+                "workFromMonth": null,
+                "workFromYear": null,
+                "workToMonth": null,
+                "workToYear": null,
+                "dateAdded": "2018-11-12T06:35:01.000Z",
+                "dateModified": "2018-11-12T06:35:01.000Z",
+                "status": 1
+            }
+        ],
+        "userDegree": [],
+        "userLink": [],
+        "userDocument": [],
+        "userAchivement": []
+    }
+]

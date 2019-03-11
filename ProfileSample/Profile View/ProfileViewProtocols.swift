@@ -45,9 +45,7 @@ protocol ProfileCardViewDelegate: class {
 
 protocol ProfileViewDelegate: class {
     
-    func didTap(view: ProfileView)
-    
-    func didBeginSwipe(onView view: ProfileView)
+    func didBeginSwipe(swipeValue: CGFloat, alpha: CGFloat)
     
     func didEndSwipe(onView view: ProfileView)
     

@@ -19,6 +19,8 @@ class ProfileView: UIView {
     private var panGestureRecognizer: UIPanGestureRecognizer?
     
     private var panGestureTranslation: CGPoint = .zero
+    private var alphaBaseValue: CGFloat = UIScreen.main.bounds.width / 4
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,6 +49,12 @@ class ProfileView: UIView {
         profileView.addGestureRecognizer(panGestureRecognizer)
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.roundCorners([.topLeft, .topRight], radius: 30)
+    }
+    
     private func reset() {
         UIView.animate(withDuration: 0.4) {
             self.frame = CGRect(x: 0, y: 5, width: self.superview!.bounds.width, height: self.superview!.bounds.height - 5.0)
@@ -56,10 +64,10 @@ class ProfileView: UIView {
     
     @objc private func panGestureRecognized(_ sender: UIPanGestureRecognizer) {
         let point = sender.translation(in: self)
-//        let xFromCenter = self.center.x - self.superview!.center.x
-        self.center = CGPoint(x: self.superview!.center.x + point.x, y: self.superview!.center.y + point.y)
+//        let xFromCenter = abs(self.center.x - self.superview!.center.x) / 2
+        self.center = CGPoint(x: self.superview!.center.x + point.x, y: self.superview!.center.y) // + point.y)
         
-//        let scale = min(100/abs(xFromCenter), 1)
+//        let alpha = min(abs(xFromCenter) / alphaBaseValue, 1)
 //        card.transform = CGAffineTransform(rotationAngle: xFromCenter/divisor).scaledBy(x: scale, y: scale)
         
 //        if xFromCenter > 0 { // Right
@@ -71,6 +79,8 @@ class ProfileView: UIView {
 //        acceptImageView.alpha = abs(xFromCenter) / view.center.x
         
 //        panGestureTranslation = gestureRecognizer.translation(in: self)
+//        print(xFromCenter)
+//        self.delegate?.didBeginSwipe(swipeValue: xFromCenter / 10, alpha: alpha)
         
         switch sender.state {
         case .ended:

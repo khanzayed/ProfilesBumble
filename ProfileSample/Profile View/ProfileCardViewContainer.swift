@@ -58,9 +58,6 @@ class ProfileCardViewContainer: UIView {
         profileCardViewContainer.layer.masksToBounds = false
     }
     
-    /// Reloads the data used to layout card views in the
-    /// card stack. Removes all existing card views and
-    /// calls the dataSource to layout new card views.
     func reloadData() {
         removeAllCardViews()
         guard let dataSource = dataSource else {
@@ -87,8 +84,6 @@ class ProfileCardViewContainer: UIView {
         cardViews.append(cardView)
         insertSubview(cardView, at: 1)
         remainingCards -= 1
-        
-//        self.sendSubviewToBack(self.profileCardViewContainer)
     }
     
     private func removeAllCardViews() {
@@ -97,14 +92,7 @@ class ProfileCardViewContainer: UIView {
         }
         cardViews = []
     }
-    
-    /// Sets the frame of a card view provided for a given index. Applies a specific
-    /// horizontal and vertical offset relative to the index in order to create an
-    /// overlay stack effect on a series of cards.
-    ///
-    /// - Parameters:
-    ///   - cardView: card view to update frame on
-    ///   - index: index used to apply horizontal and vertical insets
+
     private func setFrame(forCardView cardView: ProfileView, atIndex index: Int) {
         if index != 0 {
             cardView.frame = CGRect(x: 40, y: 0, width: UIScreen.main.bounds.width - 80, height: self.bounds.height)
@@ -123,16 +111,23 @@ extension ProfileCardViewContainer: ProfileViewDelegate, ProfileCardViewDelegate
         print("didSelect \(index)")
     }
     
-    func didTap(view: ProfileView) {
-
-    }
+    func didBeginSwipe(swipeValue: CGFloat, alpha: CGFloat) {
+        guard let _ = dataSource else {
+            return
+        }
     
-    func didBeginSwipe(onView view: ProfileView) {
-        // React to Swipe Began?
-    }
-    
-    func changeView(onView view: ProfileView) {
-        
+        if self.subviews.count > 1 {
+            let newIndex = self.subviews.count - 2
+            
+            if let nextView = self.subviews[newIndex] as? ProfileView {
+                nextView.alpha = alpha
+                let xValue = max(0, nextView.frame.origin.x - swipeValue)
+                let yValue = min(UIScreen.main.bounds.width, nextView.bounds.width + swipeValue)
+                
+                let frame = CGRect(x: xValue, y: nextView.frame.origin.y, width: yValue, height: nextView.bounds.height)
+                nextView.frame = frame
+            }
+        }
     }
     
     func didEndSwipe(onView view: ProfileView) {
@@ -149,33 +144,23 @@ extension ProfileCardViewContainer: ProfileViewDelegate, ProfileCardViewDelegate
             // Add new card as Subview
             addCardView(cardView: dataSource.card(forItemAtIndex: newIndex), atIndex: 2)
 
-//            DispatchQueue.main.async {
-//                self.cardViews[0].frame = CGRect(x: 0, y: 5.0, width: UIScreen.main.bounds.width, height: self.bounds.height - 5.0)
-//                self.cardViews[0].alpha = 1
-//            }
             if let nextView = self.subviews.last as? ProfileView {
-                
                 UIView.animate(withDuration: 0.2, animations: {
                     nextView.frame = CGRect(x: 0, y: 5.0, width: UIScreen.main.bounds.width, height: self.bounds.height - 5.0)
                     nextView.alpha = 1
-                    nextView.transform = CGAffineTransform(scaleX: 1, y: 1)
-
+                    
                     self.layoutIfNeeded()
-                })
-
+                }) { (true) in
+//                    if self.subviews.count > 1 {
+//                        let newIndex = self.subviews.count - 2
+//                        
+//                        if let nextView = self.subviews[newIndex] as? ProfileView {
+//                            nextView.frame = CGRect(x: 0, y: 5.0, width: UIScreen.main.bounds.width, height: self.bounds.height - 5.0)
+//                            nextView.alpha = 1.0
+//                        }
+//                    }
+                }
             }
-            
-
-            
-//            // Update all existing card's frames based on new indexes, animate frame change
-//            // to reveal new card from underneath the stack of existing cards.
-//            for (cardIndex, cardView) in visibleCardViews.reversed().enumerated() {
-//                UIView.animate(withDuration: 0.2, animations: {
-//                    cardView.center = self.center
-//                    self.setFrame(forCardView: cardView, atIndex: cardIndex)
-//                    self.layoutIfNeeded()
-//                })
-//            }
         }
     }
     

@@ -61,13 +61,14 @@ class ProfileView: UIView {
     }
     
     private func reset() {
+        self.delegate?.stopSwiping()
         UIView.animate(withDuration: 0.4, animations: {
             self.transform = CGAffineTransform.identity
             self.frame = CGRect(x: 0, y: 5, width: UIScreen.main.bounds.width,
                                 height: self.superview!.bounds.height - 5.0)
             self.alpha = 1
         }) { (true) in
-            self.delegate?.stopSwiping()
+            
         }
     }
     
@@ -81,7 +82,7 @@ class ProfileView: UIView {
         self.transform = CGAffineTransform(rotationAngle: xFromCenter / divisor)
         
         if xFromCenter > 0 { // Right
-            self.delegate?.swipingRight(abs(xFromCenter) / self.superview!.center.x)
+            self.delegate?.swipingRight(abs(xFromCenter) / self.superview!.center.x, distance: xFromCenter)
         } else {
             self.delegate?.swipingLeft(abs(xFromCenter) / self.superview!.center.x, distance: -xFromCenter)
         }
@@ -93,19 +94,23 @@ class ProfileView: UIView {
         switch sender.state {
         case .ended:
             if self.center.x < 50 {
+                self.delegate?.didEndSwipe(onView: self)
+                
                 UIView.animate(withDuration: 0.4, animations: {
                     self.center = CGPoint(x: self.center.x - UIScreen.main.bounds.width, y: self.center.y)
                     self.alpha = 0
                 }) { (true) in
-                    self.delegate?.didEndSwipe(onView: self)
+                    
                 }
             } else if self.center.x > self.superview!.frame.width - 50 {
+                self.delegate?.didEndSwipe(onView: self)
+                
                 UIView.animate(withDuration: 0.4, animations: {
                     self.center = CGPoint(x: self.center.x + UIScreen.main.bounds.width, y: self.center.y)
                     self.alpha = 0
                 }) { (true) in
                     self.delegate?.didRightSwipe(self.userObject)
-                    self.delegate?.didEndSwipe(onView: self)
+                    
                 }
             } else {
                 reset()

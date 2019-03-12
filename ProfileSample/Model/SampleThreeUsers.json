@@ -1,0 +1,281 @@
+[
+{
+"userID":4394,
+"blueTiePin":"ajinkyak",
+"userFirstName":"Ajinkya",
+"userLastName":"Kulthe",
+"userGender":"male",
+"userImage":"https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4394_1542014761.jpg",
+"thumbnailImage":"https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4394_1542014761.jpg",
+"userCountry":"India",
+"userState":"Maharashtra",
+"userCity":"Mumbai",
+"userAbout":"An ideator at heart who loves working on innovative ideas. I believe crafting and executing path-breaking ideas is the only way to invent the future. I'm looking for professionals who share my passion and hunger for visionary ideas.",
+"shareURL":"Ajiy8EA",
+"baseCityID":1,
+"userAge":20,
+"userIndustry":[
+{
+"userIndustryID":4977,
+"industryID":12,
+"industryName":"Information Technology (IT)"
+}
+],
+"objectives":[
+{
+"pLevel":3,
+"objectiveTitle":"Exchange Ideas",
+"description":"Discover & Interact with professionals having similar interests",
+"objectiveID":1
+},
+{
+"pLevel":3,
+"objectiveTitle":"Strategic Partnerships",
+"description":"Meet professionals to collaborate with, for ventures and projects",
+"objectiveID":2
+}
+],
+"skillwithEndorsement":[
+{
+"skillSets":"Marketing Strategy",
+"endorsement":0,
+"subSkillID":417
+},
+{
+"skillSets":"Marketing Research",
+"endorsement":0,
+"subSkillID":418
+},
+{
+"skillSets":"Marketing Analysis",
+"endorsement":0,
+"subSkillID":419
+},
+{
+"skillSets":"Rural Marketing",
+"endorsement":0,
+"subSkillID":3471
+},
+{
+"skillSets":"Online Marketing Associate-Certification",
+"endorsement":0,
+"subSkillID":3543
+},
+{
+"skillSets":"HubSpot Marketing Software-Certification",
+"endorsement":0,
+"subSkillID":3539
+},
+{
+"skillSets":"emfluence Marketing Platform Software",
+"endorsement":0,
+"subSkillID":3346
+},
+{
+"skillSets":"Affiliate Marketing and Advertising",
+"endorsement":0,
+"subSkillID":2498
+}
+],
+"userWorkHistory":[
+{
+"workID":5425,
+"currentCompany":1,
+"userDesignation":"Brand Ambassador",
+"userCompany":"BlueTie",
+"workFromMonth":null,
+"workFromYear":null,
+"workToMonth":null,
+"workToYear":null,
+"dateAdded":"2018-11-12T09:26:01.000Z",
+"dateModified":"2018-11-12T09:26:01.000Z",
+"status":1
+}
+],
+"userDegree":[
+{
+"educationID":981,
+"userDegree":"M Tech",
+"userUniversity":"MIT Pune",
+"educationYear":2011
+}
+],
+"userLink":[
+{
+"userDocLinkID":1754,
+"title":"My Search Engine",
+"linkUrl":"http://www.google.com"
+}
+],
+"userDocument":[
+{
+"userDocLinkID":1768,
+"title":"whatsapp overview",
+"linkUrl":"https://s3-ap-south-1.amazonaws.com/bluetie.local.documents/WhatsApp-Security-Whitepaper_1542024579.pdf"
+}
+],
+"userAchivement":[
+{
+"achivementID":904,
+"achivementTitle":"Google Adwords Certification"
+}
+]
+},
+{
+"userID":4377,
+"blueTiePin":"zayedkhan",
+"userFirstName":"Zayed",
+"userLastName":"Khan",
+"userGender":"",
+"userImage":"https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4377_1541746509.jpg",
+"thumbnailImage":"https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4377_1541746509.jpg",
+"userCountry":"India",
+"userState":"Maharashtra",
+"userCity":"Mumbai",
+"userAbout":"An ideator at heart who loves working on innovative ideas. I believe crafting and executing path-breaking ideas is the only way to invent the future. I'm looking for professionals who share my passion and hunger for visionary ideas.",
+"shareURL":"ZayacaT",
+"baseCityID":1,
+"userAge":2018,
+"userIndustry":[
+{
+"userIndustryID":4946,
+"industryID":12,
+"industryName":"Information Technology (IT)"
+}
+],
+"objectives":[
+{
+"pLevel":3,
+"objectiveTitle":"Exchange Ideas",
+"description":"Discover & Interact with professionals having similar interests",
+"objectiveID":1
+},
+{
+"pLevel":1,
+"objectiveTitle":"Explore Job Opportunities",
+"description":"Meet professionals looking to hire talent",
+"objectiveID":4
+},
+{
+"pLevel":2,
+"objectiveTitle":"Seek Mentorship",
+"description":"Meet experts who can mentor you in your professional journey",
+"objectiveID":6
+}
+],
+"skillwithEndorsement":[
+{
+"skillSets":"Native iOS Development",
+"endorsement":0,
+"subSkillID":1452
+},
+{
+"skillSets":"Swift-iOS Development Language",
+"endorsement":0,
+"subSkillID":1451
+}
+],
+"userWorkHistory":[
+{
+"workID":5402,
+"currentCompany":1,
+"userDesignation":"IOS Developer",
+"userCompany":"BlueTie Global Pvt Ltd",
+"workFromMonth":null,
+"workFromYear":null,
+"workToMonth":null,
+"workToYear":null,
+"dateAdded":"2018-11-09T06:55:09.000Z",
+"dateModified":"2018-11-09T06:55:09.000Z",
+"status":1
+}
+],
+"userDegree":[
+
+],
+"userLink":[
+
+],
+"userDocument":[
+
+],
+"userAchivement":[
+
+]
+},
+{
+"userID":4368,
+"blueTiePin":"jaddvrpbi",
+"userFirstName":"dheeraj",
+"userLastName":"jadhav",
+"userGender":"Male",
+"userImage":"https://s3.ap-south-1.amazonaws.com/bluetie.local.users/profile_4368_1541317114499.jpg",
+"thumbnailImage":"https://s3.ap-south-1.amazonaws.com/bluetie.local.users/profile_4368_1541317114499.jpg",
+"userCountry":"India",
+"userState":"Maharashtra",
+"userCity":"Mumbai",
+"userAbout":"An ideator at heart who loves working on innovative ideas. I believe crafting and executing path-breaking ideas is the only way to invent the future. I'm looking for professionals who share my passion and hunger for visionary ideas.",
+"shareURL":"dhe5Pp3",
+"baseCityID":1,
+"userAge":2018,
+"userIndustry":[
+{
+"userIndustryID":4934,
+"industryID":12,
+"industryName":"Information Technology (IT)"
+}
+],
+"objectives":[
+{
+"pLevel":3,
+"objectiveTitle":"Exchange Ideas",
+"description":"Discover & Interact with professionals having similar interests",
+"objectiveID":1
+}
+],
+"skillwithEndorsement":[
+{
+"skillSets":"Google Android Studio-Development Tool",
+"endorsement":0,
+"subSkillID":1433
+},
+{
+"skillSets":"PhoneGap Android Development",
+"endorsement":0,
+"subSkillID":1340
+},
+{
+"skillSets":"Native Android Development",
+"endorsement":0,
+"subSkillID":1339
+}
+],
+"userWorkHistory":[
+{
+"workID":5391,
+"currentCompany":1,
+"userDesignation":"Android",
+"userCompany":"Bt",
+"workFromMonth":null,
+"workFromYear":null,
+"workToMonth":null,
+"workToYear":null,
+"dateAdded":"2018-11-04T07:38:35.000Z",
+"dateModified":"2018-11-04T07:38:35.000Z",
+"status":1
+}
+],
+"userDegree":[
+
+],
+"userLink":[
+
+],
+"userDocument":[
+
+],
+"userAchivement":[
+
+]
+}
+]

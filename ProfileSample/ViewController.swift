@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var leftSwipeImageView: UIImageView!
     @IBOutlet weak var rightSwipeImageView: UIImageView!
     @IBOutlet weak var leftImageLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var rightImageLeadingConstraint: NSLayoutConstraint!
     
     var cardContainer: ProfileCardViewContainer!
     var users: [UserObject] = []
@@ -78,21 +79,53 @@ extension ViewController: ProfileCardViewDataSource, ProfileCardViewDelegate {
         return nil
     }
     
-    func swipingRight(_ alpha: CGFloat) {
-        print(alpha)
+    func swipingRight(_ alpha: CGFloat, distance: CGFloat) {
+        resetLeftSwipeIcon()
         
         rightSwipeImageView.alpha = alpha
+        
+        let scale = min(alpha + 0.4, 1)
+        rightSwipeImageView.transform = CGAffineTransform(scaleX: scale , y: scale)
+        
+        if rightImageLeadingConstraint.constant <= 30 {
+            let value = min(distance / 10, 30)
+            rightImageLeadingConstraint.constant += value
+        }
     }
     
     func swipingLeft(_ alpha: CGFloat, distance: CGFloat) {
-        print(distance)
+        resetRightSwipeIcon()
         
         leftSwipeImageView.alpha = alpha
-//        leftImageLeadingConstraint.constant += distance
+        
+        let scale = min(alpha + 0.4, 1)
+        leftSwipeImageView.transform = CGAffineTransform(scaleX: scale , y: scale)
+        
+        if leftImageLeadingConstraint.constant <= 30 {
+            let value = min(distance / 10, 30)
+            leftImageLeadingConstraint.constant += value
+        }
+    }
+    
+    private func resetRightSwipeIcon() {
+        if self.rightImageLeadingConstraint.constant > -100 {
+           self.rightImageLeadingConstraint.constant = -100
+        }
+    }
+    
+    private func resetLeftSwipeIcon() {
+        if self.leftImageLeadingConstraint.constant > -100 {
+            self.leftImageLeadingConstraint.constant = -100
+        }
     }
     
     func stopSwiping() {
-        UIView.animate(withDuration: 0.2) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.leftImageLeadingConstraint.constant = -100
+            self.rightImageLeadingConstraint.constant = -100
+            
+            self.view.layoutIfNeeded()
+        }) { (true) in
             self.leftSwipeImageView.alpha = 0
             self.rightSwipeImageView.alpha = 0
         }

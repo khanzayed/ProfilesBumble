@@ -130,8 +130,8 @@ extension ProfileCardViewContainer: ProfileViewDelegate {
         self.delegate?.swipingLeft(alpha, distance: distance)
     }
     
-    func swipingRight(_ alpha: CGFloat) {
-        self.delegate?.swipingRight(alpha)
+    func swipingRight(_ alpha: CGFloat, distance: CGFloat) {
+        self.delegate?.swipingRight(alpha, distance: distance)
     }
     
     func stopSwiping() {

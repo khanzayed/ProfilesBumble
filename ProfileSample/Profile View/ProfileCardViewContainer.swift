@@ -212,7 +212,8 @@ extension ProfileCardViewContainer: ProfileViewDelegate {
             addCardView(cardView: dataSource.card(forItemAtIndex: newIndex), atIndex: 2)
         }
         
-        if self.profileCardViewContainer.subviews.count > 2, let nextView = self.profileCardViewContainer.subviews[2] as? ProfileView {
+        if cardViews.count > 0 {
+            let nextView = cardViews[0]
             UIView.animate(withDuration: 0.2) {
                 nextView.frame = CGRect(x: 0, y: 5.0, width: UIScreen.main.bounds.width, height: self.bounds.height - 5.0)
                 nextView.alpha = 1

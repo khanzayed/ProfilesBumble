@@ -10,17 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var leftSwipeImageView: UIImageView!
-    @IBOutlet weak var rightSwipeImageView: UIImageView!
-    @IBOutlet weak var leftImageLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var rightImageLeadingConstraint: NSLayoutConstraint!
-    
     var cardContainer: ProfileCardViewContainer!
     var users: [UserObject] = []
+    var shapeLayer: CAShapeLayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         cardContainer = ProfileCardViewContainer(frame: CGRect(x: 0, y: 60.0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 60))
         cardContainer.delegate = self
         
@@ -42,27 +38,14 @@ class ViewController: UIViewController {
             }
         }
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        let xValue: CGFloat = 20
-        let rect = CGRect(x: xValue, y: 60, width: UIScreen.main.bounds.width - (2 * xValue), height: 40)
-        let roundedRect = UIBezierPath(roundedRect: rect, cornerRadius: 20)
         
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = roundedRect.cgPath
-        
-        shapeLayer.strokeColor = UIColor.clear.cgColor
-        shapeLayer.fillColor = UIColor.white.cgColor
-        shapeLayer.opacity = 0.5
-        shapeLayer.lineWidth = 1.0
-        
-        // add the new layer to our custom view
-        self.view.layer.insertSublayer(shapeLayer, below: cardContainer.layer)
-    }
-    
 }
 
-extension ViewController: ProfileCardViewDataSource, ProfileCardViewDelegate {
+extension ViewController: ProfileCardViewDataSource {
+    
+    func superView() -> UIView {
+        return self.view
+    }
     
     func numberOfCards() -> Int {
         return users.count
@@ -75,61 +58,16 @@ extension ViewController: ProfileCardViewDataSource, ProfileCardViewDelegate {
         return cardView
     }
     
-    func viewForEmptyCards() -> UIView? {
-        return nil
+    func viewForEmptyCards() -> UIView {
+        let emptyView = EmptyView(frame: CGRect(x: 20, y: 0, width: UIScreen.main.bounds.width - 40, height: self.cardContainer.bounds.height))
+        emptyView.alpha = 0.5
+        
+        return emptyView
     }
     
-    func swipingRight(_ alpha: CGFloat, distance: CGFloat) {
-        resetLeftSwipeIcon()
-        
-        rightSwipeImageView.alpha = alpha
-        
-        let scale = min(alpha + 0.4, 1)
-        rightSwipeImageView.transform = CGAffineTransform(scaleX: scale , y: scale)
-        
-        if rightImageLeadingConstraint.constant <= 30 {
-            let value = min(distance / 10, 30)
-            rightImageLeadingConstraint.constant += value
-        }
-    }
-    
-    func swipingLeft(_ alpha: CGFloat, distance: CGFloat) {
-        resetRightSwipeIcon()
-        
-        leftSwipeImageView.alpha = alpha
-        
-        let scale = min(alpha + 0.4, 1)
-        leftSwipeImageView.transform = CGAffineTransform(scaleX: scale , y: scale)
-        
-        if leftImageLeadingConstraint.constant <= 30 {
-            let value = min(distance / 10, 30)
-            leftImageLeadingConstraint.constant += value
-        }
-    }
-    
-    private func resetRightSwipeIcon() {
-        if self.rightImageLeadingConstraint.constant > -100 {
-           self.rightImageLeadingConstraint.constant = -100
-        }
-    }
-    
-    private func resetLeftSwipeIcon() {
-        if self.leftImageLeadingConstraint.constant > -100 {
-            self.leftImageLeadingConstraint.constant = -100
-        }
-    }
-    
-    func stopSwiping() {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.leftImageLeadingConstraint.constant = -100
-            self.rightImageLeadingConstraint.constant = -100
-            
-            self.view.layoutIfNeeded()
-        }) { (true) in
-            self.leftSwipeImageView.alpha = 0
-            self.rightSwipeImageView.alpha = 0
-        }
-    }
+}
+
+extension ViewController: ProfileCardViewDelegate {
     
     func didRightSwipe(_ userObject: UserObject) {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RightSwipeViewController") as! RightSwipeViewController

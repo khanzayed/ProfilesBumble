@@ -18,37 +18,9 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pass@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="qKN-yI-nY2">
-                                <rect key="frame" x="-100" y="273.5" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="KPr-JN-pv6"/>
-                                    <constraint firstAttribute="width" constant="120" id="TY5-WE-kql"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reachout@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="QYg-Zn-hE0">
-                                <rect key="frame" x="355" y="273.5" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="3vY-Bj-28v"/>
-                                    <constraint firstAttribute="width" constant="120" id="4FI-nC-WZE"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" name="PrimaryBlue"/>
-                        <constraints>
-                            <constraint firstItem="QYg-Zn-hE0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="avN-CL-OPU"/>
-                            <constraint firstItem="qKN-yI-nY2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ePr-H6-da4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QYg-Zn-hE0" secondAttribute="trailing" constant="-100" id="xRO-6H-m69"/>
-                            <constraint firstItem="qKN-yI-nY2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-100" id="y87-Fa-rnK"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="leftImageLeadingConstraint" destination="y87-Fa-rnK" id="h2x-t9-FDy"/>
-                        <outlet property="leftSwipeImageView" destination="qKN-yI-nY2" id="Lcm-n2-Of3"/>
-                        <outlet property="rightImageLeadingConstraint" destination="xRO-6H-m69" id="hFb-fB-lIV"/>
-                        <outlet property="rightSwipeImageView" destination="QYg-Zn-hE0" id="qkh-WG-3Bz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,8 +53,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pass@3x.png" width="16" height="16"/>
-        <image name="reachout@3x.png" width="16" height="16"/>
         <namedColor name="PrimaryBlue">
             <color red="0.0" green="0.58823529411764708" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

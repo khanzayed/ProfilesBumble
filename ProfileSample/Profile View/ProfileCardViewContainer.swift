@@ -8,32 +8,49 @@
 
 import UIKit
 
+protocol ProfileCardViewDataSource {
+    
+    func numberOfCards() -> Int
+    
+    func superView() -> UIView
+    
+    func card(forItemAtIndex index: Int) -> ProfileView
+    
+    func viewForEmptyCards() -> UIView
+    
+}
+
+protocol ProfileCardViewDelegate {
+    
+    func didRightSwipe(_ userObject: UserObject)
+    
+}
+
+
 class ProfileCardViewContainer: UIView {
     
     @IBOutlet var profileCardViewContainer: UIView!
+    @IBOutlet weak var leftSwipeImageView: UIImageView!
+    @IBOutlet weak var rightSwipeImageView: UIImageView!
+    @IBOutlet weak var leftImageLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var rightImageLeadingConstraint: NSLayoutConstraint!
     
-    var delegate: ProfileCardViewDelegate?
+    fileprivate var shapeLayer: CAShapeLayer!
+    fileprivate var remainingCards: Int = 0
+    fileprivate var emptyView: UIView!
     
-    private var areCornersRounded = false
-    
-    static let horizontalInset: CGFloat = 12.0
-    
-    static let verticalInset: CGFloat = 5.0
+    internal var delegate: ProfileCardViewDelegate?
     internal var currentIndex = 0
-    
-    var dataSource: ProfileCardViewDataSource? {
+    internal var dataSource: ProfileCardViewDataSource? {
         didSet {
             reloadData()
         }
     }
     
     private var cardViews: [ProfileView] = []
-    
     private var visibleCardViews: [ProfileView] {
         return subviews as? [ProfileView] ?? []
     }
-    
-    fileprivate var remainingCards: Int = 0
     
     static let numberOfVisibleCards: Int = 3
     
@@ -56,10 +73,27 @@ class ProfileCardViewContainer: UIView {
         profileCardViewContainer.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
         profileCardViewContainer.layer.masksToBounds = false
+        
+        setupStackLayer()
+    }
+    
+    private func setupStackLayer() {
+        let xValue: CGFloat = 20
+        let rect = CGRect(x: xValue, y: 60, width: UIScreen.main.bounds.width - (2 * xValue), height: 40)
+        let roundedRect = UIBezierPath(roundedRect: rect, cornerRadius: 20)
+        
+        shapeLayer = CAShapeLayer()
+        shapeLayer.path = roundedRect.cgPath
+        
+        shapeLayer.strokeColor = UIColor.clear.cgColor
+        shapeLayer.fillColor = UIColor.white.cgColor
+        shapeLayer.opacity = 0.5
+        shapeLayer.lineWidth = 1.0
     }
     
     func reloadData() {
         removeAllCardViews()
+        
         guard let dataSource = dataSource else {
             return
         }
@@ -70,10 +104,9 @@ class ProfileCardViewContainer: UIView {
         for index in 0..<min(numberOfCards, ProfileCardViewContainer.numberOfVisibleCards) {
             addCardView(cardView: dataSource.card(forItemAtIndex: index), atIndex: index)
         }
-        
-        if let emptyView = dataSource.viewForEmptyCards() {
-//            addEdgeConstrainedSubView(view: emptyView)
-        }
+    
+        emptyView = dataSource.viewForEmptyCards()
+        insertSubview(self.emptyView, at: 0)
         
         setNeedsLayout()
     }
@@ -82,7 +115,7 @@ class ProfileCardViewContainer: UIView {
         cardView.delegate = self
         setFrame(forCardView: cardView, atIndex: index)
         cardViews.append(cardView)
-        insertSubview(cardView, at: 1)
+        profileCardViewContainer.insertSubview(cardView, at: 0)
         remainingCards -= 1
     }
     
@@ -96,10 +129,21 @@ class ProfileCardViewContainer: UIView {
     private func setFrame(forCardView cardView: ProfileView, atIndex index: Int) {
         if index != 0 {
             cardView.frame = CGRect(x: 10, y: 5, width: UIScreen.main.bounds.width - 20, height: self.bounds.height - 5.0)
-//            cardView.alpha = 0.5
         }
-        cardView.roundCorners([.topLeft, .topRight], radius: 10)
+        
         cardView.lbl.text = cardView.userObject.fName
+    }
+    
+    fileprivate func resetRightSwipeIcon() {
+        if self.rightImageLeadingConstraint.constant > -100 {
+            self.rightImageLeadingConstraint.constant = -100
+        }
+    }
+    
+    fileprivate func resetLeftSwipeIcon() {
+        if self.leftImageLeadingConstraint.constant > -100 {
+            self.leftImageLeadingConstraint.constant = -100
+        }
     }
     
 }
@@ -107,35 +151,44 @@ class ProfileCardViewContainer: UIView {
 // MARK: - ProfileCardViewDelegate
 extension ProfileCardViewContainer: ProfileViewDelegate {
     
-    func didBeginSwipe(swipeValue: CGFloat, alpha: CGFloat) {
-        guard let _ = dataSource else {
-            return
-        }
-    
-        if self.subviews.count > 1 {
-            let newIndex = self.subviews.count - 2
-            
-            if let nextView = self.subviews[newIndex] as? ProfileView {
-                nextView.alpha = alpha
-                let xValue = max(0, nextView.frame.origin.x - swipeValue)
-                let yValue = min(UIScreen.main.bounds.width, nextView.bounds.width + swipeValue)
-                
-                let frame = CGRect(x: xValue, y: nextView.frame.origin.y, width: yValue, height: nextView.bounds.height)
-                nextView.frame = frame
-            }
+    func swipingRight(_ alpha: CGFloat, distance: CGFloat) {
+        resetLeftSwipeIcon()
+
+        rightSwipeImageView.alpha = alpha
+
+        let scale = min(alpha + 0.6, 1)
+        rightSwipeImageView.transform = CGAffineTransform(scaleX: scale , y: scale)
+
+        if rightImageLeadingConstraint.constant <= 30 {
+            let value = min(distance / 10, 30)
+            rightImageLeadingConstraint.constant += value
         }
     }
     
     func swipingLeft(_ alpha: CGFloat, distance: CGFloat) {
-        self.delegate?.swipingLeft(alpha, distance: distance)
-    }
-    
-    func swipingRight(_ alpha: CGFloat, distance: CGFloat) {
-        self.delegate?.swipingRight(alpha, distance: distance)
+        resetRightSwipeIcon()
+        
+        leftSwipeImageView.alpha = alpha
+        
+        let scale = min(alpha + 0.6, 1)
+        leftSwipeImageView.transform = CGAffineTransform(scaleX: scale , y: scale)
+        
+        if leftImageLeadingConstraint.constant <= 30 {
+            let value = min(distance / 10, 30)
+            leftImageLeadingConstraint.constant += value
+        }
     }
     
     func stopSwiping() {
-        self.delegate?.stopSwiping()
+        UIView.animate(withDuration: 0.3, animations: {
+            self.leftImageLeadingConstraint.constant = -100
+            self.rightImageLeadingConstraint.constant = -100
+            
+            self.layoutIfNeeded()
+        }) { (true) in
+            self.leftSwipeImageView.alpha = 0
+            self.rightSwipeImageView.alpha = 0
+        }
     }
     
     func didRightSwipe(_ userObject: UserObject) {
@@ -150,30 +203,30 @@ extension ProfileCardViewContainer: ProfileViewDelegate {
         view.removeFromSuperview()
         cardViews.remove(at: 0)
         
-        self.delegate?.stopSwiping()
+        stopSwiping()
         
         if remainingCards > 0 {
             let newIndex = dataSource.numberOfCards() - remainingCards
 
             // Add new card as Subview
             addCardView(cardView: dataSource.card(forItemAtIndex: newIndex), atIndex: 2)
-
-            if let nextView = self.subviews.last as? ProfileView {
-                UIView.animate(withDuration: 0.2, animations: {
-                    nextView.frame = CGRect(x: 0, y: 5.0, width: UIScreen.main.bounds.width, height: self.bounds.height - 5.0)
-                    nextView.alpha = 1
-                    
-                    self.layoutIfNeeded()
-                }) { (true) in
-//                    if self.subviews.count > 1 {
-//                        let newIndex = self.subviews.count - 2
-//                        
-//                        if let nextView = self.subviews[newIndex] as? ProfileView {
-//                            nextView.frame = CGRect(x: 0, y: 5.0, width: UIScreen.main.bounds.width, height: self.bounds.height - 5.0)
-//                            nextView.alpha = 1.0
-//                        }
-//                    }
-                }
+        }
+        
+        if self.profileCardViewContainer.subviews.count > 2, let nextView = self.profileCardViewContainer.subviews[2] as? ProfileView {
+            UIView.animate(withDuration: 0.2) {
+                nextView.frame = CGRect(x: 0, y: 5.0, width: UIScreen.main.bounds.width, height: self.bounds.height - 5.0)
+                nextView.alpha = 1
+                
+                self.layoutIfNeeded()
+            }
+        }
+        
+        if cardViews.count == 1 {
+            UIView.animate(withDuration: 0.2) {
+                self.emptyView.frame = CGRect(x: 0, y: 5.0, width: UIScreen.main.bounds.width, height: self.bounds.height - 5.0)
+                self.emptyView.alpha = 1
+                
+                self.layoutIfNeeded()
             }
         }
     }

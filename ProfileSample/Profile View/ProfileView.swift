@@ -8,6 +8,20 @@
 
 import UIKit
 
+protocol ProfileViewDelegate {
+    
+    func swipingRight(_ alpha: CGFloat, distance: CGFloat)
+    
+    func swipingLeft(_ alpha: CGFloat, distance: CGFloat)
+    
+    func stopSwiping()
+    
+    func didRightSwipe(_ userObject: UserObject)
+    
+    func didEndSwipe(onView view: ProfileView)
+    
+}
+
 class ProfileView: UIView {
 
     @IBOutlet var profileView: UIView!
@@ -75,10 +89,8 @@ class ProfileView: UIView {
     @objc private func panGestureRecognized(_ sender: UIPanGestureRecognizer) {
         let point = sender.translation(in: self)
         let xFromCenter = self.center.x - self.superview!.center.x
-        self.center = CGPoint(x: self.superview!.center.x + point.x, y: self.center.y)// superview!.center.y) // + point.y)
+        self.center = CGPoint(x: self.superview!.center.x + point.x, y: self.center.y)
         
-//        let alpha = min(abs(xFromCenter) / alphaBaseValue, 1)
-//        let scale = min(100/abs(xFromCenter), 1)
         self.transform = CGAffineTransform(rotationAngle: xFromCenter / divisor)
         
         if xFromCenter > 0 { // Right
@@ -86,10 +98,6 @@ class ProfileView: UIView {
         } else {
             self.delegate?.swipingLeft(abs(xFromCenter) / self.superview!.center.x, distance: -xFromCenter)
         }
-        
-//        panGestureTranslation = gestureRecognizer.translation(in: self)
-//        print(xFromCenter)
-//        self.delegate?.didBeginSwipe(swipeValue: xFromCenter / 10, alpha: alpha)
         
         switch sender.state {
         case .ended:

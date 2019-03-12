@@ -20,6 +20,9 @@
 		848AC188223263DE0043643F /* ProfileCardViewContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848AC187223263DE0043643F /* ProfileCardViewContainer.xib */; };
 		848AC18B223272750043643F /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AC18A223272750043643F /* UserDataModel.swift */; };
 		848AC18D223274550043643F /* SampleExplore.json in Resources */ = {isa = PBXBuildFile; fileRef = 848AC18C223274550043643F /* SampleExplore.json */; };
+		D0595CCF2236CF920061EE3F /* pass@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0595CCE2236CF920061EE3F /* pass@3x.png */; };
+		D0595CD12236CFA00061EE3F /* reachout@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0595CD02236CFA00061EE3F /* reachout@3x.png */; };
+		D0C6E3F92236BB1500707DAF /* RightSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C6E3F82236BB1500707DAF /* RightSwipeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		848AC187223263DE0043643F /* ProfileCardViewContainer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCardViewContainer.xib; sourceTree = "<group>"; };
 		848AC18A223272750043643F /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		848AC18C223274550043643F /* SampleExplore.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SampleExplore.json; sourceTree = "<group>"; };
+		D0595CCE2236CF920061EE3F /* pass@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pass@3x.png"; sourceTree = "<group>"; };
+		D0595CD02236CFA00061EE3F /* reachout@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "reachout@3x.png"; path = "Assets.xcassets/right_swipe.imageset/reachout@3x.png"; sourceTree = "<group>"; };
+		D0C6E3F82236BB1500707DAF /* RightSwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightSwipeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,10 +76,13 @@
 		848AC169223242CB0043643F /* ProfileSample */ = {
 			isa = PBXGroup;
 			children = (
+				D0595CD02236CFA00061EE3F /* reachout@3x.png */,
+				D0595CCE2236CF920061EE3F /* pass@3x.png */,
 				848AC189223272660043643F /* Model */,
 				848AC17C223243440043643F /* Profile View */,
 				848AC16A223242CB0043643F /* AppDelegate.swift */,
 				848AC16C223242CB0043643F /* ViewController.swift */,
+				D0C6E3F82236BB1500707DAF /* RightSwipeViewController.swift */,
 				848AC16E223242CB0043643F /* Main.storyboard */,
 				848AC173223242CC0043643F /* LaunchScreen.storyboard */,
 				848AC176223242CC0043643F /* Info.plist */,
@@ -162,8 +171,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0595CCF2236CF920061EE3F /* pass@3x.png in Resources */,
 				848AC182223244530043643F /* Colors.xcassets in Resources */,
 				848AC18D223274550043643F /* SampleExplore.json in Resources */,
+				D0595CD12236CFA00061EE3F /* reachout@3x.png in Resources */,
 				848AC188223263DE0043643F /* ProfileCardViewContainer.xib in Resources */,
 				848AC180223243900043643F /* ProfileView.xib in Resources */,
 				848AC175223242CC0043643F /* LaunchScreen.storyboard in Resources */,
@@ -181,6 +192,7 @@
 			files = (
 				848AC18B223272750043643F /* UserDataModel.swift in Sources */,
 				848AC16D223242CB0043643F /* ViewController.swift in Sources */,
+				D0C6E3F92236BB1500707DAF /* RightSwipeViewController.swift in Sources */,
 				848AC18422324EA80043643F /* ProfileViewProtocols.swift in Sources */,
 				848AC18622325FC20043643F /* ProfileCardViewContainer.swift in Sources */,
 				848AC17E223243850043643F /* ProfileView.swift in Sources */,

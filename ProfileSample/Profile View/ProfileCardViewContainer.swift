@@ -12,6 +12,8 @@ class ProfileCardViewContainer: UIView {
     
     @IBOutlet var profileCardViewContainer: UIView!
     
+    var delegate: ProfileCardViewDelegate?
+    
     private var areCornersRounded = false
     
     static let horizontalInset: CGFloat = 12.0
@@ -24,8 +26,6 @@ class ProfileCardViewContainer: UIView {
             reloadData()
         }
     }
-    
-    var delegate: ProfileCardViewDelegate?
     
     private var cardViews: [ProfileView] = []
     
@@ -95,21 +95,17 @@ class ProfileCardViewContainer: UIView {
 
     private func setFrame(forCardView cardView: ProfileView, atIndex index: Int) {
         if index != 0 {
-            cardView.frame = CGRect(x: 40, y: 0, width: UIScreen.main.bounds.width - 80, height: self.bounds.height)
-            cardView.alpha = 0.5
+            cardView.frame = CGRect(x: 10, y: 5, width: UIScreen.main.bounds.width - 20, height: self.bounds.height - 5.0)
+//            cardView.alpha = 0.5
         }
-        cardView.roundCorners([.topLeft, .topRight], radius: 30)
+        cardView.roundCorners([.topLeft, .topRight], radius: 10)
         cardView.lbl.text = cardView.userObject.fName
     }
     
 }
 
 // MARK: - ProfileCardViewDelegate
-extension ProfileCardViewContainer: ProfileViewDelegate, ProfileCardViewDelegate {
-    
-    func didSelect(card: ProfileView, atIndex index: Int) {
-        print("didSelect \(index)")
-    }
+extension ProfileCardViewContainer: ProfileViewDelegate {
     
     func didBeginSwipe(swipeValue: CGFloat, alpha: CGFloat) {
         guard let _ = dataSource else {
@@ -130,6 +126,22 @@ extension ProfileCardViewContainer: ProfileViewDelegate, ProfileCardViewDelegate
         }
     }
     
+    func swipingLeft(_ alpha: CGFloat, distance: CGFloat) {
+        self.delegate?.swipingLeft(alpha, distance: distance)
+    }
+    
+    func swipingRight(_ alpha: CGFloat) {
+        self.delegate?.swipingRight(alpha)
+    }
+    
+    func stopSwiping() {
+        self.delegate?.stopSwiping()
+    }
+    
+    func didRightSwipe(_ userObject: UserObject) {
+        self.delegate?.didRightSwipe(userObject)
+    }
+    
     func didEndSwipe(onView view: ProfileView) {
         guard let dataSource = dataSource else {
             return
@@ -137,6 +149,8 @@ extension ProfileCardViewContainer: ProfileViewDelegate, ProfileCardViewDelegate
         
         view.removeFromSuperview()
         cardViews.remove(at: 0)
+        
+        self.delegate?.stopSwiping()
         
         if remainingCards > 0 {
             let newIndex = dataSource.numberOfCards() - remainingCards

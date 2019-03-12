@@ -11,6 +11,7 @@ import UIKit
 class ProfileView: UIView {
 
     @IBOutlet var profileView: UIView!
+    
     @IBOutlet weak var lbl: UILabel!
     
     internal var delegate: ProfileViewDelegate?
@@ -21,6 +22,8 @@ class ProfileView: UIView {
     private var panGestureTranslation: CGPoint = .zero
     private var alphaBaseValue: CGFloat = UIScreen.main.bounds.width / 4
     
+    var divisor : CGFloat!
+    var top : CGFloat!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,6 +50,8 @@ class ProfileView: UIView {
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ProfileView.panGestureRecognized(_:)))
         self.panGestureRecognizer = panGestureRecognizer
         profileView.addGestureRecognizer(panGestureRecognizer)
+        
+        divisor = (self.bounds.height / 2) / 0.61
     }
     
     override func layoutSubviews() {
@@ -56,27 +61,30 @@ class ProfileView: UIView {
     }
     
     private func reset() {
-        UIView.animate(withDuration: 0.4) {
-            self.frame = CGRect(x: 0, y: 5, width: self.superview!.bounds.width, height: self.superview!.bounds.height - 5.0)
+        UIView.animate(withDuration: 0.4, animations: {
+            self.transform = CGAffineTransform.identity
+            self.frame = CGRect(x: 0, y: 5, width: UIScreen.main.bounds.width,
+                                height: self.superview!.bounds.height - 5.0)
             self.alpha = 1
+        }) { (true) in
+            self.delegate?.stopSwiping()
         }
     }
     
     @objc private func panGestureRecognized(_ sender: UIPanGestureRecognizer) {
         let point = sender.translation(in: self)
-//        let xFromCenter = abs(self.center.x - self.superview!.center.x) / 2
-        self.center = CGPoint(x: self.superview!.center.x + point.x, y: self.superview!.center.y) // + point.y)
+        let xFromCenter = self.center.x - self.superview!.center.x
+        self.center = CGPoint(x: self.superview!.center.x + point.x, y: self.center.y)// superview!.center.y) // + point.y)
         
 //        let alpha = min(abs(xFromCenter) / alphaBaseValue, 1)
-//        card.transform = CGAffineTransform(rotationAngle: xFromCenter/divisor).scaledBy(x: scale, y: scale)
+//        let scale = min(100/abs(xFromCenter), 1)
+        self.transform = CGAffineTransform(rotationAngle: xFromCenter / divisor)
         
-//        if xFromCenter > 0 { // Right
-//            acceptImageView.image = UIImage(named: "accept")
-//        } else {
-//            acceptImageView.image = UIImage(named: "accept")
-//        }
-        
-//        acceptImageView.alpha = abs(xFromCenter) / view.center.x
+        if xFromCenter > 0 { // Right
+            self.delegate?.swipingRight(abs(xFromCenter) / self.superview!.center.x)
+        } else {
+            self.delegate?.swipingLeft(abs(xFromCenter) / self.superview!.center.x, distance: -xFromCenter)
+        }
         
 //        panGestureTranslation = gestureRecognizer.translation(in: self)
 //        print(xFromCenter)
@@ -84,15 +92,23 @@ class ProfileView: UIView {
         
         switch sender.state {
         case .ended:
-        if self.center.x < 100 || self.center.x > self.superview!.frame.width - 100 {
-            UIView.animate(withDuration: 0.4, animations: {
-                self.center = CGPoint(x: self.center.x - 200, y: self.center.y + 150)
-                self.alpha = 0
-            }) { (true) in
-                self.delegate?.didEndSwipe(onView: self)
-            }
-        } else {
-            reset()
+            if self.center.x < 50 {
+                UIView.animate(withDuration: 0.4, animations: {
+                    self.center = CGPoint(x: self.center.x - UIScreen.main.bounds.width, y: self.center.y)
+                    self.alpha = 0
+                }) { (true) in
+                    self.delegate?.didEndSwipe(onView: self)
+                }
+            } else if self.center.x > self.superview!.frame.width - 50 {
+                UIView.animate(withDuration: 0.4, animations: {
+                    self.center = CGPoint(x: self.center.x + UIScreen.main.bounds.width, y: self.center.y)
+                    self.alpha = 0
+                }) { (true) in
+                    self.delegate?.didRightSwipe(self.userObject)
+                    self.delegate?.didEndSwipe(onView: self)
+                }
+            } else {
+                reset()
             }
         default:
             break

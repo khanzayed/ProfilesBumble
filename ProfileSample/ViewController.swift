@@ -9,7 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var leftSwipeImageView: UIImageView!
+    @IBOutlet weak var rightSwipeImageView: UIImageView!
+    @IBOutlet weak var leftImageLeadingConstraint: NSLayoutConstraint!
+    
     var cardContainer: ProfileCardViewContainer!
     var users: [UserObject] = []
     
@@ -17,7 +21,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         cardContainer = ProfileCardViewContainer(frame: CGRect(x: 0, y: 60.0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 60))
-    
+        cardContainer.delegate = self
+        
         if let path = Bundle.main.path(forResource: "SampleExplore", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
@@ -29,6 +34,7 @@ class ViewController: UIViewController {
                     cardContainer.dataSource = self
                     
                     view.addSubview(cardContainer)
+                    view.sendSubviewToBack(cardContainer)
                 }
             } catch {
                 // handle error
@@ -36,31 +42,26 @@ class ViewController: UIViewController {
         }
     }
 
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//
-////        cardContainer.roundCorners([.topLeft, .topRight], radius: 30)
-//    }
-
-//    override func viewDidAppear(_ animated: Bool) {
-//        let xValue: CGFloat = 40
-//        let rect = CGRect(x: xValue, y: 60, width: UIScreen.main.bounds.width - (2 * xValue), height: 40)
-//        let roundedRect = UIBezierPath(roundedRect: rect, cornerRadius: 20)
-//        
-//        let shapeLayer = CAShapeLayer()
-//        shapeLayer.path = roundedRect.cgPath
-//        
-//        shapeLayer.strokeColor = UIColor.clear.cgColor
-//        shapeLayer.fillColor = UIColor.white.cgColor
-//        shapeLayer.opacity = 0.5
-//        shapeLayer.lineWidth = 1.0
-//        
-//        // add the new layer to our custom view
-//        self.view.layer.insertSublayer(shapeLayer, below: cardContainer.layer)
-//    }
+    override func viewDidAppear(_ animated: Bool) {
+        let xValue: CGFloat = 20
+        let rect = CGRect(x: xValue, y: 60, width: UIScreen.main.bounds.width - (2 * xValue), height: 40)
+        let roundedRect = UIBezierPath(roundedRect: rect, cornerRadius: 20)
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = roundedRect.cgPath
+        
+        shapeLayer.strokeColor = UIColor.clear.cgColor
+        shapeLayer.fillColor = UIColor.white.cgColor
+        shapeLayer.opacity = 0.5
+        shapeLayer.lineWidth = 1.0
+        
+        // add the new layer to our custom view
+        self.view.layer.insertSublayer(shapeLayer, below: cardContainer.layer)
+    }
+    
 }
 
-extension ViewController: ProfileCardViewDataSource {
+extension ViewController: ProfileCardViewDataSource, ProfileCardViewDelegate {
     
     func numberOfCards() -> Int {
         return users.count
@@ -75,6 +76,33 @@ extension ViewController: ProfileCardViewDataSource {
     
     func viewForEmptyCards() -> UIView? {
         return nil
+    }
+    
+    func swipingRight(_ alpha: CGFloat) {
+        print(alpha)
+        
+        rightSwipeImageView.alpha = alpha
+    }
+    
+    func swipingLeft(_ alpha: CGFloat, distance: CGFloat) {
+        print(distance)
+        
+        leftSwipeImageView.alpha = alpha
+//        leftImageLeadingConstraint.constant += distance
+    }
+    
+    func stopSwiping() {
+        UIView.animate(withDuration: 0.2) {
+            self.leftSwipeImageView.alpha = 0
+            self.rightSwipeImageView.alpha = 0
+        }
+    }
+    
+    func didRightSwipe(_ userObject: UserObject) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RightSwipeViewController") as! RightSwipeViewController
+        DispatchQueue.main.async {
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
 }

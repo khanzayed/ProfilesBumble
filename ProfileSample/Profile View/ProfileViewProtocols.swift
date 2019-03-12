@@ -39,13 +39,29 @@ protocol ProfileCardViewDataSource: class {
 
 protocol ProfileCardViewDelegate: class {
     
-    func didSelect(card: ProfileView, atIndex index: Int)
+    func didRightSwipe(_ userObject: UserObject)
+    
+    func swipingRight(_ alpha: CGFloat)
+    
+    func swipingLeft(_ alpha: CGFloat, distance: CGFloat)
+    
+    func stopSwiping()
     
 }
+
+
 
 protocol ProfileViewDelegate: class {
     
     func didBeginSwipe(swipeValue: CGFloat, alpha: CGFloat)
+    
+    func swipingRight(_ alpha: CGFloat)
+    
+    func swipingLeft(_ alpha: CGFloat, distance: CGFloat)
+    
+    func stopSwiping()
+    
+    func didRightSwipe(_ userObject: UserObject)
     
     func didEndSwipe(onView view: ProfileView)
     

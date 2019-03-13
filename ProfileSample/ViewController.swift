@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     var cardContainer: ProfileCardViewContainer!
     var users: [UserObject] = []
     var shapeLayer: CAShapeLayer!
+    @IBOutlet weak var pinboxButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,14 @@ class ViewController: UIViewController {
         }
     }
         
+    @IBAction func pinboxButtonTapped(_ sender: UIButton) {
+
+    }
+    
+    @IBAction func notificationsButtonTapped(_ sender: UIButton) {
+        
+    }
+    
 }
 
 extension ViewController: ProfileCardViewDataSource {

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ProximaNova-Extrabold.otf">
+            <string>ProximaNova-Extrabld</string>
+        </array>
+        <array key="ProximaNova-Regular.otf">
+            <string>ProximaNova-Regular</string>
+        </array>
+        <array key="ProximaNova-Semibold.otf">
+            <string>ProximaNova-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileHeaderTableViewCell" rowHeight="350" id="KGk-i7-Jjw" customClass="ProfileHeaderTableViewCell" customModule="ProfileSample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="349.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_test_user_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="wdU-ZB-VQ4">
+                        <rect key="frame" x="135" y="15" width="105" height="105"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="105" id="AKU-Ib-y8i"/>
+                            <constraint firstAttribute="height" constant="105" id="uYc-Yj-qlJ"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdA-6H-3EX">
+                        <rect key="frame" x="65" y="80" width="40" height="40"/>
+                        <color key="backgroundColor" name="AppLightGrey"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="5Pv-kj-tqG"/>
+                            <constraint firstAttribute="height" constant="40" id="qTN-XE-m9g"/>
+                        </constraints>
+                        <state key="normal" image="ic_share_profile"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nS3-ch-g7p">
+                        <rect key="frame" x="270" y="80" width="40" height="40"/>
+                        <color key="backgroundColor" name="AppLightGrey"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="iL3-Ul-0cB"/>
+                            <constraint firstAttribute="height" constant="40" id="swi-Ck-3iy"/>
+                        </constraints>
+                        <state key="normal" image="ic_add_to_pinbox"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tausif Shaikh" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VbI-ao-68l">
+                        <rect key="frame" x="20" y="145" width="335" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="rY2-C3-i7D"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="ProximaNova-Extrabld" family="Proxima Nova" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Interface Designer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7n-jm-NOh">
+                        <rect key="frame" x="20" y="175" width="335" height="17.5"/>
+                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="14"/>
+                        <color key="textColor" name="AppGrey"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shrooms Creatives Private Limited" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AkW-1V-mgX">
+                        <rect key="frame" x="20" y="195" width="335" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="Kpz-V6-2Hl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
+                        <color key="textColor" name="AppGrey"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YcL-jd-99O">
+                        <rect key="frame" x="148" y="230" width="79.5" height="20"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_location" translatesAutoresizingMaskIntoConstraints="NO" id="lyJ-vR-fqg">
+                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Mdm-BX-hxR"/>
+                                    <constraint firstAttribute="width" constant="20" id="pVa-dP-ZEj"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bengaluru" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TC0-26-uKi">
+                                <rect key="frame" x="25" y="0.0" width="54.5" height="20"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="12"/>
+                                <color key="textColor" name="AppGrey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUe-tQ-PDJ">
+                        <rect key="frame" x="97.5" y="265" width="180" height="50"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7BE-Gu-eEW">
+                                <rect key="frame" x="45.5" y="15" width="89.5" height="20"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bluetie_pin" translatesAutoresizingMaskIntoConstraints="NO" id="e0X-WP-KP2">
+                                        <rect key="frame" x="0.0" y="0.0" width="15" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="796-kO-suD"/>
+                                            <constraint firstAttribute="height" constant="20" id="pCA-yh-PpT"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tausifsheikh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FL-Qu-Ld3">
+                                        <rect key="frame" x="25" y="0.0" width="64.5" height="20"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="PrimaryBlue"/>
+                        <constraints>
+                            <constraint firstItem="7BE-Gu-eEW" firstAttribute="centerY" secondItem="fUe-tQ-PDJ" secondAttribute="centerY" id="Nvr-iZ-h27"/>
+                            <constraint firstAttribute="height" constant="50" id="kgw-PE-MNe"/>
+                            <constraint firstAttribute="width" constant="180" id="lR6-0n-9ey"/>
+                            <constraint firstItem="7BE-Gu-eEW" firstAttribute="centerX" secondItem="fUe-tQ-PDJ" secondAttribute="centerX" id="pGJ-Ob-FU9"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="AkW-1V-mgX" secondAttribute="trailing" constant="20" id="3e3-aQ-Yqw"/>
+                    <constraint firstItem="AkW-1V-mgX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="3ym-1V-7Nj"/>
+                    <constraint firstAttribute="trailing" secondItem="VbI-ao-68l" secondAttribute="trailing" constant="20" id="6fp-PF-O9a"/>
+                    <constraint firstItem="wdU-ZB-VQ4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="7tk-TG-PSg"/>
+                    <constraint firstAttribute="trailing" secondItem="K7n-jm-NOh" secondAttribute="trailing" constant="20" id="98b-OV-XUn"/>
+                    <constraint firstItem="K7n-jm-NOh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="N47-AQ-TxV"/>
+                    <constraint firstItem="wdU-ZB-VQ4" firstAttribute="leading" secondItem="NdA-6H-3EX" secondAttribute="trailing" constant="30" id="NT6-Wl-AEB"/>
+                    <constraint firstItem="VbI-ao-68l" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="NnY-aK-zbG"/>
+                    <constraint firstItem="YcL-jd-99O" firstAttribute="top" secondItem="AkW-1V-mgX" secondAttribute="bottom" constant="10" id="OII-If-CMg"/>
+                    <constraint firstItem="fUe-tQ-PDJ" firstAttribute="top" secondItem="YcL-jd-99O" secondAttribute="bottom" constant="15" id="RG6-j5-oDd"/>
+                    <constraint firstItem="fUe-tQ-PDJ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Sf4-RP-m3v"/>
+                    <constraint firstItem="NdA-6H-3EX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="80" id="Te4-sQ-aBN"/>
+                    <constraint firstItem="AkW-1V-mgX" firstAttribute="top" secondItem="K7n-jm-NOh" secondAttribute="bottom" constant="2.5" id="TuZ-YC-yZo"/>
+                    <constraint firstItem="nS3-ch-g7p" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="80" id="i7i-hF-mln"/>
+                    <constraint firstItem="wdU-ZB-VQ4" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="kle-Qt-ffi"/>
+                    <constraint firstItem="nS3-ch-g7p" firstAttribute="leading" secondItem="wdU-ZB-VQ4" secondAttribute="trailing" constant="30" id="nK8-Jd-XSd"/>
+                    <constraint firstItem="VbI-ao-68l" firstAttribute="top" secondItem="wdU-ZB-VQ4" secondAttribute="bottom" constant="25" id="ng0-xb-Eky"/>
+                    <constraint firstItem="YcL-jd-99O" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="oWt-2M-NYZ"/>
+                    <constraint firstItem="K7n-jm-NOh" firstAttribute="top" secondItem="VbI-ao-68l" secondAttribute="bottom" constant="5" id="zxz-Db-a5i"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addToPinBoxButton" destination="nS3-ch-g7p" id="mx4-pM-AWo"/>
+                <outlet property="bluetiePinLbl" destination="0FL-Qu-Ld3" id="LcY-NA-D6W"/>
+                <outlet property="bluetiePinView" destination="fUe-tQ-PDJ" id="Bdh-fY-DaG"/>
+                <outlet property="cityLbl" destination="TC0-26-uKi" id="tMt-tD-7iA"/>
+                <outlet property="companyLbl" destination="AkW-1V-mgX" id="MpD-VE-gwL"/>
+                <outlet property="designationLbl" destination="K7n-jm-NOh" id="O2b-t5-yTz"/>
+                <outlet property="shareButton" destination="NdA-6H-3EX" id="Fin-Mp-XUo"/>
+                <outlet property="userImageView" destination="wdU-ZB-VQ4" id="0lv-zo-QhT"/>
+                <outlet property="userNameLbl" destination="VbI-ao-68l" id="i0P-1x-L7F"/>
+            </connections>
+            <point key="canvasLocation" x="-1391" y="-40"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_add_to_pinbox" width="40" height="40"/>
+        <image name="ic_bluetie_pin" width="14.5" height="20"/>
+        <image name="ic_location" width="20" height="20"/>
+        <image name="ic_share_profile" width="40" height="40"/>
+        <image name="ic_test_user_1.png" width="200" height="145"/>
+        <namedColor name="AppGrey">
+            <color red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppLightGrey">
+            <color red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryBlue">
+            <color red="0.0" green="0.58823529411764708" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

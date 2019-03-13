@@ -10,6 +10,16 @@
 		8404A3472237818400631C4A /* SampleThreeUsers.json in Resources */ = {isa = PBXBuildFile; fileRef = 8404A3462237818400631C4A /* SampleThreeUsers.json */; };
 		8404A3492237DB7E00631C4A /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8404A3482237DB7E00631C4A /* EmptyView.xib */; };
 		8404A34B2237DB8C00631C4A /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8404A34A2237DB8C00631C4A /* EmptyView.swift */; };
+		8404A34D2238D9A900631C4A /* ic_test_user_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8404A34C2238D9A900631C4A /* ic_test_user_1.png */; };
+		8404A34F2238DC4700631C4A /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8404A34E2238DC4700631C4A /* Helper.swift */; };
+		8404A3582238DE2500631C4A /* ProximaNova-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8404A3522238DE2500631C4A /* ProximaNova-Medium.otf */; };
+		8404A3592238DE2500631C4A /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8404A3532238DE2500631C4A /* ProximaNova-Light.otf */; };
+		8404A35A2238DE2500631C4A /* ProximaNova-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8404A3542238DE2500631C4A /* ProximaNova-Semibold.otf */; };
+		8404A35B2238DE2500631C4A /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8404A3552238DE2500631C4A /* ProximaNova-Bold.otf */; };
+		8404A35C2238DE2500631C4A /* ProximaNova-Extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8404A3562238DE2500631C4A /* ProximaNova-Extrabold.otf */; };
+		8404A35D2238DE2500631C4A /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8404A3572238DE2500631C4A /* ProximaNova-Regular.otf */; };
+		8404A3652238EB0E00631C4A /* ProfileHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8404A3632238EB0E00631C4A /* ProfileHeaderTableViewCell.swift */; };
+		8404A3662238EB0E00631C4A /* ProfileHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8404A3642238EB0E00631C4A /* ProfileHeaderTableViewCell.xib */; };
 		848AC16B223242CB0043643F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AC16A223242CB0043643F /* AppDelegate.swift */; };
 		848AC16D223242CB0043643F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AC16C223242CB0043643F /* ViewController.swift */; };
 		848AC170223242CB0043643F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848AC16E223242CB0043643F /* Main.storyboard */; };
@@ -31,6 +41,16 @@
 		8404A3462237818400631C4A /* SampleThreeUsers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleThreeUsers.json; sourceTree = "<group>"; };
 		8404A3482237DB7E00631C4A /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		8404A34A2237DB8C00631C4A /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		8404A34C2238D9A900631C4A /* ic_test_user_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_test_user_1.png; sourceTree = "<group>"; };
+		8404A34E2238DC4700631C4A /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		8404A3522238DE2500631C4A /* ProximaNova-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Medium.otf"; sourceTree = "<group>"; };
+		8404A3532238DE2500631C4A /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
+		8404A3542238DE2500631C4A /* ProximaNova-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.otf"; sourceTree = "<group>"; };
+		8404A3552238DE2500631C4A /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
+		8404A3562238DE2500631C4A /* ProximaNova-Extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Extrabold.otf"; sourceTree = "<group>"; };
+		8404A3572238DE2500631C4A /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		8404A3632238EB0E00631C4A /* ProfileHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		8404A3642238EB0E00631C4A /* ProfileHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		848AC167223242CB0043643F /* ProfileSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProfileSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848AC16A223242CB0043643F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848AC16C223242CB0043643F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +81,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8404A3502238DDFF00631C4A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8404A3512238DE2500631C4A /* Proxima Nova */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8404A3512238DE2500631C4A /* Proxima Nova */ = {
+			isa = PBXGroup;
+			children = (
+				8404A3522238DE2500631C4A /* ProximaNova-Medium.otf */,
+				8404A3532238DE2500631C4A /* ProximaNova-Light.otf */,
+				8404A3542238DE2500631C4A /* ProximaNova-Semibold.otf */,
+				8404A3552238DE2500631C4A /* ProximaNova-Bold.otf */,
+				8404A3562238DE2500631C4A /* ProximaNova-Extrabold.otf */,
+				8404A3572238DE2500631C4A /* ProximaNova-Regular.otf */,
+			);
+			path = "Proxima Nova";
+			sourceTree = "<group>";
+		};
+		8404A3602238EA1400631C4A /* Profile Data */ = {
+			isa = PBXGroup;
+			children = (
+				8404A3632238EB0E00631C4A /* ProfileHeaderTableViewCell.swift */,
+				8404A3642238EB0E00631C4A /* ProfileHeaderTableViewCell.xib */,
+			);
+			path = "Profile Data";
+			sourceTree = "<group>";
+		};
 		848AC15E223242CB0043643F = {
 			isa = PBXGroup;
 			children = (
@@ -80,8 +130,11 @@
 		848AC169223242CB0043643F /* ProfileSample */ = {
 			isa = PBXGroup;
 			children = (
+				8404A34C2238D9A900631C4A /* ic_test_user_1.png */,
 				D0595CD02236CFA00061EE3F /* reachout@3x.png */,
 				D0595CCE2236CF920061EE3F /* pass@3x.png */,
+				8404A34E2238DC4700631C4A /* Helper.swift */,
+				8404A3502238DDFF00631C4A /* Fonts */,
 				848AC189223272660043643F /* Model */,
 				848AC17C223243440043643F /* Profile View */,
 				848AC16A223242CB0043643F /* AppDelegate.swift */,
@@ -99,6 +152,7 @@
 		848AC17C223243440043643F /* Profile View */ = {
 			isa = PBXGroup;
 			children = (
+				8404A3602238EA1400631C4A /* Profile Data */,
 				848AC17D223243850043643F /* ProfileView.swift */,
 				848AC17F223243900043643F /* ProfileView.xib */,
 				848AC18522325FC20043643F /* ProfileCardViewContainer.swift */,
@@ -179,13 +233,21 @@
 			files = (
 				8404A3492237DB7E00631C4A /* EmptyView.xib in Resources */,
 				8404A3472237818400631C4A /* SampleThreeUsers.json in Resources */,
+				8404A3582238DE2500631C4A /* ProximaNova-Medium.otf in Resources */,
+				8404A3592238DE2500631C4A /* ProximaNova-Light.otf in Resources */,
+				8404A3662238EB0E00631C4A /* ProfileHeaderTableViewCell.xib in Resources */,
 				D0595CCF2236CF920061EE3F /* pass@3x.png in Resources */,
 				848AC182223244530043643F /* Colors.xcassets in Resources */,
 				848AC18D223274550043643F /* SampleExplore.json in Resources */,
+				8404A35A2238DE2500631C4A /* ProximaNova-Semibold.otf in Resources */,
+				8404A35C2238DE2500631C4A /* ProximaNova-Extrabold.otf in Resources */,
 				D0595CD12236CFA00061EE3F /* reachout@3x.png in Resources */,
+				8404A34D2238D9A900631C4A /* ic_test_user_1.png in Resources */,
+				8404A35D2238DE2500631C4A /* ProximaNova-Regular.otf in Resources */,
 				848AC188223263DE0043643F /* ProfileCardViewContainer.xib in Resources */,
 				848AC180223243900043643F /* ProfileView.xib in Resources */,
 				848AC175223242CC0043643F /* LaunchScreen.storyboard in Resources */,
+				8404A35B2238DE2500631C4A /* ProximaNova-Bold.otf in Resources */,
 				848AC172223242CC0043643F /* Assets.xcassets in Resources */,
 				848AC170223242CB0043643F /* Main.storyboard in Resources */,
 			);
@@ -199,8 +261,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				848AC18B223272750043643F /* UserDataModel.swift in Sources */,
+				8404A34F2238DC4700631C4A /* Helper.swift in Sources */,
 				848AC16D223242CB0043643F /* ViewController.swift in Sources */,
 				D0C6E3F92236BB1500707DAF /* RightSwipeViewController.swift in Sources */,
+				8404A3652238EB0E00631C4A /* ProfileHeaderTableViewCell.swift in Sources */,
 				848AC18622325FC20043643F /* ProfileCardViewContainer.swift in Sources */,
 				848AC17E223243850043643F /* ProfileView.swift in Sources */,
 				8404A34B2237DB8C00631C4A /* EmptyView.swift in Sources */,

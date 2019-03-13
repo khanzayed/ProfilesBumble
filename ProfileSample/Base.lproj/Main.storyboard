@@ -18,9 +18,42 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4c-Nv-3R7">
+                                <rect key="frame" x="325" y="30" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="SYZ-Vj-Oof"/>
+                                    <constraint firstAttribute="width" constant="20" id="qQK-0b-tgZ"/>
+                                </constraints>
+                                <state key="normal" image="ic_pinbox"/>
+                                <connections>
+                                    <action selector="pinboxButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vS5-ei-42v"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFM-mY-rUZ">
+                                <rect key="frame" x="30" y="30" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Gzi-ex-Yji"/>
+                                    <constraint firstAttribute="width" constant="20" id="b47-oS-PE8"/>
+                                </constraints>
+                                <state key="normal" image="ic_notifications"/>
+                                <connections>
+                                    <action selector="notificationsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pGn-16-shk"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" name="PrimaryBlue"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S4c-Nv-3R7" secondAttribute="trailing" constant="30" id="HTY-yb-Ptl"/>
+                            <constraint firstItem="PFM-mY-rUZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="S2m-Dm-HAP"/>
+                            <constraint firstItem="S4c-Nv-3R7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="YNG-3U-Ev8"/>
+                            <constraint firstItem="PFM-mY-rUZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="mNE-1f-tk5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="pinboxButton" destination="S4c-Nv-3R7" id="m5u-E0-2kF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -53,6 +86,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_notifications" width="20" height="20"/>
+        <image name="ic_pinbox" width="20" height="20"/>
         <namedColor name="PrimaryBlue">
             <color red="0.0" green="0.58823529411764708" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

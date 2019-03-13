@@ -36,7 +36,6 @@ class UserObject {
     var currentDesignation : String?
     var currentCompany : String?
     
-    
     @available(*, deprecated)
     var overallScore = 0
     var isFromExplore = false

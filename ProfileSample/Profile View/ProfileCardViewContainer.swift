@@ -120,9 +120,10 @@ class ProfileCardViewContainer: UIView {
     }
     
     private func removeAllCardViews() {
-        for cardView in visibleCardViews {
+        for cardView in cardViews {
             cardView.removeFromSuperview()
         }
+        
         cardViews = []
     }
 
@@ -131,7 +132,7 @@ class ProfileCardViewContainer: UIView {
             cardView.frame = CGRect(x: 10, y: 5, width: UIScreen.main.bounds.width - 20, height: self.bounds.height - 5.0)
         }
         
-        cardView.lbl.text = cardView.userObject.fName
+        cardView.roundCorners([.topLeft, .topRight], radius: 30)
     }
     
     fileprivate func resetRightSwipeIcon() {
@@ -163,6 +164,11 @@ extension ProfileCardViewContainer: ProfileViewDelegate {
             let value = min(distance / 10, 30)
             rightImageLeadingConstraint.constant += value
         }
+        
+        if cardViews.count > 1 {
+            let backViewValue = min(max(cardViews[1].bounds.width / distance, 0), 20)
+            cardViews[1].transform = CGAffineTransform(scaleX: (UIScreen.main.bounds.width - backViewValue) / cardViews[1].bounds.width , y: 1)
+        }
     }
     
     func swipingLeft(_ alpha: CGFloat, distance: CGFloat) {
@@ -177,12 +183,21 @@ extension ProfileCardViewContainer: ProfileViewDelegate {
             let value = min(distance / 10, 30)
             leftImageLeadingConstraint.constant += value
         }
+        
+        if cardViews.count > 1 {
+            let backViewValue = min(max(cardViews[1].bounds.width / distance, 0), 20)
+            cardViews[1].transform = CGAffineTransform(scaleX: (UIScreen.main.bounds.width - backViewValue) / cardViews[1].bounds.width , y: 1)
+        }
     }
     
     func stopSwiping() {
         UIView.animate(withDuration: 0.3, animations: {
             self.leftImageLeadingConstraint.constant = -100
             self.rightImageLeadingConstraint.constant = -100
+            
+            if self.cardViews.count > 1 {
+                self.cardViews[1].transform = CGAffineTransform.identity
+            }
             
             self.layoutIfNeeded()
         }) { (true) in
@@ -214,9 +229,9 @@ extension ProfileCardViewContainer: ProfileViewDelegate {
         
         if cardViews.count > 0 {
             let nextView = cardViews[0]
-            UIView.animate(withDuration: 0.2) {
+            UIView.animate(withDuration: 0.4) {
                 nextView.frame = CGRect(x: 0, y: 5.0, width: UIScreen.main.bounds.width, height: self.bounds.height - 5.0)
-                nextView.alpha = 1
+                nextView.transform = CGAffineTransform(scaleX: UIScreen.main.bounds.width / nextView.bounds.width , y: 1)
                 
                 self.layoutIfNeeded()
             }

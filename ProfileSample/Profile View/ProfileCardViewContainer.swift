@@ -41,11 +41,12 @@ class ProfileCardViewContainer: UIView {
     @IBOutlet weak var reachOutButton: UIButton!
     
     fileprivate var remainingCards: Int = 0
+    fileprivate var displacement: CGFloat = UIScreen.main.bounds.height
     fileprivate var emptyView: UIView!
     fileprivate var gradientLayer: CAGradientLayer?
+    fileprivate var divisor:CGFloat!
     
     internal var delegate: ProfileCardViewDelegate?
-    internal var currentIndex = 0
     internal var dataSource: ProfileCardViewDataSource? {
         didSet {
             reloadData()
@@ -53,10 +54,8 @@ class ProfileCardViewContainer: UIView {
     }
     
     private var cardViews: [ProfileView] = []
-    private var visibleCardViews: [ProfileView] {
-        return subviews as? [ProfileView] ?? []
-    }
-    
+    private var lastCardView: ProfileView?
+
     static let numberOfVisibleCards: Int = 3
     
     override init(frame: CGRect) {
@@ -81,6 +80,8 @@ class ProfileCardViewContainer: UIView {
         
         passButton.layer.cornerRadius = passButton.bounds.height / 2
         reachOutButton.layer.cornerRadius = reachOutButton.bounds.height / 2
+        
+        divisor = (self.bounds.height / 2) / 0.41
     }
     
     func reloadData() {
@@ -132,9 +133,34 @@ class ProfileCardViewContainer: UIView {
             cardView.removeFromSuperview()
         }
         
+        lastCardView = nil
         cardViews = []
+        
+        undoButton.isEnabled = false
+    }
+    
+    fileprivate func removeLastCard() {
+        lastCardView = nil
+        
+        undoButton.isEnabled = false
+    }
+    
+    fileprivate func setLastCard(withView view: ProfileView) {
+        lastCardView = view
+        
+        undoButton.isEnabled = true
     }
 
+    private func enableActionButtons() {
+        passButton.isEnabled = true
+        reachOutButton.isEnabled = true
+    }
+    
+    private func disableActionButtons() {
+        passButton.isEnabled = false
+        reachOutButton.isEnabled = false
+    }
+    
     private func setFrame(forCardView cardView: ProfileView, atIndex index: Int) {
         if index != 0 {
             cardView.frame = CGRect(x: 10, y: 5, width: UIScreen.main.bounds.width - 20, height: self.bounds.height - 5.0)
@@ -153,56 +179,110 @@ class ProfileCardViewContainer: UIView {
         }
     }
     
-    @IBAction func passButtonTapped(_ sender: UIButton) {
+    fileprivate func handleNextCard(dataSource: ProfileCardViewDataSource) {
+        cardViews.remove(at: 0)
+        
+        if remainingCards > 0 {
+            let newIndex = dataSource.numberOfCards() - remainingCards
+            addCardView(cardView: dataSource.card(forItemAtIndex: newIndex), atIndex: 2)
+        }
+        
+        if cardViews.count > 0 {
+            let nextView = cardViews[0]
+            UIView.animate(withDuration: 0.6, animations: {
+                nextView.transform = CGAffineTransform(scaleX: UIScreen.main.bounds.width / nextView.bounds.width , y: 1)
+                
+                self.layoutIfNeeded()
+            }) { (true) in
+                nextView.transform = CGAffineTransform.identity
+                nextView.frame = CGRect(x: 0, y: 5.0, width: UIScreen.main.bounds.width, height: self.bounds.height - 5.0)
+
+                self.enableActionButtons()
+            }
+        } else {
+            self.enableActionButtons()
+        }
+        
+        if cardViews.count == 1 {
+            UIView.animate(withDuration: 0.2) {
+                self.emptyView.frame = CGRect(x: 0, y: 5.0, width: UIScreen.main.bounds.width, height: self.bounds.height - 5.0)
+                self.emptyView.alpha = 1
+                
+                self.layoutIfNeeded()
+            }
+        }
+    }
+    
+    private func swipeCardOnButtonTap(isSwipeRight: Bool, animationDuration: TimeInterval) {
         guard let dataSource = dataSource else {
             return
         }
         
         if cardViews.count > 0 {
+            removeLastCard()
+            disableActionButtons()
+            
             let card = cardViews[0]
-            let xFromCenter = card.center.x - UIScreen.main.bounds.width
+            let xFromCenter = (isSwipeRight) ? (card.center.x + displacement) : (card.center.x - displacement)
             
-            UIView.animate(withDuration: 1.0, animations: {
+            UIView.animate(withDuration: animationDuration, animations: {
+                card.transform = CGAffineTransform(rotationAngle: xFromCenter / self.divisor)
                 card.center = CGPoint(x:xFromCenter, y: card.center.y)
-                card.transform = CGAffineTransform(rotationAngle: xFromCenter / card.divisor)
-                card.alpha = 0.5
             }) { (true) in
-                card.removeFromSuperview()
-            }
-            
-            cardViews.remove(at: 0)
-            
-            if remainingCards > 0 {
-                let newIndex = dataSource.numberOfCards() - remainingCards
-                addCardView(cardView: dataSource.card(forItemAtIndex: newIndex), atIndex: 2)
-            }
-            
-            if cardViews.count > 0 {
-                let nextView = cardViews[0]
-                UIView.animate(withDuration: 0.6) {
-                    nextView.transform = CGAffineTransform(scaleX: UIScreen.main.bounds.width / nextView.bounds.width , y: 1)
-                    
-                    self.layoutIfNeeded()
+                if isSwipeRight {
+                    self.delegate?.didRightSwipe(card.userObject)
                 }
             }
             
-            if cardViews.count == 1 {
-                UIView.animate(withDuration: 0.2) {
-                    self.emptyView.frame = CGRect(x: 0, y: 5.0, width: UIScreen.main.bounds.width, height: self.bounds.height - 5.0)
-                    self.emptyView.alpha = 1
-                    
-                    self.layoutIfNeeded()
-                }
+            if !isSwipeRight {
+                setLastCard(withView: card)
+            }
+            
+            handleNextCard(dataSource: dataSource)
+        }
+    }
+    
+    private func handleCurrentCard() {
+        if cardViews.count > 1 {
+            let currentView = cardViews[1]
+            UIView.animate(withDuration: 0.6, animations: {
+                currentView.transform = CGAffineTransform(scaleX: (UIScreen.main.bounds.width - 20) / currentView.bounds.width , y: 1)
+                
+                self.layoutIfNeeded()
+            }) { (true) in
+                currentView.frame = CGRect(x: 10, y: 5.0, width: UIScreen.main.bounds.width - 20, height: self.bounds.height - 5.0)
             }
         }
     }
     
-    @IBAction func undoButtonTapped(_ sender: UIButton) {
+    private func swipeBackCardOnButtonTap(animationDuration: TimeInterval) {
+        removeLastCard()
         
+        let card = cardViews[0]
+        
+        UIView.animate(withDuration: animationDuration) {
+            card.transform = CGAffineTransform(a: 1, b: 0, c: 0, d: 1, tx: 0, ty: 0)
+            card.center = CGPoint(x: self.center.x, y: card.center.y)
+        }
+        
+        handleCurrentCard()
+    }
+    
+    @IBAction func passButtonTapped(_ sender: UIButton) {
+        swipeCardOnButtonTap(isSwipeRight: false, animationDuration: 1.0)
+    }
+    
+    @IBAction func undoButtonTapped(_ sender: UIButton) {
+        guard let _ = dataSource, let card = lastCardView else {
+            return
+        }
+        
+        cardViews.insert(card, at: 0)
+        swipeBackCardOnButtonTap(animationDuration: 1.0)
     }
     
     @IBAction func reachOutButtonTapped(_ sender: UIButton) {
-        
+        swipeCardOnButtonTap(isSwipeRight: true, animationDuration: 1.0)
     }
     
 }
@@ -273,36 +353,11 @@ extension ProfileCardViewContainer: ProfileViewDelegate {
             return
         }
         
-        view.removeFromSuperview()
-        cardViews.remove(at: 0)
+        removeLastCard()
+        setLastCard(withView: view)
         
         stopSwiping()
-        
-        if remainingCards > 0 {
-            let newIndex = dataSource.numberOfCards() - remainingCards
-
-            // Add new card as Subview
-            addCardView(cardView: dataSource.card(forItemAtIndex: newIndex), atIndex: 2)
-        }
-        
-        if cardViews.count > 0 {
-            let nextView = cardViews[0]
-            UIView.animate(withDuration: 0.4) {
-                nextView.frame = CGRect(x: 0, y: 5.0, width: UIScreen.main.bounds.width, height: self.bounds.height - 5.0)
-                nextView.transform = CGAffineTransform(scaleX: UIScreen.main.bounds.width / nextView.bounds.width , y: 1)
-                
-                self.layoutIfNeeded()
-            }
-        }
-        
-        if cardViews.count == 1 {
-            UIView.animate(withDuration: 0.2) {
-                self.emptyView.frame = CGRect(x: 0, y: 5.0, width: UIScreen.main.bounds.width, height: self.bounds.height - 5.0)
-                self.emptyView.alpha = 1
-                
-                self.layoutIfNeeded()
-            }
-        }
+        handleNextCard(dataSource: dataSource)
     }
     
     func hasStartedScrolling(isScrollingUp: Bool) {

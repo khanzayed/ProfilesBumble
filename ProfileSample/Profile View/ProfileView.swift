@@ -75,6 +75,10 @@ class ProfileView: UIView {
         divisor = (self.bounds.height / 2) / 0.61
     }
     
+    deinit {
+        print("Deinit called on ProfileView")
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
 

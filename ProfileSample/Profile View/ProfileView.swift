@@ -16,7 +16,7 @@ protocol ProfileViewDelegate {
     
     func stopSwiping()
     
-    func didRightSwipe(_ userObject: UserObject)
+    func didEndRightSwipe(_ userObject: UserObject)
     
     func didEndSwipe(onView view: ProfileView)
     
@@ -109,11 +109,9 @@ class ProfileView: UIView {
             if self.center.x < 50 {
                 self.delegate?.didEndSwipe(onView: self)
                 
-                UIView.animate(withDuration: 0.4, animations: {
+                UIView.animate(withDuration: 0.4) {
                     self.center = CGPoint(x: self.center.x - UIScreen.main.bounds.width, y: self.center.y)
                     self.alpha = 0
-                }) { (true) in
-                    
                 }
             } else if self.center.x > self.superview!.frame.width - 50 {
                 self.delegate?.didEndSwipe(onView: self)
@@ -122,7 +120,7 @@ class ProfileView: UIView {
                     self.center = CGPoint(x: self.center.x + UIScreen.main.bounds.width, y: self.center.y)
                     self.alpha = 0
                 }) { (true) in
-                    self.delegate?.didRightSwipe(self.userObject)
+                    self.delegate?.didEndRightSwipe(self.userObject)
                     
                 }
             } else {

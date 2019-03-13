@@ -153,6 +153,58 @@ class ProfileCardViewContainer: UIView {
         }
     }
     
+    @IBAction func passButtonTapped(_ sender: UIButton) {
+        guard let dataSource = dataSource else {
+            return
+        }
+        
+        if cardViews.count > 0 {
+            let card = cardViews[0]
+            let xFromCenter = card.center.x - UIScreen.main.bounds.width
+            
+            UIView.animate(withDuration: 1.0, animations: {
+                card.center = CGPoint(x:xFromCenter, y: card.center.y)
+                card.transform = CGAffineTransform(rotationAngle: xFromCenter / card.divisor)
+                card.alpha = 0.5
+            }) { (true) in
+                card.removeFromSuperview()
+            }
+            
+            cardViews.remove(at: 0)
+            
+            if remainingCards > 0 {
+                let newIndex = dataSource.numberOfCards() - remainingCards
+                addCardView(cardView: dataSource.card(forItemAtIndex: newIndex), atIndex: 2)
+            }
+            
+            if cardViews.count > 0 {
+                let nextView = cardViews[0]
+                UIView.animate(withDuration: 0.6) {
+                    nextView.transform = CGAffineTransform(scaleX: UIScreen.main.bounds.width / nextView.bounds.width , y: 1)
+                    
+                    self.layoutIfNeeded()
+                }
+            }
+            
+            if cardViews.count == 1 {
+                UIView.animate(withDuration: 0.2) {
+                    self.emptyView.frame = CGRect(x: 0, y: 5.0, width: UIScreen.main.bounds.width, height: self.bounds.height - 5.0)
+                    self.emptyView.alpha = 1
+                    
+                    self.layoutIfNeeded()
+                }
+            }
+        }
+    }
+    
+    @IBAction func undoButtonTapped(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func reachOutButtonTapped(_ sender: UIButton) {
+        
+    }
+    
 }
 
 // MARK: - ProfileCardViewDelegate
@@ -212,7 +264,7 @@ extension ProfileCardViewContainer: ProfileViewDelegate {
         }
     }
     
-    func didRightSwipe(_ userObject: UserObject) {
+    func didEndRightSwipe(_ userObject: UserObject) {
         self.delegate?.didRightSwipe(userObject)
     }
     

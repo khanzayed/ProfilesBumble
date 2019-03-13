@@ -67,6 +67,9 @@
                                             <state key="normal" title="Pass" image="ic_pass">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="passButtonTapped:" destination="-1" eventType="touchUpInside" id="ena-6s-d3l"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,6 +85,9 @@
                                             <rect key="frame" x="0.0" y="5" width="35" height="35"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="ic_undo"/>
+                                            <connections>
+                                                <action selector="undoButtonTapped:" destination="-1" eventType="touchUpInside" id="EUJ-iC-jUa"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -102,6 +108,9 @@
                                             <state key="normal" title="Reach Out" image="ic_reachout">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="reachOutButtonTapped:" destination="-1" eventType="touchUpInside" id="2zd-vO-L1l"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

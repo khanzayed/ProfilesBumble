@@ -20,6 +20,8 @@ protocol ProfileViewDelegate {
     
     func didEndSwipe(onView view: ProfileView)
     
+    func hasStartedScrolling(isScrollingUp: Bool)
+    
 }
 
 class ProfileView: UIView {
@@ -30,6 +32,8 @@ class ProfileView: UIView {
     fileprivate var userImage: UIImageView!
     fileprivate var shareButton: UIButton!
     fileprivate var addToPinBox: UIButton!
+    fileprivate var isScrollingUp = false
+    fileprivate var isScrollingDown = false
     
     internal var delegate: ProfileViewDelegate?
     internal var userObject: UserObject! {
@@ -73,8 +77,8 @@ class ProfileView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        self.roundCorners([.topLeft, .topRight], radius: 30)
+
+        self.roundCorners([.topLeft, .topRight, .bottomLeft, .bottomRight], radius: 30)
     }
     
     private func reset() {
@@ -150,7 +154,7 @@ extension ProfileView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 5
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -158,25 +162,26 @@ extension ProfileView: UITableViewDataSource, UITableViewDelegate {
         case 0:
             return 350
         default:
-            return 50
+            return 350
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileHeaderTableViewCell") as! ProfileHeaderTableViewCell
-            cell.configure(withUser: userObject)
-            
-            return cell
-        default:
+        case 10:
             var cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier")
             
             if cell == nil {
                 cell = UITableViewCell(style: .default, reuseIdentifier: "CellIdentifier")
+                cell!.backgroundColor = UIColor.lightGray
             }
             
             return cell!
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileHeaderTableViewCell") as! ProfileHeaderTableViewCell
+            cell.configure(withUser: userObject)
+            
+            return cell
         }
     }
     
@@ -249,6 +254,23 @@ extension ProfileView: UITableViewDataSource, UITableViewDelegate {
     
 }
 
+extension ProfileView: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let velocity = scrollView.panGestureRecognizer.velocity(in: self)
+        if isScrollingUp == false, velocity.y < 0 { //up
+            isScrollingUp = true
+            isScrollingDown = false
+            self.delegate?.hasStartedScrolling(isScrollingUp: true)
+        } else if isScrollingDown == false, velocity.y > 0 { //down
+            isScrollingDown = true
+            isScrollingUp = false
+            self.delegate?.hasStartedScrolling(isScrollingUp: false)
+        }
+    }
+    
+}
+
 
 extension UIView {
     
@@ -259,6 +281,7 @@ extension UIView {
         let mask = CAShapeLayer()
         mask.frame = self.bounds
         mask.path = path.cgPath
+
         self.layer.mask = mask
     }
     

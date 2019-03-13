@@ -13,14 +13,15 @@ class ViewController: UIViewController {
     var cardContainer: ProfileCardViewContainer!
     var users: [UserObject] = []
     var shapeLayer: CAShapeLayer!
+    
     @IBOutlet weak var pinboxButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        cardContainer = ProfileCardViewContainer(frame: CGRect(x: 0, y: 60.0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 60))
+        cardContainer = ProfileCardViewContainer(frame: CGRect(x: 0, y: 80.0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 60))
         cardContainer.delegate = self
-        
+
         if let path = Bundle.main.path(forResource: "SampleExplore", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
@@ -28,9 +29,9 @@ class ViewController: UIViewController {
                     for object in jsonResult {
                         users.append(UserObject(details: object))
                     }
-                                
+
                     cardContainer.dataSource = self
-                    
+
                     view.addSubview(cardContainer)
                     view.sendSubviewToBack(cardContainer)
                 }
@@ -38,6 +39,22 @@ class ViewController: UIViewController {
                 // handle error
             }
         }
+        
+//        view.addSubview(cardContainer)
+//        let subView = UIView(frame: CGRect(x: 50, y: 50, width: 200, height: 200))
+//
+//        let shadowLayer = CAShapeLayer()
+//        shadowLayer.path = UIBezierPath(roundedRect: subView.bounds, cornerRadius: 10.0).cgPath
+//        shadowLayer.fillColor = UIColor.white.cgColor
+//        shadowLayer.shadowColor = UIColor.black.cgColor
+//        shadowLayer.shadowPath = shadowLayer.path
+//        shadowLayer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+//        shadowLayer.shadowOpacity = 0.3
+//        shadowLayer.shadowRadius = 4
+//
+//        subView.layer.insertSublayer(shadowLayer, at: 0)
+//
+//        self.cardContainer.addSubview(subView)
     }
         
     @IBAction func pinboxButtonTapped(_ sender: UIButton) {

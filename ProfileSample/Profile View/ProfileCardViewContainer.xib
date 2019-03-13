@@ -6,17 +6,28 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ProximaNova-Semibold.otf">
+            <string>ProximaNova-Semibold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileCardViewContainer" customModule="ProfileSample" customModuleProvider="target">
             <connections>
-                <outlet property="leftImageLeadingConstraint" destination="jIt-Ze-awm" id="rMT-ul-VnG"/>
+                <outlet property="bottomButtonsView" destination="lOn-8O-ywN" id="4e3-Ac-9zE"/>
+                <outlet property="bottomsViewBottomConstraint" destination="9vM-HL-ksm" id="c5l-cz-1ex"/>
+                <outlet property="leftImageLeadingConstraint" destination="DZh-5b-v4U" id="5gS-SY-bIZ"/>
                 <outlet property="leftSwipeImageView" destination="PdB-jc-tqo" id="3qN-qD-5rW"/>
+                <outlet property="passButton" destination="YnD-vj-aLg" id="oNS-tT-zNH"/>
                 <outlet property="profileCardViewContainer" destination="iN0-l3-epB" id="W30-Z9-8z7"/>
-                <outlet property="rightImageLeadingConstraint" destination="UmR-VV-8yY" id="8cd-Bu-QHp"/>
+                <outlet property="reachOutButton" destination="6T2-2l-ALk" id="1ij-c9-TuF"/>
+                <outlet property="rightImageLeadingConstraint" destination="E9f-Ic-uiu" id="bdY-ah-hIi"/>
                 <outlet property="rightSwipeImageView" destination="2ua-Wf-ghN" id="1PL-hy-cJV"/>
+                <outlet property="undoButton" destination="QtA-6H-fGu" id="IX3-Sh-kcW"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -27,30 +38,115 @@
                 <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pass@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="PdB-jc-tqo">
                     <rect key="frame" x="-100" y="258.5" width="150" height="150"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="150" id="eg7-st-Tvc"/>
-                        <constraint firstAttribute="width" constant="150" id="s2W-j2-fn4"/>
+                        <constraint firstAttribute="height" constant="150" id="4YY-og-m8J"/>
+                        <constraint firstAttribute="width" constant="150" id="GJ2-2G-6mV"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reachout@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="2ua-Wf-ghN">
                     <rect key="frame" x="325" y="258.5" width="150" height="150"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="150" id="EdB-I6-go1"/>
-                        <constraint firstAttribute="height" constant="150" id="UVT-Ne-eh4"/>
+                        <constraint firstAttribute="width" constant="150" id="4i6-LL-Vdt"/>
+                        <constraint firstAttribute="height" constant="150" id="RPd-Ri-3Su"/>
                     </constraints>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOn-8O-ywN">
+                    <rect key="frame" x="0.0" y="532" width="375" height="135"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="D0r-Il-rKA">
+                            <rect key="frame" x="30" y="55" width="315" height="45"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VLI-nw-3C8">
+                                    <rect key="frame" x="0.0" y="0.0" width="125" height="45"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YnD-vj-aLg">
+                                            <rect key="frame" x="0.0" y="0.0" width="125" height="45"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="1" green="0.25098039215686274" blue="0.3411764705882353" alpha="1" colorSpace="deviceRGB"/>
+                                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="12"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
+                                            <state key="normal" title="Pass" image="ic_pass">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="1dZ-2L-h2o"/>
+                                        <constraint firstAttribute="width" constant="125" id="VqD-6Z-leP"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4b-AO-fFr">
+                                    <rect key="frame" x="140" y="0.0" width="35" height="45"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtA-6H-fGu">
+                                            <rect key="frame" x="0.0" y="5" width="35" height="35"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="ic_undo"/>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="35" id="5ed-Hl-gMP"/>
+                                        <constraint firstAttribute="height" constant="45" id="6y8-x5-Vz0"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFJ-BV-qET">
+                                    <rect key="frame" x="190" y="0.0" width="125" height="45"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6T2-2l-ALk">
+                                            <rect key="frame" x="0.0" y="0.0" width="125" height="45"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" name="PrimaryBlue"/>
+                                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="12"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                            <state key="normal" title="Reach Out" image="ic_reachout">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="OcM-3P-9vu"/>
+                                        <constraint firstAttribute="width" constant="125" id="jf7-Zp-r8h"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="315" id="JWn-KE-iiJ"/>
+                                <constraint firstAttribute="height" constant="45" id="Nd0-uD-SE7"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="D0r-Il-rKA" secondAttribute="bottom" constant="35" id="9g6-eD-oR3"/>
+                        <constraint firstItem="D0r-Il-rKA" firstAttribute="centerX" secondItem="lOn-8O-ywN" secondAttribute="centerX" id="erM-9b-17x"/>
+                        <constraint firstAttribute="height" constant="135" id="qg2-7s-33d"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="2ua-Wf-ghN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Nez-Xu-REA"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="2ua-Wf-ghN" secondAttribute="trailing" constant="-100" id="UmR-VV-8yY"/>
-                <constraint firstItem="PdB-jc-tqo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="-100" id="jIt-Ze-awm"/>
-                <constraint firstItem="PdB-jc-tqo" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="jcL-g8-JvR"/>
+                <constraint firstItem="PdB-jc-tqo" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="4JI-00-gk6"/>
+                <constraint firstItem="lOn-8O-ywN" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="9vM-HL-ksm"/>
+                <constraint firstItem="PdB-jc-tqo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-100" id="DZh-5b-v4U"/>
+                <constraint firstAttribute="trailing" secondItem="2ua-Wf-ghN" secondAttribute="trailing" constant="-100" id="E9f-Ic-uiu"/>
+                <constraint firstItem="lOn-8O-ywN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="JPU-7b-UEp"/>
+                <constraint firstItem="lOn-8O-ywN" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="a9y-Xb-IlV"/>
+                <constraint firstItem="2ua-Wf-ghN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="loA-WV-Ump"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="133.59999999999999" y="154.27286356821591"/>
         </view>
     </objects>
     <resources>
+        <image name="ic_pass" width="19" height="15"/>
+        <image name="ic_reachout" width="19.5" height="15"/>
+        <image name="ic_undo" width="35" height="35"/>
         <image name="pass@3x.png" width="16" height="16"/>
         <image name="reachout@3x.png" width="16" height="16"/>
+        <namedColor name="PrimaryBlue">
+            <color red="0.0" green="0.58823529411764708" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

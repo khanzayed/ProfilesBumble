@@ -34,10 +34,15 @@ class ProfileCardViewContainer: UIView {
     @IBOutlet weak var rightSwipeImageView: UIImageView!
     @IBOutlet weak var leftImageLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var rightImageLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomsViewBottomConstraint: NSLayoutConstraint! //0
+    @IBOutlet weak var bottomButtonsView: UIView!
+    @IBOutlet weak var passButton: UIButton!
+    @IBOutlet weak var undoButton: UIButton!
+    @IBOutlet weak var reachOutButton: UIButton!
     
-    fileprivate var shapeLayer: CAShapeLayer!
     fileprivate var remainingCards: Int = 0
     fileprivate var emptyView: UIView!
+    fileprivate var gradientLayer: CAGradientLayer?
     
     internal var delegate: ProfileCardViewDelegate?
     internal var currentIndex = 0
@@ -74,25 +79,13 @@ class ProfileCardViewContainer: UIView {
         
         profileCardViewContainer.layer.masksToBounds = false
         
-        setupStackLayer()
-    }
-    
-    private func setupStackLayer() {
-        let xValue: CGFloat = 20
-        let rect = CGRect(x: xValue, y: 60, width: UIScreen.main.bounds.width - (2 * xValue), height: 40)
-        let roundedRect = UIBezierPath(roundedRect: rect, cornerRadius: 20)
-        
-        shapeLayer = CAShapeLayer()
-        shapeLayer.path = roundedRect.cgPath
-        
-        shapeLayer.strokeColor = UIColor.clear.cgColor
-        shapeLayer.fillColor = UIColor.white.cgColor
-        shapeLayer.opacity = 0.5
-        shapeLayer.lineWidth = 1.0
+        passButton.layer.cornerRadius = passButton.bounds.height / 2
+        reachOutButton.layer.cornerRadius = reachOutButton.bounds.height / 2
     }
     
     func reloadData() {
         removeAllCardViews()
+        addGradientLayer()
         
         guard let dataSource = dataSource else {
             return
@@ -119,6 +112,21 @@ class ProfileCardViewContainer: UIView {
         remainingCards -= 1
     }
     
+    private func addGradientLayer() {
+        if self.gradientLayer == nil {
+            gradientLayer = CAGradientLayer()
+            gradientLayer!.colors = [ UIColor.white.withAlphaComponent(0.0).cgColor,
+                                UIColor.white.withAlphaComponent(1.0).cgColor,
+                                UIColor.white.withAlphaComponent(1.0).cgColor]
+            gradientLayer!.locations = [0.0 , 1.0]
+            gradientLayer!.startPoint = CGPoint(x: 0.5, y: 0.0)
+            gradientLayer!.endPoint = CGPoint(x: 0.5, y: 0.5)
+            gradientLayer!.frame = CGRect(x: 0.0, y: 0.0, width: self.bottomButtonsView.bounds.width, height: self.bottomButtonsView.bounds.height)
+            
+            self.bottomButtonsView.layer.insertSublayer(gradientLayer!, at: 0)
+        }
+    }
+    
     private func removeAllCardViews() {
         for cardView in cardViews {
             cardView.removeFromSuperview()
@@ -131,8 +139,6 @@ class ProfileCardViewContainer: UIView {
         if index != 0 {
             cardView.frame = CGRect(x: 10, y: 5, width: UIScreen.main.bounds.width - 20, height: self.bounds.height - 5.0)
         }
-        
-        cardView.roundCorners([.topLeft, .topRight], radius: 30)
     }
     
     fileprivate func resetRightSwipeIcon() {
@@ -241,6 +247,22 @@ extension ProfileCardViewContainer: ProfileViewDelegate {
             UIView.animate(withDuration: 0.2) {
                 self.emptyView.frame = CGRect(x: 0, y: 5.0, width: UIScreen.main.bounds.width, height: self.bounds.height - 5.0)
                 self.emptyView.alpha = 1
+                
+                self.layoutIfNeeded()
+            }
+        }
+    }
+    
+    func hasStartedScrolling(isScrollingUp: Bool) {
+        if isScrollingUp {
+            UIView.animate(withDuration: 0.2) {
+                self.bottomsViewBottomConstraint.constant = 20
+                
+                self.layoutIfNeeded()
+            }
+        } else {
+            UIView.animate(withDuration: 0.2) {
+                self.bottomsViewBottomConstraint.constant = 0
                 
                 self.layoutIfNeeded()
             }

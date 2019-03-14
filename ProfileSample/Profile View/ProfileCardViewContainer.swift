@@ -35,7 +35,7 @@ class ProfileCardViewContainer: UIView {
     @IBOutlet weak var leftImageLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var rightImageLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomsViewBottomConstraint: NSLayoutConstraint! //0
-    @IBOutlet weak var bottomButtonsView: UIView!
+    @IBOutlet weak var bottomButtonsView: FooterView!
     @IBOutlet weak var passButton: UIButton!
     @IBOutlet weak var undoButton: UIButton!
     @IBOutlet weak var reachOutButton: UIButton!
@@ -82,11 +82,12 @@ class ProfileCardViewContainer: UIView {
         reachOutButton.layer.cornerRadius = reachOutButton.bounds.height / 2
         
         divisor = (self.bounds.height / 2) / 0.41
+        
+        bottomButtonsView.addGradientLayer()
     }
     
     func reloadData() {
         removeAllCardViews()
-        addGradientLayer()
         
         guard let dataSource = dataSource else {
             return
@@ -163,7 +164,9 @@ class ProfileCardViewContainer: UIView {
     
     private func setFrame(forCardView cardView: ProfileView, atIndex index: Int) {
         if index != 0 {
-            cardView.frame = CGRect(x: 10, y: 5, width: UIScreen.main.bounds.width - 20, height: self.bounds.height - 5.0)
+//            cardView.frame = CGRect(x: 10, y: 5, width: UIScreen.main.bounds.width - 20, height: self.bounds.height - 5.0)
+            cardView.frame = CGRect(x: 0, y: 5, width: UIScreen.main.bounds.width, height: self.bounds.height - 5.0)
+            cardView.transform = CGAffineTransform(scaleX: (UIScreen.main.bounds.width - 20) / UIScreen.main.bounds.width, y: 1)
         }
     }
     
@@ -190,13 +193,15 @@ class ProfileCardViewContainer: UIView {
         if cardViews.count > 0 {
             let nextView = cardViews[0]
             UIView.animate(withDuration: 0.6, animations: {
-                nextView.transform = CGAffineTransform(scaleX: UIScreen.main.bounds.width / nextView.bounds.width , y: 1)
+//                nextView.transform = CGAffineTransform(scaleX: UIScreen.main.bounds.width / nextView.bounds.width , y: 1)
+                nextView.transform = CGAffineTransform.identity
                 
                 self.layoutIfNeeded()
             }) { (true) in
-                nextView.transform = CGAffineTransform.identity
+//                nextView.transform = CGAffineTransform.identity
                 nextView.frame = CGRect(x: 0, y: 5.0, width: UIScreen.main.bounds.width, height: self.bounds.height - 5.0)
-
+                nextView.layoutIfNeeded()
+                
                 self.enableActionButtons()
             }
         } else {
@@ -374,6 +379,39 @@ extension ProfileCardViewContainer: ProfileViewDelegate {
                 self.layoutIfNeeded()
             }
         }
+    }
+    
+}
+
+class FooterView: UIView {
+    
+    var gradientLayer: CAGradientLayer!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func layoutSublayers(of layer: CALayer) {
+        super.layoutSublayers(of: layer)
+        
+        gradientLayer.frame = self.bounds
+    }
+    
+    fileprivate func addGradientLayer() {
+        gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [ UIColor.white.withAlphaComponent(0.0).cgColor,
+                                  UIColor.white.withAlphaComponent(1.0).cgColor,
+                                  UIColor.white.withAlphaComponent(1.0).cgColor]
+        gradientLayer.locations = [0.0 , 1.0]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.5)
+        gradientLayer.frame = CGRect(x: 0.0, y: 0.0, width: self.bounds.width, height: self.bounds.height)
+        
+        self.layer.insertSublayer(gradientLayer, at: 0)
     }
     
 }

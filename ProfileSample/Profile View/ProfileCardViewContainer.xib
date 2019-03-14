@@ -49,7 +49,7 @@
                         <constraint firstAttribute="height" constant="150" id="RPd-Ri-3Su"/>
                     </constraints>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOn-8O-ywN">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOn-8O-ywN" customClass="FooterView" customModule="ProfileSample" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="532" width="375" height="135"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="D0r-Il-rKA">

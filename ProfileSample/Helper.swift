@@ -45,3 +45,28 @@ extension UIFont {
     }
     
 }
+
+
+extension UILabel {
+    
+    func setText(text: String, withLineSpacing lineSpacing: CGFloat, style: NSTextAlignment) {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = lineSpacing
+        paragraphStyle.alignment = style
+        
+        let placeAttr: [NSAttributedString.Key:Any] = [NSAttributedString.Key.paragraphStyle : paragraphStyle]
+        
+        self.attributedText = NSAttributedString(string: text, attributes: placeAttr)
+    }
+    
+    func setText(attText: NSMutableAttributedString, withLineSpacing lineSpacing: CGFloat, style: NSTextAlignment) {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = lineSpacing
+        paragraphStyle.alignment = style
+        
+        attText.addAttributes([NSAttributedString.Key.paragraphStyle: paragraphStyle], range: NSRange(location: 0, length: attText.string.count))
+        
+        self.attributedText = attText
+    }
+    
+}

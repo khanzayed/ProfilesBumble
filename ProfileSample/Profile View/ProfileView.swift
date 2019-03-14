@@ -140,8 +140,9 @@ class ProfileView: UIView {
 extension ProfileView: UITableViewDataSource, UITableViewDelegate {
     
     fileprivate func setupTableView() {
-//        setupHeaderView()
         self.profileTableView.register(UINib(nibName: "ProfileHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileHeaderTableViewCell")
+        self.profileTableView.register(UINib(nibName: "ProfileObjectivesTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileObjectivesTableViewCell")
+        self.profileTableView.register(UINib(nibName: "ProfileAboutMeTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileAboutMeTableViewCell")
 
         self.profileTableView.dataSource = self
         self.profileTableView.delegate = self
@@ -156,21 +157,40 @@ extension ProfileView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 3
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 350
+            return userObject.headerCellHeight
+        case 1:
+            return userObject.objectivesCellHeight
+        case 2:
+            return userObject.aboutMeCellHeight
         default:
-            return 350
+            return 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
-        case 10:
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileHeaderTableViewCell") as! ProfileHeaderTableViewCell
+            cell.configure(withUser: userObject)
+            
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileObjectivesTableViewCell") as! ProfileObjectivesTableViewCell
+            cell.configure(withUser: userObject)
+            
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileAboutMeTableViewCell") as! ProfileAboutMeTableViewCell
+            cell.configure(withUser: userObject)
+            
+            return cell
+        default:
             var cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier")
             
             if cell == nil {
@@ -179,79 +199,15 @@ extension ProfileView: UITableViewDataSource, UITableViewDelegate {
             }
             
             return cell!
-        default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileHeaderTableViewCell") as! ProfileHeaderTableViewCell
-            cell.configure(withUser: userObject)
-            
-            return cell
         }
     }
     
-    private func setupHeaderView()  {
-        let headerView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: 410))
-        headerView.backgroundColor = .white
-
-        let imageSize: CGFloat = 105
-        let xImageFrame: CGFloat = (headerView.bounds.width - imageSize) / 2
-        userImage = UIImageView(frame: CGRect(x: xImageFrame, y: 15, width: imageSize, height: imageSize))
-        userImage.layer.cornerRadius = 52
-        userImage.image = UIImage(named: "ic_test_user_1.png")
-        userImage.clipsToBounds = true
-        userImage.contentMode = .scaleAspectFill
-        headerView.addSubview(userImage)
-
-//        #EEEEEE
-        let buttonSize: CGFloat = 40
-        shareButton = UIButton(frame: CGRect(x: xImageFrame - buttonSize - 30, y: 80, width: buttonSize, height: buttonSize))
-        shareButton.backgroundColor = UIColor(named: Colors.App_Light_Grey)
-        shareButton.layer.cornerRadius =  20
-        shareButton.setTitle("S", for: .normal)
-        headerView.addSubview(shareButton)
-
-        addToPinBox = UIButton(frame: CGRect(x: xImageFrame + imageSize + 30, y: 80, width: buttonSize, height: buttonSize))
-        addToPinBox.backgroundColor = UIColor(named: Colors.App_Light_Grey)
-        addToPinBox.layer.cornerRadius =  20
-        addToPinBox.setTitle("+", for: .normal)
-        headerView.addSubview(addToPinBox)
-
-        let userNameLbl = UILabel(frame: CGRect(x: 20, y: 145, width: self.bounds.width - 40, height: 25))
-        userNameLbl.font = UIFont.ProximaNovaExtrabold(fontSize: 20)
-        userNameLbl.textColor = UIColor(named: Colors.App_Black)
-        userNameLbl.textAlignment = .center
-        userNameLbl.text = userObject.fullName
-        headerView.addSubview(userNameLbl)
-
-        let designationLbl = UILabel(frame: CGRect(x: 20, y: 175, width: self.bounds.width - 40, height: 20))
-        designationLbl.font = UIFont.ProximaNovaSemiBold(fontSize: 14)
-        designationLbl.textColor = UIColor(named: Colors.App_Grey)
-        designationLbl.textAlignment = .center
-        designationLbl.text = userObject.currentDesignation ?? ""
-        headerView.addSubview(designationLbl)
-
-        let companyNameLbl = UILabel(frame: CGRect(x: 20, y: 200, width: self.bounds.width - 40, height: 20))
-        companyNameLbl.font = UIFont.ProximaNovaRegular(fontSize: 14)
-        companyNameLbl.textColor = UIColor(named: Colors.App_Grey)
-        companyNameLbl.textAlignment = .center
-        companyNameLbl.text = userObject.currentCompany ?? ""
-        headerView.addSubview(companyNameLbl)
-
-        let locationLbl = UILabel(frame: CGRect(x: 20, y: 230, width: self.bounds.width - 40, height: 20))
-        locationLbl.font = UIFont.ProximaNovaRegular(fontSize: 12)
-        locationLbl.textColor = UIColor(named: Colors.App_Grey)
-        locationLbl.textAlignment = .center
-        locationLbl.text = "Bengaluru"
-        headerView.addSubview(locationLbl)
-
-        let pinViewSize: CGFloat = 185
-        let blueTiePinView = UIView(frame: CGRect(x: (headerView.bounds.width - pinViewSize) / 2, y: 265, width: pinViewSize, height: 50))
-        blueTiePinView.backgroundColor = UIColor(named: Colors.Primary_Blue)
-        blueTiePinView.clipsToBounds = true
-        blueTiePinView.layer.cornerRadius = 25
-        headerView.addSubview(blueTiePinView)
-
-        profileTableView.tableHeaderView = headerView
-        
-        headerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
     }
     
 }

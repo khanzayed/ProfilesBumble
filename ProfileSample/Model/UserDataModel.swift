@@ -40,6 +40,13 @@ class UserObject {
     var overallScore = 0
     var isFromExplore = false
     
+    let headerCellHeight: CGFloat = 360
+    
+    var completeObjectives = [ObjectiveModel]()
+    var objectivesCellHeight: CGFloat = 120.0
+    
+    var aboutMeCellHeight: CGFloat = 525
+    
     init(details: [String: Any], fromExplore: Bool = false) {
         
         isFromExplore = fromExplore
@@ -96,6 +103,39 @@ class UserObject {
                 self.currentCompany = company.trimmingCharacters(in: .whitespacesAndNewlines)
             }
         }
+        
+        if let allObjectives = details["objectives"] as? [[String: Any]], allObjectives.count > 0 {
+            completeObjectives = allObjectives.map{ ObjectiveModel(details: $0) }
+            objectivesCellHeight += CGFloat(75 * completeObjectives.count)
+        }
     }
     
+}
+
+struct ObjectiveModel {
+    
+    var id: Int?
+    var name: String?
+    var isSelected: Bool = false
+    var priority: Int?
+    var description: String?
+    var isMatching: Bool = false
+    
+    init(details: [String: Any]) {
+        if let objectiveID = details["objectiveID"] as? String {
+            id = Int(objectiveID)
+        }else if let objectiveID = details["objectiveID"] as? Int {
+            id = objectiveID
+        }
+        
+        if let pLevel = details["pLevel"] as? String {
+            priority = Int(pLevel)
+        }else if let pLevel = details["pLevel"] as? Int {
+            priority = pLevel
+        }
+        name = details["objectiveTitle"] as? String
+        isSelected = details["userID"] != nil
+        description = details["description"] as? String
+        isMatching = details["matched"] as? Bool == true
+    }
 }

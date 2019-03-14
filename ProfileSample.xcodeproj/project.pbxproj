@@ -20,6 +20,10 @@
 		8404A35D2238DE2500631C4A /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8404A3572238DE2500631C4A /* ProximaNova-Regular.otf */; };
 		8404A3652238EB0E00631C4A /* ProfileHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8404A3632238EB0E00631C4A /* ProfileHeaderTableViewCell.swift */; };
 		8404A3662238EB0E00631C4A /* ProfileHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8404A3642238EB0E00631C4A /* ProfileHeaderTableViewCell.xib */; };
+		84055778223A261F0008D0C8 /* ProfileObjectivesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84055776223A261F0008D0C8 /* ProfileObjectivesTableViewCell.swift */; };
+		84055779223A261F0008D0C8 /* ProfileObjectivesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84055777223A261F0008D0C8 /* ProfileObjectivesTableViewCell.xib */; };
+		8405577C223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405577A223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.swift */; };
+		8405577D223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8405577B223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.xib */; };
 		848AC16B223242CB0043643F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AC16A223242CB0043643F /* AppDelegate.swift */; };
 		848AC16D223242CB0043643F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AC16C223242CB0043643F /* ViewController.swift */; };
 		848AC170223242CB0043643F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848AC16E223242CB0043643F /* Main.storyboard */; };
@@ -51,6 +55,10 @@
 		8404A3572238DE2500631C4A /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
 		8404A3632238EB0E00631C4A /* ProfileHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		8404A3642238EB0E00631C4A /* ProfileHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		84055776223A261F0008D0C8 /* ProfileObjectivesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileObjectivesTableViewCell.swift; sourceTree = "<group>"; };
+		84055777223A261F0008D0C8 /* ProfileObjectivesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileObjectivesTableViewCell.xib; sourceTree = "<group>"; };
+		8405577A223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAboutMeTableViewCell.swift; sourceTree = "<group>"; };
+		8405577B223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileAboutMeTableViewCell.xib; sourceTree = "<group>"; };
 		848AC167223242CB0043643F /* ProfileSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProfileSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848AC16A223242CB0043643F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848AC16C223242CB0043643F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,13 +110,17 @@
 			path = "Proxima Nova";
 			sourceTree = "<group>";
 		};
-		8404A3602238EA1400631C4A /* Profile Data */ = {
+		8404A3602238EA1400631C4A /* Profile Data Cell */ = {
 			isa = PBXGroup;
 			children = (
 				8404A3632238EB0E00631C4A /* ProfileHeaderTableViewCell.swift */,
 				8404A3642238EB0E00631C4A /* ProfileHeaderTableViewCell.xib */,
+				84055776223A261F0008D0C8 /* ProfileObjectivesTableViewCell.swift */,
+				84055777223A261F0008D0C8 /* ProfileObjectivesTableViewCell.xib */,
+				8405577A223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.swift */,
+				8405577B223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.xib */,
 			);
-			path = "Profile Data";
+			path = "Profile Data Cell";
 			sourceTree = "<group>";
 		};
 		848AC15E223242CB0043643F = {
@@ -152,7 +164,7 @@
 		848AC17C223243440043643F /* Profile View */ = {
 			isa = PBXGroup;
 			children = (
-				8404A3602238EA1400631C4A /* Profile Data */,
+				8404A3602238EA1400631C4A /* Profile Data Cell */,
 				848AC17D223243850043643F /* ProfileView.swift */,
 				848AC17F223243900043643F /* ProfileView.xib */,
 				848AC18522325FC20043643F /* ProfileCardViewContainer.swift */,
@@ -239,9 +251,11 @@
 				D0595CCF2236CF920061EE3F /* pass@3x.png in Resources */,
 				848AC182223244530043643F /* Colors.xcassets in Resources */,
 				848AC18D223274550043643F /* SampleExplore.json in Resources */,
+				8405577D223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.xib in Resources */,
 				8404A35A2238DE2500631C4A /* ProximaNova-Semibold.otf in Resources */,
 				8404A35C2238DE2500631C4A /* ProximaNova-Extrabold.otf in Resources */,
 				D0595CD12236CFA00061EE3F /* reachout@3x.png in Resources */,
+				84055779223A261F0008D0C8 /* ProfileObjectivesTableViewCell.xib in Resources */,
 				8404A34D2238D9A900631C4A /* ic_test_user_1.png in Resources */,
 				8404A35D2238DE2500631C4A /* ProximaNova-Regular.otf in Resources */,
 				848AC188223263DE0043643F /* ProfileCardViewContainer.xib in Resources */,
@@ -266,7 +280,9 @@
 				D0C6E3F92236BB1500707DAF /* RightSwipeViewController.swift in Sources */,
 				8404A3652238EB0E00631C4A /* ProfileHeaderTableViewCell.swift in Sources */,
 				848AC18622325FC20043643F /* ProfileCardViewContainer.swift in Sources */,
+				8405577C223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.swift in Sources */,
 				848AC17E223243850043643F /* ProfileView.swift in Sources */,
+				84055778223A261F0008D0C8 /* ProfileObjectivesTableViewCell.swift in Sources */,
 				8404A34B2237DB8C00631C4A /* EmptyView.swift in Sources */,
 				848AC16B223242CB0043643F /* AppDelegate.swift in Sources */,
 			);

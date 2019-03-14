@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ProximaNova-Bold.otf">
+            <string>ProximaNova-Bold</string>
+        </array>
+        <array key="ProximaNova-Semibold.otf">
+            <string>ProximaNova-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileAboutMeTableViewCell" rowHeight="525" id="KGk-i7-Jjw" customClass="ProfileAboutMeTableViewCell" customModule="ProfileSample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="525"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="524.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_get_to_know_me" translatesAutoresizingMaskIntoConstraints="NO" id="tRT-V2-LTn">
+                        <rect key="frame" x="40" y="60" width="60" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="Ct8-6h-Sxm"/>
+                            <constraint firstAttribute="height" constant="40" id="QOT-VC-11U"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GET TO KNOW ME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJX-hB-fx6">
+                        <rect key="frame" x="30" y="70" width="101.5" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="gV3-yQ-u5Q"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Cb-rT-xPQ">
+                        <rect key="frame" x="30" y="125" width="315" height="340"/>
+                        <string key="text">I am deeply passionate about an interactive designs and layouts, and am always looking to gain a better understanding of the ever evolving technology through which I can make aesthetically pleasing as well as functionally sound designs.</string>
+                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="24"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" name="AppLightGrey"/>
+                <constraints>
+                    <constraint firstItem="8Cb-rT-xPQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="Al6-UA-awr"/>
+                    <constraint firstItem="tRT-V2-LTn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="60" id="DP9-7f-M75"/>
+                    <constraint firstItem="tRT-V2-LTn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="EOT-a7-V1K"/>
+                    <constraint firstItem="MJX-hB-fx6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="LH7-4U-h4F"/>
+                    <constraint firstItem="8Cb-rT-xPQ" firstAttribute="top" secondItem="tRT-V2-LTn" secondAttribute="bottom" constant="25" id="MAw-zh-Y2u"/>
+                    <constraint firstAttribute="bottom" secondItem="8Cb-rT-xPQ" secondAttribute="bottom" constant="59.5" id="SUs-65-1q1"/>
+                    <constraint firstItem="MJX-hB-fx6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="70" id="pBe-cD-07y"/>
+                    <constraint firstAttribute="trailing" secondItem="8Cb-rT-xPQ" secondAttribute="trailing" constant="30" id="wSF-Cw-3PW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="aboutMeLbl" destination="8Cb-rT-xPQ" id="9s7-kl-dDl"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_get_to_know_me" width="60" height="40"/>
+        <namedColor name="AppLightGrey">
+            <color red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

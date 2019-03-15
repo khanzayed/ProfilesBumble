@@ -43,7 +43,7 @@ class ProfileLinksTableViewCell: UITableViewCell {
             let tickImageView = UIImageView(frame: CGRect(x: linkView.bounds.width, y: 55, width: 20, height: 20))
             tickImageView.contentMode = .scaleAspectFit
             tickImageView.clipsToBounds = true
-            tickImageView.image = UIImage(named: "ic_match_objective_tick")
+            tickImageView.image = UIImage(named: "ic_link_arrow")
 
             linkView.addSubview(tickImageView)
 
@@ -57,7 +57,7 @@ class ProfileLinksTableViewCell: UITableViewCell {
             let catalogueImageView = UIImageView(frame: CGRect(x: 15, y: 20, width: 50, height: 50))
             catalogueImageView.contentMode = .scaleAspectFit
             catalogueImageView.clipsToBounds = true
-            catalogueImageView.image = UIImage(named: "ic_match_objective_tick")
+            catalogueImageView.image = UIImage(named: "ic_profile_document")
 
             linkView.addSubview(catalogueImageView)
 

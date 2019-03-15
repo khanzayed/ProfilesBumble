@@ -36,6 +36,12 @@
 		84055793223BB2F50008D0C8 /* ProfileAchievementsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84055791223BB2F50008D0C8 /* ProfileAchievementsTableViewCell.xib */; };
 		84055796223BC6C70008D0C8 /* ProfileReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84055794223BC6C70008D0C8 /* ProfileReportTableViewCell.swift */; };
 		84055797223BC6C70008D0C8 /* ProfileReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84055795223BC6C70008D0C8 /* ProfileReportTableViewCell.xib */; };
+		8405579B223BE4760008D0C8 /* ProfileSkillsHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84055799223BE4760008D0C8 /* ProfileSkillsHeaderTableViewCell.swift */; };
+		8405579C223BE4760008D0C8 /* ProfileSkillsHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8405579A223BE4760008D0C8 /* ProfileSkillsHeaderTableViewCell.xib */; };
+		8405579F223BE4FF0008D0C8 /* ProfileSkillsSubHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405579D223BE4FF0008D0C8 /* ProfileSkillsSubHeaderTableViewCell.swift */; };
+		840557A0223BE4FF0008D0C8 /* ProfileSkillsSubHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8405579E223BE4FF0008D0C8 /* ProfileSkillsSubHeaderTableViewCell.xib */; };
+		840557A3223BE5400008D0C8 /* ProfileSkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840557A1223BE5400008D0C8 /* ProfileSkillTableViewCell.swift */; };
+		840557A4223BE5400008D0C8 /* ProfileSkillTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840557A2223BE5400008D0C8 /* ProfileSkillTableViewCell.xib */; };
 		848AC16B223242CB0043643F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AC16A223242CB0043643F /* AppDelegate.swift */; };
 		848AC16D223242CB0043643F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AC16C223242CB0043643F /* ViewController.swift */; };
 		848AC170223242CB0043643F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848AC16E223242CB0043643F /* Main.storyboard */; };
@@ -83,6 +89,12 @@
 		84055791223BB2F50008D0C8 /* ProfileAchievementsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileAchievementsTableViewCell.xib; sourceTree = "<group>"; };
 		84055794223BC6C70008D0C8 /* ProfileReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileReportTableViewCell.swift; sourceTree = "<group>"; };
 		84055795223BC6C70008D0C8 /* ProfileReportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileReportTableViewCell.xib; sourceTree = "<group>"; };
+		84055799223BE4760008D0C8 /* ProfileSkillsHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSkillsHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		8405579A223BE4760008D0C8 /* ProfileSkillsHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileSkillsHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		8405579D223BE4FF0008D0C8 /* ProfileSkillsSubHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSkillsSubHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		8405579E223BE4FF0008D0C8 /* ProfileSkillsSubHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileSkillsSubHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		840557A1223BE5400008D0C8 /* ProfileSkillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSkillTableViewCell.swift; sourceTree = "<group>"; };
+		840557A2223BE5400008D0C8 /* ProfileSkillTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileSkillTableViewCell.xib; sourceTree = "<group>"; };
 		848AC167223242CB0043643F /* ProfileSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProfileSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848AC16A223242CB0043643F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848AC16C223242CB0043643F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +149,7 @@
 		8404A3602238EA1400631C4A /* Profile Data Cell */ = {
 			isa = PBXGroup;
 			children = (
+				84055798223BE4430008D0C8 /* Skill Cells */,
 				8404A3632238EB0E00631C4A /* ProfileHeaderTableViewCell.swift */,
 				8404A3642238EB0E00631C4A /* ProfileHeaderTableViewCell.xib */,
 				84055776223A261F0008D0C8 /* ProfileObjectivesTableViewCell.swift */,
@@ -157,6 +170,19 @@
 				84055795223BC6C70008D0C8 /* ProfileReportTableViewCell.xib */,
 			);
 			path = "Profile Data Cell";
+			sourceTree = "<group>";
+		};
+		84055798223BE4430008D0C8 /* Skill Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84055799223BE4760008D0C8 /* ProfileSkillsHeaderTableViewCell.swift */,
+				8405579A223BE4760008D0C8 /* ProfileSkillsHeaderTableViewCell.xib */,
+				8405579D223BE4FF0008D0C8 /* ProfileSkillsSubHeaderTableViewCell.swift */,
+				8405579E223BE4FF0008D0C8 /* ProfileSkillsSubHeaderTableViewCell.xib */,
+				840557A1223BE5400008D0C8 /* ProfileSkillTableViewCell.swift */,
+				840557A2223BE5400008D0C8 /* ProfileSkillTableViewCell.xib */,
+			);
+			path = "Skill Cells";
 			sourceTree = "<group>";
 		};
 		848AC15E223242CB0043643F = {
@@ -279,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8405579C223BE4760008D0C8 /* ProfileSkillsHeaderTableViewCell.xib in Resources */,
 				8404A3492237DB7E00631C4A /* EmptyView.xib in Resources */,
 				8404A3472237818400631C4A /* SampleThreeUsers.json in Resources */,
 				8404A3582238DE2500631C4A /* ProximaNova-Medium.otf in Resources */,
@@ -290,6 +317,8 @@
 				848AC18D223274550043643F /* SampleExplore.json in Resources */,
 				84055793223BB2F50008D0C8 /* ProfileAchievementsTableViewCell.xib in Resources */,
 				84055797223BC6C70008D0C8 /* ProfileReportTableViewCell.xib in Resources */,
+				840557A0223BE4FF0008D0C8 /* ProfileSkillsSubHeaderTableViewCell.xib in Resources */,
+				840557A4223BE5400008D0C8 /* ProfileSkillTableViewCell.xib in Resources */,
 				8405577D223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.xib in Resources */,
 				8404A35A2238DE2500631C4A /* ProximaNova-Semibold.otf in Resources */,
 				8404A35C2238DE2500631C4A /* ProximaNova-Extrabold.otf in Resources */,
@@ -321,9 +350,12 @@
 				8404A34F2238DC4700631C4A /* Helper.swift in Sources */,
 				848AC16D223242CB0043643F /* ViewController.swift in Sources */,
 				8405578E223B9CA90008D0C8 /* ProfileEducationDetailsTableViewCell.swift in Sources */,
+				840557A3223BE5400008D0C8 /* ProfileSkillTableViewCell.swift in Sources */,
 				84055782223A72D20008D0C8 /* ProfileIndustryExpTableViewCell.swift in Sources */,
+				8405579B223BE4760008D0C8 /* ProfileSkillsHeaderTableViewCell.swift in Sources */,
 				8405578A223A92800008D0C8 /* ProfileWorkExpTableViewCell.swift in Sources */,
 				D0C6E3F92236BB1500707DAF /* RightSwipeViewController.swift in Sources */,
+				8405579F223BE4FF0008D0C8 /* ProfileSkillsSubHeaderTableViewCell.swift in Sources */,
 				8404A3652238EB0E00631C4A /* ProfileHeaderTableViewCell.swift in Sources */,
 				848AC18622325FC20043643F /* ProfileCardViewContainer.swift in Sources */,
 				84055786223A7D7E0008D0C8 /* ProfileLinksTableViewCell.swift in Sources */,

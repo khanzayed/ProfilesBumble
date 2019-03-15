@@ -53,6 +53,8 @@ class UserObject {
     var industries = [IndustryModel]()
     var industryExpCellHeight: CGFloat = 160
     
+    var completeSkills = [SkillsModel]()
+    
     var profileLinks = [ProfileLinkModel]()
     var profileLinksCellHeight: CGFloat = 110
     
@@ -358,3 +360,41 @@ struct AchievementsModel {
         name = details["achivementTitle"] as? String
     }
 }
+
+
+struct SkillsModel {
+    
+    var skillId: Int?
+    var industryId: Int?
+    var skillName: String?
+    var endorsement: Int?
+    var isMainSkill: Int?
+    var skillType: Int? = 0
+    var height: CGFloat = 50
+    
+    init() {
+        
+    }
+    
+    init(skillDetails: [String: Any]) {
+        
+        if let id = skillDetails["subSkillID"] as? String {
+            skillId = Int(id)
+        } else if let id = skillDetails["subSkillID"] as? Int {
+            skillId = id
+        }
+        if let endorsementString = skillDetails["endorsement"] as? String {
+            endorsement = Int(endorsementString)
+        } else if let endorsementInt = skillDetails["endorsement"] as? Int {
+            endorsement = endorsementInt
+        }
+        skillName = skillDetails["skillSets"] as? String ?? ""
+        
+        if let type = skillDetails["type"] as? Int {
+            skillType = type
+        }
+        
+        height = skillName!.height(constraintedWidth: UIScreen.main.bounds.width - 80, font: UIFont.ProximaNovaSemiBold(fontSize: 14))
+    }
+}
+

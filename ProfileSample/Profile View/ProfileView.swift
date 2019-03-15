@@ -30,9 +30,9 @@ fileprivate enum ProfileCells: Int {
     case AboutMeCell
     case IndustryExperienceCell
     case ProfessionalFortesCell
-    case SkillsAcquiredCell
-    case SoftwareLearnedCell
-    case CertificationsAchievedCell
+    case SkillHeaderCell
+    case SkillSubHeaderCell
+    case SkillCell
     case ProfessionalCatalogueCell
     case WorkExperienceCell
     case EducationCell
@@ -171,6 +171,14 @@ extension ProfileView: UITableViewDataSource, UITableViewDelegate {
         rows.append(.IndustryExperienceCell)
         profileTableView.register(UINib(nibName: "ProfileIndustryExpTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileIndustryExpTableViewCell")
         
+        if userObject.completeSkills.count > 0 {
+            rows.append(.SkillHeaderCell)
+            profileTableView.register(UINib(nibName: "ProfileSkillsHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileSkillsHeaderTableViewCell")
+            
+            rows.append(.SkillSubHeaderCell)
+            profileTableView.register(UINib(nibName: "ProfileSkillsSubHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileSkillsSubHeaderTableViewCell")
+        }
+        
         if userObject.profileLinks.count > 0 {
             rows.append(.ProfessionalCatalogueCell)
             profileTableView.register(UINib(nibName: "ProfileLinksTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileLinksTableViewCell")
@@ -216,6 +224,10 @@ extension ProfileView: UITableViewDataSource, UITableViewDelegate {
             return userObject.aboutMeCellHeight
         case .IndustryExperienceCell:
             return userObject.industryExpCellHeight
+        case .SkillHeaderCell:
+            return userObject.skillHeaderCellHeight
+        case .SkillSubHeaderCell:
+            return userObject.skillSubHeaderCellHeight
         case .ProfessionalCatalogueCell:
             return userObject.profileLinksCellHeight
         case .WorkExperienceCell:
@@ -251,6 +263,14 @@ extension ProfileView: UITableViewDataSource, UITableViewDelegate {
         case .IndustryExperienceCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileIndustryExpTableViewCell") as! ProfileIndustryExpTableViewCell
             cell.configure(withUser: userObject)
+            
+            return cell
+        case .SkillHeaderCell:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileSkillsHeaderTableViewCell") as! ProfileSkillsHeaderTableViewCell
+            
+            return cell
+        case .SkillSubHeaderCell:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileSkillsSubHeaderTableViewCell") as! ProfileSkillsSubHeaderTableViewCell
             
             return cell
         case .ProfessionalCatalogueCell:

@@ -54,6 +54,8 @@ class UserObject {
     var industryExpCellHeight: CGFloat = 160
     
     var completeSkills = [SkillsModel]()
+    var skillHeaderCellHeight: CGFloat = 60
+    var skillSubHeaderCellHeight: CGFloat = 40
     
     var profileLinks = [ProfileLinkModel]()
     var profileLinksCellHeight: CGFloat = 110
@@ -170,6 +172,10 @@ class UserObject {
         if let allAchievements = details["userAchivement"] as? [[String: Any]], allAchievements.count > 0 {
             achievements = allAchievements.map { AchievementsModel(details: $0) }
             achievementsCellHeight = 400
+        }
+        
+        if let skillDetails = details["skillwithEndorsement"] as? [[String: Any]], skillDetails.count > 0 {
+            completeSkills = skillDetails.map { SkillsModel(skillDetails: $0) }
         }
     }
     

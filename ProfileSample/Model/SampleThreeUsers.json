@@ -10,7 +10,6 @@
 "userCountry":"India",
 "userState":"Maharashtra",
 "userCity":"Mumbai",
-"userAbout":"An ideator at heart who loves working on innovative ideas. I believe crafting and executing path-breaking ideas is the only way to invent the future. I'm looking for professionals who share my passion and hunger for visionary ideas.",
 "shareURL":"Ajiy8EA",
 "baseCityID":1,
 "userAge":20,
@@ -79,17 +78,30 @@
 ],
 "userWorkHistory":[
 {
-"workID":5425,
-"currentCompany":1,
-"userDesignation":"Brand Ambassador",
-"userCompany":"BlueTie",
-"workFromMonth":null,
-"workFromYear":null,
-"workToMonth":null,
-"workToYear":null,
-"dateAdded":"2018-11-12T09:26:01.000Z",
-"dateModified":"2018-11-12T09:26:01.000Z",
-"status":1
+    "workID":5425,
+    "currentCompany":1,
+    "userDesignation":"Extremely Senior Manager - Finance, Compliance And Administration",
+    "userCompany":"BlueTie",
+    "workFromMonth":null,
+    "workFromYear":null,
+    "workToMonth":null,
+    "workToYear":null,
+    "dateAdded":"2018-11-12T09:26:01.000Z",
+    "dateModified":"2018-11-12T09:26:01.000Z",
+    "status":1
+},
+{
+    "workID":5425,
+    "currentCompany":1,
+    "userDesignation":"Sr iOS Developer",
+    "userCompany":"BlueTie",
+    "workFromMonth":null,
+    "workFromYear":null,
+    "workToMonth":null,
+    "workToYear":null,
+    "dateAdded":"2018-11-12T09:26:01.000Z",
+    "dateModified":"2018-11-12T09:26:01.000Z",
+    "status":1
 }
 ],
 "userDegree":[
@@ -105,6 +117,11 @@
 "userDocLinkID":1754,
 "title":"My Search Engine",
 "linkUrl":"http://www.google.com"
+},
+{
+    "userDocLinkID":1754,
+    "title":"My Search Engine",
+    "linkUrl":"http://www.google.com"
 }
 ],
 "userDocument":[

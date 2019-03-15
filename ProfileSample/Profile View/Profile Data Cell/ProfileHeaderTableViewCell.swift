@@ -20,6 +20,8 @@ class ProfileHeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var bluetiePinLbl: UILabel!
     @IBOutlet weak var bluetiePinView: UIView!
     
+    private var isConfigured = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -30,6 +32,11 @@ class ProfileHeaderTableViewCell: UITableViewCell {
     }
     
     internal func configure(withUser userObject: UserObject) {
+        guard isConfigured == false else {
+            return
+        }
+        isConfigured = true
+        
         userNameLbl.text = userObject.fullName ?? ""
         designationLbl.text = userObject.currentDesignation ?? ""
         companyLbl.text = userObject.currentCompany ?? ""

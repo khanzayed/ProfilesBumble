@@ -70,3 +70,36 @@ extension UILabel {
     }
     
 }
+
+extension NSAttributedString {
+    
+    func height(containerWidth: CGFloat) -> CGFloat {
+        let rect = self.boundingRect(with: CGSize.init(width: containerWidth, height: CGFloat.greatestFiniteMagnitude), options: [.usesLineFragmentOrigin, .usesFontLeading], context: nil)
+        return ceil(rect.size.height)
+    }
+    
+}
+
+extension String {
+    
+    func getAttributedString(withLineSpacing lineSpacing: CGFloat, style: NSTextAlignment, font: UIFont) -> NSAttributedString {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = lineSpacing
+        paragraphStyle.alignment = style
+        
+        let placeAttr: [NSAttributedString.Key:Any] = [NSAttributedString.Key.paragraphStyle : paragraphStyle, NSAttributedString.Key.font: font]
+        
+        return NSAttributedString(string: self, attributes: placeAttr)
+    }
+    
+    func height(constraintedWidth width: CGFloat, font: UIFont) -> CGFloat {
+        let label =  UILabel(frame: CGRect(x: 0, y: 0, width: width, height: .greatestFiniteMagnitude))
+        label.numberOfLines = 0
+        label.text = self
+        label.font = font
+        label.sizeToFit()
+        
+        return label.frame.height
+    }
+    
+}

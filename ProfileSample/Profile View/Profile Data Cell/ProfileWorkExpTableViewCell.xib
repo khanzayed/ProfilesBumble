@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ProximaNova-Bold.otf">
+            <string>ProximaNova-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileWorkExpTableViewCell" id="KGk-i7-Jjw" customClass="ProfileWorkExpTableViewCell" customModule="ProfileSample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="299.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9T-h2-4y2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_work_exp" translatesAutoresizingMaskIntoConstraints="NO" id="JQe-WC-MVN">
+                                <rect key="frame" x="40" y="30" width="43" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3Bk-KA-1mS"/>
+                                    <constraint firstAttribute="width" constant="43" id="5Jd-PS-SML"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WORK EXPERIENCE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d23-sb-5Nk">
+                                <rect key="frame" x="30" y="40" width="110" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="4s8-hw-iyr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="d23-sb-5Nk" firstAttribute="leading" secondItem="G9T-h2-4y2" secondAttribute="leading" constant="30" id="3fh-hK-7F8"/>
+                            <constraint firstItem="JQe-WC-MVN" firstAttribute="top" secondItem="G9T-h2-4y2" secondAttribute="top" constant="30" id="Miz-4U-uuD"/>
+                            <constraint firstAttribute="height" constant="80" id="VFk-bj-Mrn"/>
+                            <constraint firstItem="JQe-WC-MVN" firstAttribute="leading" secondItem="G9T-h2-4y2" secondAttribute="leading" constant="40" id="pZj-jc-rwx"/>
+                            <constraint firstItem="d23-sb-5Nk" firstAttribute="top" secondItem="G9T-h2-4y2" secondAttribute="top" constant="40" id="qHC-kU-Phr"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QN7-lz-y34">
+                        <rect key="frame" x="30" y="80" width="315" height="189.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="QN7-lz-y34" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="8zW-k6-pZs"/>
+                    <constraint firstItem="G9T-h2-4y2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="I4v-2S-Ib1"/>
+                    <constraint firstAttribute="trailing" secondItem="QN7-lz-y34" secondAttribute="trailing" constant="30" id="XvT-D6-aeK"/>
+                    <constraint firstItem="QN7-lz-y34" firstAttribute="top" secondItem="G9T-h2-4y2" secondAttribute="bottom" id="iDs-sZ-ooZ"/>
+                    <constraint firstAttribute="bottom" secondItem="QN7-lz-y34" secondAttribute="bottom" constant="30" id="j98-CO-YUq"/>
+                    <constraint firstItem="G9T-h2-4y2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tJG-7X-qc9"/>
+                    <constraint firstAttribute="trailing" secondItem="G9T-h2-4y2" secondAttribute="trailing" id="uPh-Bk-f9J"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="workExpsListView" destination="QN7-lz-y34" id="XFn-6a-ALt"/>
+            </connections>
+            <point key="canvasLocation" x="40.799999999999997" y="46.776611694152926"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_work_exp" width="45" height="40"/>
+    </resources>
+</document>

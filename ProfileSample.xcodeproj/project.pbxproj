@@ -24,6 +24,18 @@
 		84055779223A261F0008D0C8 /* ProfileObjectivesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84055777223A261F0008D0C8 /* ProfileObjectivesTableViewCell.xib */; };
 		8405577C223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405577A223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.swift */; };
 		8405577D223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8405577B223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.xib */; };
+		84055782223A72D20008D0C8 /* ProfileIndustryExpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84055780223A72D20008D0C8 /* ProfileIndustryExpTableViewCell.swift */; };
+		84055783223A72D20008D0C8 /* ProfileIndustryExpTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84055781223A72D20008D0C8 /* ProfileIndustryExpTableViewCell.xib */; };
+		84055786223A7D7E0008D0C8 /* ProfileLinksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84055784223A7D7E0008D0C8 /* ProfileLinksTableViewCell.swift */; };
+		84055787223A7D7E0008D0C8 /* ProfileLinksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84055785223A7D7E0008D0C8 /* ProfileLinksTableViewCell.xib */; };
+		8405578A223A92800008D0C8 /* ProfileWorkExpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84055788223A92800008D0C8 /* ProfileWorkExpTableViewCell.swift */; };
+		8405578B223A92800008D0C8 /* ProfileWorkExpTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84055789223A92800008D0C8 /* ProfileWorkExpTableViewCell.xib */; };
+		8405578E223B9CA90008D0C8 /* ProfileEducationDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405578C223B9CA90008D0C8 /* ProfileEducationDetailsTableViewCell.swift */; };
+		8405578F223B9CA90008D0C8 /* ProfileEducationDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8405578D223B9CA90008D0C8 /* ProfileEducationDetailsTableViewCell.xib */; };
+		84055792223BB2F50008D0C8 /* ProfileAchievementsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84055790223BB2F50008D0C8 /* ProfileAchievementsTableViewCell.swift */; };
+		84055793223BB2F50008D0C8 /* ProfileAchievementsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84055791223BB2F50008D0C8 /* ProfileAchievementsTableViewCell.xib */; };
+		84055796223BC6C70008D0C8 /* ProfileReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84055794223BC6C70008D0C8 /* ProfileReportTableViewCell.swift */; };
+		84055797223BC6C70008D0C8 /* ProfileReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84055795223BC6C70008D0C8 /* ProfileReportTableViewCell.xib */; };
 		848AC16B223242CB0043643F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AC16A223242CB0043643F /* AppDelegate.swift */; };
 		848AC16D223242CB0043643F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AC16C223242CB0043643F /* ViewController.swift */; };
 		848AC170223242CB0043643F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848AC16E223242CB0043643F /* Main.storyboard */; };
@@ -59,6 +71,18 @@
 		84055777223A261F0008D0C8 /* ProfileObjectivesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileObjectivesTableViewCell.xib; sourceTree = "<group>"; };
 		8405577A223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAboutMeTableViewCell.swift; sourceTree = "<group>"; };
 		8405577B223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileAboutMeTableViewCell.xib; sourceTree = "<group>"; };
+		84055780223A72D20008D0C8 /* ProfileIndustryExpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileIndustryExpTableViewCell.swift; sourceTree = "<group>"; };
+		84055781223A72D20008D0C8 /* ProfileIndustryExpTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileIndustryExpTableViewCell.xib; sourceTree = "<group>"; };
+		84055784223A7D7E0008D0C8 /* ProfileLinksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLinksTableViewCell.swift; sourceTree = "<group>"; };
+		84055785223A7D7E0008D0C8 /* ProfileLinksTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileLinksTableViewCell.xib; sourceTree = "<group>"; };
+		84055788223A92800008D0C8 /* ProfileWorkExpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWorkExpTableViewCell.swift; sourceTree = "<group>"; };
+		84055789223A92800008D0C8 /* ProfileWorkExpTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileWorkExpTableViewCell.xib; sourceTree = "<group>"; };
+		8405578C223B9CA90008D0C8 /* ProfileEducationDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEducationDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		8405578D223B9CA90008D0C8 /* ProfileEducationDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileEducationDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		84055790223BB2F50008D0C8 /* ProfileAchievementsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAchievementsTableViewCell.swift; sourceTree = "<group>"; };
+		84055791223BB2F50008D0C8 /* ProfileAchievementsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileAchievementsTableViewCell.xib; sourceTree = "<group>"; };
+		84055794223BC6C70008D0C8 /* ProfileReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileReportTableViewCell.swift; sourceTree = "<group>"; };
+		84055795223BC6C70008D0C8 /* ProfileReportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileReportTableViewCell.xib; sourceTree = "<group>"; };
 		848AC167223242CB0043643F /* ProfileSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProfileSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848AC16A223242CB0043643F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848AC16C223242CB0043643F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +143,18 @@
 				84055777223A261F0008D0C8 /* ProfileObjectivesTableViewCell.xib */,
 				8405577A223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.swift */,
 				8405577B223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.xib */,
+				84055780223A72D20008D0C8 /* ProfileIndustryExpTableViewCell.swift */,
+				84055781223A72D20008D0C8 /* ProfileIndustryExpTableViewCell.xib */,
+				84055784223A7D7E0008D0C8 /* ProfileLinksTableViewCell.swift */,
+				84055785223A7D7E0008D0C8 /* ProfileLinksTableViewCell.xib */,
+				84055788223A92800008D0C8 /* ProfileWorkExpTableViewCell.swift */,
+				84055789223A92800008D0C8 /* ProfileWorkExpTableViewCell.xib */,
+				8405578C223B9CA90008D0C8 /* ProfileEducationDetailsTableViewCell.swift */,
+				8405578D223B9CA90008D0C8 /* ProfileEducationDetailsTableViewCell.xib */,
+				84055790223BB2F50008D0C8 /* ProfileAchievementsTableViewCell.swift */,
+				84055791223BB2F50008D0C8 /* ProfileAchievementsTableViewCell.xib */,
+				84055794223BC6C70008D0C8 /* ProfileReportTableViewCell.swift */,
+				84055795223BC6C70008D0C8 /* ProfileReportTableViewCell.xib */,
 			);
 			path = "Profile Data Cell";
 			sourceTree = "<group>";
@@ -246,24 +282,30 @@
 				8404A3492237DB7E00631C4A /* EmptyView.xib in Resources */,
 				8404A3472237818400631C4A /* SampleThreeUsers.json in Resources */,
 				8404A3582238DE2500631C4A /* ProximaNova-Medium.otf in Resources */,
+				84055787223A7D7E0008D0C8 /* ProfileLinksTableViewCell.xib in Resources */,
 				8404A3592238DE2500631C4A /* ProximaNova-Light.otf in Resources */,
 				8404A3662238EB0E00631C4A /* ProfileHeaderTableViewCell.xib in Resources */,
 				D0595CCF2236CF920061EE3F /* pass@3x.png in Resources */,
 				848AC182223244530043643F /* Colors.xcassets in Resources */,
 				848AC18D223274550043643F /* SampleExplore.json in Resources */,
+				84055793223BB2F50008D0C8 /* ProfileAchievementsTableViewCell.xib in Resources */,
+				84055797223BC6C70008D0C8 /* ProfileReportTableViewCell.xib in Resources */,
 				8405577D223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.xib in Resources */,
 				8404A35A2238DE2500631C4A /* ProximaNova-Semibold.otf in Resources */,
 				8404A35C2238DE2500631C4A /* ProximaNova-Extrabold.otf in Resources */,
+				8405578B223A92800008D0C8 /* ProfileWorkExpTableViewCell.xib in Resources */,
 				D0595CD12236CFA00061EE3F /* reachout@3x.png in Resources */,
 				84055779223A261F0008D0C8 /* ProfileObjectivesTableViewCell.xib in Resources */,
 				8404A34D2238D9A900631C4A /* ic_test_user_1.png in Resources */,
 				8404A35D2238DE2500631C4A /* ProximaNova-Regular.otf in Resources */,
 				848AC188223263DE0043643F /* ProfileCardViewContainer.xib in Resources */,
 				848AC180223243900043643F /* ProfileView.xib in Resources */,
+				84055783223A72D20008D0C8 /* ProfileIndustryExpTableViewCell.xib in Resources */,
 				848AC175223242CC0043643F /* LaunchScreen.storyboard in Resources */,
 				8404A35B2238DE2500631C4A /* ProximaNova-Bold.otf in Resources */,
 				848AC172223242CC0043643F /* Assets.xcassets in Resources */,
 				848AC170223242CB0043643F /* Main.storyboard in Resources */,
+				8405578F223B9CA90008D0C8 /* ProfileEducationDetailsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,14 +317,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				848AC18B223272750043643F /* UserDataModel.swift in Sources */,
+				84055792223BB2F50008D0C8 /* ProfileAchievementsTableViewCell.swift in Sources */,
 				8404A34F2238DC4700631C4A /* Helper.swift in Sources */,
 				848AC16D223242CB0043643F /* ViewController.swift in Sources */,
+				8405578E223B9CA90008D0C8 /* ProfileEducationDetailsTableViewCell.swift in Sources */,
+				84055782223A72D20008D0C8 /* ProfileIndustryExpTableViewCell.swift in Sources */,
+				8405578A223A92800008D0C8 /* ProfileWorkExpTableViewCell.swift in Sources */,
 				D0C6E3F92236BB1500707DAF /* RightSwipeViewController.swift in Sources */,
 				8404A3652238EB0E00631C4A /* ProfileHeaderTableViewCell.swift in Sources */,
 				848AC18622325FC20043643F /* ProfileCardViewContainer.swift in Sources */,
+				84055786223A7D7E0008D0C8 /* ProfileLinksTableViewCell.swift in Sources */,
 				8405577C223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.swift in Sources */,
 				848AC17E223243850043643F /* ProfileView.swift in Sources */,
 				84055778223A261F0008D0C8 /* ProfileObjectivesTableViewCell.swift in Sources */,
+				84055796223BC6C70008D0C8 /* ProfileReportTableViewCell.swift in Sources */,
 				8404A34B2237DB8C00631C4A /* EmptyView.swift in Sources */,
 				848AC16B223242CB0043643F /* AppDelegate.swift in Sources */,
 			);

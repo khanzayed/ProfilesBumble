@@ -24,6 +24,22 @@ protocol ProfileViewDelegate {
     
 }
 
+fileprivate enum ProfileCells: Int {
+    case HeaderCell = 0
+    case ObjectiveCell
+    case AboutMeCell
+    case IndustryExperienceCell
+    case ProfessionalFortesCell
+    case SkillsAcquiredCell
+    case SoftwareLearnedCell
+    case CertificationsAchievedCell
+    case ProfessionalCatalogueCell
+    case WorkExperienceCell
+    case EducationCell
+    case AcheivementCell
+    case ReportCell
+}
+
 class ProfileView: UIView {
 
     @IBOutlet var profileView: UIView!
@@ -34,6 +50,7 @@ class ProfileView: UIView {
     fileprivate var addToPinBox: UIButton!
     fileprivate var isScrollingUp = false
     fileprivate var isScrollingDown = false
+    fileprivate var rows = [ProfileCells]()
     
     internal var delegate: ProfileViewDelegate?
     internal var userObject: UserObject! {
@@ -140,16 +157,45 @@ class ProfileView: UIView {
 extension ProfileView: UITableViewDataSource, UITableViewDelegate {
     
     fileprivate func setupTableView() {
-        self.profileTableView.register(UINib(nibName: "ProfileHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileHeaderTableViewCell")
-        self.profileTableView.register(UINib(nibName: "ProfileObjectivesTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileObjectivesTableViewCell")
-        self.profileTableView.register(UINib(nibName: "ProfileAboutMeTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileAboutMeTableViewCell")
-
+        rows.append(.HeaderCell)
+        profileTableView.register(UINib(nibName: "ProfileHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileHeaderTableViewCell")
+        
+        rows.append(.ObjectiveCell)
+        profileTableView.register(UINib(nibName: "ProfileObjectivesTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileObjectivesTableViewCell")
+        
+        if userObject.aboutMeCellHeight > 0 {
+            rows.append(.AboutMeCell)
+            profileTableView.register(UINib(nibName: "ProfileAboutMeTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileAboutMeTableViewCell")
+        }
+        
+        rows.append(.IndustryExperienceCell)
+        profileTableView.register(UINib(nibName: "ProfileIndustryExpTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileIndustryExpTableViewCell")
+        
+        if userObject.profileLinks.count > 0 {
+            rows.append(.ProfessionalCatalogueCell)
+            profileTableView.register(UINib(nibName: "ProfileLinksTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileLinksTableViewCell")
+        }
+        
+        if userObject.workExpCellHeight > 0 {
+            rows.append(.WorkExperienceCell)
+            profileTableView.register(UINib(nibName: "ProfileWorkExpTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileWorkExpTableViewCell")
+        }
+        
+        if userObject.educationDetailsCellHeight > 0 {
+            rows.append(.EducationCell)
+            profileTableView.register(UINib(nibName: "ProfileEducationDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileEducationDetailsTableViewCell")
+        }
+        
+        if userObject.achievementsCellHeight > 0 {
+            rows.append(.AcheivementCell)
+            profileTableView.register(UINib(nibName: "ProfileAchievementsTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileAchievementsTableViewCell")
+        }
+        
+        rows.append(.ReportCell)
+        profileTableView.register(UINib(nibName: "ProfileReportTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileReportTableViewCell")
+        
         self.profileTableView.dataSource = self
         self.profileTableView.delegate = self
-
-        DispatchQueue.main.async {
-            self.profileTableView.reloadData()
-        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -157,37 +203,78 @@ extension ProfileView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return rows.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-        case 0:
+        switch rows[indexPath.row] {
+        case .HeaderCell:
             return userObject.headerCellHeight
-        case 1:
+        case .ObjectiveCell:
             return userObject.objectivesCellHeight
-        case 2:
+        case .AboutMeCell:
             return userObject.aboutMeCellHeight
+        case .IndustryExperienceCell:
+            return userObject.industryExpCellHeight
+        case .ProfessionalCatalogueCell:
+            return userObject.profileLinksCellHeight
+        case .WorkExperienceCell:
+            return userObject.workExpCellHeight
+        case .EducationCell:
+            return userObject.educationDetailsCellHeight
+        case .AcheivementCell:
+            return userObject.achievementsCellHeight
+        case .ReportCell:
+            return userObject.reportCellHeight
         default:
             return 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
+        switch rows[indexPath.row] {
+        case .HeaderCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileHeaderTableViewCell") as! ProfileHeaderTableViewCell
             cell.configure(withUser: userObject)
             
             return cell
-        case 1:
+        case .ObjectiveCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileObjectivesTableViewCell") as! ProfileObjectivesTableViewCell
             cell.configure(withUser: userObject)
             
             return cell
-        case 2:
+        case .AboutMeCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileAboutMeTableViewCell") as! ProfileAboutMeTableViewCell
             cell.configure(withUser: userObject)
+            
+            return cell
+        case .IndustryExperienceCell:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileIndustryExpTableViewCell") as! ProfileIndustryExpTableViewCell
+            cell.configure(withUser: userObject)
+            
+            return cell
+        case .ProfessionalCatalogueCell:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileLinksTableViewCell") as! ProfileLinksTableViewCell
+            cell.configure(withUser: userObject)
+            
+            return cell
+        case .WorkExperienceCell:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileWorkExpTableViewCell") as! ProfileWorkExpTableViewCell
+            cell.configure(withUser: userObject)
+            
+            return cell
+        case .EducationCell:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileEducationDetailsTableViewCell") as! ProfileEducationDetailsTableViewCell
+            cell.configure(withUser: userObject)
+            
+            return cell
+        case .AcheivementCell:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileAchievementsTableViewCell") as! ProfileAchievementsTableViewCell
+            cell.configure(withUser: userObject)
+                
+            return cell
+        case .ReportCell:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileReportTableViewCell") as! ProfileReportTableViewCell
             
             return cell
         default:
@@ -203,7 +290,7 @@ extension ProfileView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 100
+        return 50
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

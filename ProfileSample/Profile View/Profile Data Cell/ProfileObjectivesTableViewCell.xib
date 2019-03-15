@@ -17,11 +17,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileObjectivesTableViewCell" rowHeight="135" id="KGk-i7-Jjw" customClass="ProfileObjectivesTableViewCell" customModule="ProfileSample" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="345"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileObjectivesTableViewCell" rowHeight="315" id="KGk-i7-Jjw" customClass="ProfileObjectivesTableViewCell" customModule="ProfileSample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="315"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="344.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="314.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FpT-PV-kDS">
@@ -64,7 +64,7 @@
                     <constraint firstItem="FpT-PV-kDS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="PLi-7p-xtp"/>
                     <constraint firstAttribute="trailing" secondItem="FpT-PV-kDS" secondAttribute="trailing" id="XCB-WH-Mpc"/>
                     <constraint firstItem="z7x-qP-agW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="r6U-Mh-UXb"/>
-                    <constraint firstAttribute="bottom" secondItem="z7x-qP-agW" secondAttribute="bottom" constant="60" id="y2t-XE-ldj"/>
+                    <constraint firstAttribute="bottom" secondItem="z7x-qP-agW" secondAttribute="bottom" constant="30" id="y2t-XE-ldj"/>
                     <constraint firstItem="z7x-qP-agW" firstAttribute="top" secondItem="FpT-PV-kDS" secondAttribute="bottom" id="ydn-D6-8os"/>
                 </constraints>
             </tableViewCellContentView>

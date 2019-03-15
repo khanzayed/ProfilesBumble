@@ -12,19 +12,24 @@ class ProfileObjectivesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var objectivesListView: UIView!
     
+    private var isConfigured = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
     }
 
     internal func configure(withUser userObject: UserObject) {
+        guard isConfigured == false else {
+            return
+        }
+        isConfigured = true
+        
         var yView: CGFloat = 15
         for objective in userObject.completeObjectives {
             let objectiveView = ObjectiveView(frame: CGRect(x: 0, y: yView, width: objectivesListView.bounds.width, height: 60))
-            objectiveView.backgroundColor = .clear
             objectiveView.translatesAutoresizingMaskIntoConstraints = false
             objectiveView.setupLayer()
-            
             objectivesListView.addSubview(objectiveView)
             
             NSLayoutConstraint.activate([
@@ -71,16 +76,16 @@ class ObjectiveView: UIView {
     override func layoutSublayers(of layer: CALayer) {
         super.layoutSublayers(of: layer)
         
-        shadowLayer.frame = self.bounds
+        shadowLayer.path = UIBezierPath(roundedRect: self.bounds, cornerRadius: 30).cgPath
     }
     
     fileprivate func setupLayer() {
         shadowLayer = CAShapeLayer()
         shadowLayer.path = UIBezierPath(roundedRect: self.bounds, cornerRadius: 30).cgPath
         shadowLayer.fillColor = UIColor.white.cgColor
-        shadowLayer.shadowColor = UIColor.darkGray.cgColor
-        shadowLayer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        shadowLayer.shadowOpacity = 0.2
+        shadowLayer.shadowColor = UIColor(named: Colors.App_Grey)!.cgColor
+        shadowLayer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        shadowLayer.shadowOpacity = 0.3
         shadowLayer.shadowRadius = 10
         
         self.layer.insertSublayer(shadowLayer, at: 0)

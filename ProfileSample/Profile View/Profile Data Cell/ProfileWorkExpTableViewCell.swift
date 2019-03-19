@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileWorkExpTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var workExpsListView: UIView!
     
     private var isConfigured = false
@@ -25,8 +26,9 @@ class ProfileWorkExpTableViewCell: UITableViewCell {
         }
         isConfigured = true
         
-        var yView: CGFloat = 0
+        titleLbl.addCharacterSpacing()
         
+        var yView: CGFloat = 0
         for work in userObject.workDetails {
             let workView = UIView(frame: CGRect(x: 0, y: yView, width: workExpsListView.bounds.width, height: work.height))
             workView.backgroundColor = .clear

@@ -10,14 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="ProximaNova-Bold.otf">
-            <string>ProximaNova-Bold</string>
+        <array key="ProximaNova-Extrabold.otf">
+            <string>ProximaNova-Extrabld</string>
         </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileIndustryExpTableViewCell" rowHeight="280" id="KGk-i7-Jjw" customClass="ProfileIndustryExpTableViewCell" customModule="ProfileSample" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProfileIndustryExpTableViewCell" rowHeight="280" id="KGk-i7-Jjw" customClass="ProfileIndustryExpTableViewCell" customModule="ProfileSample" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -35,11 +35,11 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INDUSTRY EXPERIENCE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fe7-rB-yza">
-                                <rect key="frame" x="30" y="70" width="133.5" height="15"/>
+                                <rect key="frame" x="30" y="70" width="136" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="Xsd-2U-ymd"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Extrabld" family="Proxima Nova" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -71,6 +71,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="industriesListView" destination="hdf-X3-DB5" id="I1L-Hb-CRZ"/>
+                <outlet property="titleLbl" destination="fe7-rB-yza" id="F8H-1A-rAE"/>
             </connections>
             <point key="canvasLocation" x="133.59999999999999" y="154.72263868065968"/>
         </tableViewCell>

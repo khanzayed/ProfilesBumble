@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileLinksTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var linksListView: UIView!
     
     private var isConfigured = false
@@ -24,6 +25,8 @@ class ProfileLinksTableViewCell: UITableViewCell {
             return
         }
         isConfigured = true
+        
+        titleLbl.addCharacterSpacing()
         
         var yView: CGFloat = 15
         for link in userObject.profileLinks {
@@ -42,7 +45,7 @@ class ProfileLinksTableViewCell: UITableViewCell {
                 linkView.topAnchor.constraint(equalTo: linksListView.topAnchor, constant: yView)
                 ])
             
-            let tickImageView = UIImageView(frame: CGRect(x: linkView.bounds.width, y: 55, width: 20, height: 20))
+            let tickImageView = UIImageView(frame: CGRect(x: linkView.bounds.width - 20 - 15, y: 55, width: 20, height: 20))
             tickImageView.contentMode = .scaleAspectFit
             tickImageView.clipsToBounds = true
             tickImageView.image = UIImage(named: "ic_link_arrow")
@@ -52,7 +55,7 @@ class ProfileLinksTableViewCell: UITableViewCell {
             NSLayoutConstraint.activate([
                 tickImageView.heightAnchor.constraint(equalToConstant: 20),
                 tickImageView.widthAnchor.constraint(equalToConstant: 20),
-                tickImageView.leadingAnchor.constraint(equalTo: linkView.leadingAnchor, constant: linkView.bounds.width),
+                tickImageView.leadingAnchor.constraint(equalTo: linkView.leadingAnchor, constant: linkView.bounds.width - 20 - 15),
                 tickImageView.topAnchor.constraint(equalTo: linkView.topAnchor, constant: 55)
                 ])
 

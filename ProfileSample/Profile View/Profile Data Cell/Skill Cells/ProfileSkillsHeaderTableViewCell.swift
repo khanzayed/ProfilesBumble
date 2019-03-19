@@ -10,9 +10,19 @@ import UIKit
 
 class ProfileSkillsHeaderTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLbl: UILabel!
+    private var isConfigured = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
     }
-
+    
+    internal func configure() {
+        guard isConfigured == false else {
+            return
+        }
+        
+        titleLbl.addCharacterSpacing()
+    }
 }

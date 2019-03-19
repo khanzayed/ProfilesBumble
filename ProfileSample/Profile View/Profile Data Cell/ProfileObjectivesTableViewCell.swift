@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileObjectivesTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var objectivesListView: UIView!
     
     private var isConfigured = false
@@ -24,6 +25,8 @@ class ProfileObjectivesTableViewCell: UITableViewCell {
             return
         }
         isConfigured = true
+        
+        titleLbl.addCharacterSpacing()
         
         var yView: CGFloat = 15
         for objective in userObject.completeObjectives {

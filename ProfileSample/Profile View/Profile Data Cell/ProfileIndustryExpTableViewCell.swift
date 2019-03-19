@@ -11,6 +11,7 @@ import UIKit
 class ProfileIndustryExpTableViewCell: UITableViewCell {
 
     @IBOutlet weak var industriesListView: UIView!
+    @IBOutlet weak var titleLbl: UILabel!
     
     private var isConfigured = false
     
@@ -25,8 +26,9 @@ class ProfileIndustryExpTableViewCell: UITableViewCell {
         }
         isConfigured = true
         
-        var yView: CGFloat = 15
+        titleLbl.addCharacterSpacing()
         
+        var yView: CGFloat = 15
         for i in 0..<userObject.industries.count {
             let industry = userObject.industries[i]
             
@@ -65,7 +67,7 @@ class ProfileIndustryExpTableViewCell: UITableViewCell {
                     ])
             }
             
-            yView += 75
+            yView += 50
         }
     }
     

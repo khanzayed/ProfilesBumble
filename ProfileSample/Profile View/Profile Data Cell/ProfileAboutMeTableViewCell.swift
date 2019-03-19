@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileAboutMeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var aboutMeLbl: UILabel!
     
     private var isConfigured = false
@@ -25,6 +26,7 @@ class ProfileAboutMeTableViewCell: UITableViewCell {
         }
         isConfigured = true
         
+        self.titleLbl.addCharacterSpacing()
         self.aboutMeLbl.attributedText = userObject.aboutMeAttributedString
     }
     

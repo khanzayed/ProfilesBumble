@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         cardContainer = ProfileCardViewContainer(frame: CGRect(x: 0, y: 80.0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 60))
         cardContainer.delegate = self
 
-        if let path = Bundle.main.path(forResource: "SampleThreeUsers", ofType: "json") {
+        if let path = Bundle.main.path(forResource: "SampleExplore", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 if let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as? [[String : Any]] {
@@ -68,10 +68,6 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: ProfileCardViewDataSource {
-    
-    func superView() -> UIView {
-        return self.view
-    }
     
     func numberOfCards() -> Int {
         return users.count

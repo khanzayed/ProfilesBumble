@@ -10,19 +10,17 @@ import UIKit
 
 protocol ProfileCardViewDataSource {
     
-    func numberOfCards() -> Int
+    func numberOfCards() -> Int // Total number of profiles
     
-    func superView() -> UIView
+    func card(forItemAtIndex index: Int) -> ProfileView // Initialise a card for a particular index
     
-    func card(forItemAtIndex index: Int) -> ProfileView
-    
-    func viewForEmptyCards() -> UIView
+    func viewForEmptyCards() -> UIView // If there are no profiles to be shown then empty view will be shown
     
 }
 
 protocol ProfileCardViewDelegate {
     
-    func didRightSwipe(_ userObject: UserObject)
+    func didRightSwipe(_ userObject: UserObject) // To present SendReachOut controller on right swipe
     
 }
 
@@ -56,7 +54,7 @@ class ProfileCardViewContainer: UIView {
     private var cardViews: [ProfileView] = []
     private var lastCardView: ProfileView?
 
-    static let numberOfVisibleCards: Int = 3
+    static let numberOfVisibleCards: Int = 2 // Limit of cards to be initialise at once
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -86,6 +84,13 @@ class ProfileCardViewContainer: UIView {
         bottomButtonsView.addGradientLayer()
     }
     
+    /*
+    Get the total number of cards.
+    Initialise cards only as per numberOfVisibleCards. Once the front cards are removed, a new card will be added.
+    Frame and alpha property of the empty view is set in the datasource to give a stack effect. When a singal card is left,
+     empty card alpha and frame is set to normal.
+     */
+    
     func reloadData() {
         removeAllCardViews()
         
@@ -105,6 +110,11 @@ class ProfileCardViewContainer: UIView {
         
         setNeedsLayout()
     }
+    
+    /*
+     Set the ProfileView's delegate to self to handle all the animation. Also the right swipe delegate is called from the ProfileView.
+     Below methods sets the frame of cards.
+     */
     
     private func addCardView(cardView: ProfileView, atIndex index: Int) {
         cardView.delegate = self
@@ -162,9 +172,13 @@ class ProfileCardViewContainer: UIView {
         reachOutButton.isEnabled = false
     }
     
+    /*
+     To give a stack effect, top card is set to normal frame and card below the top card are reduced in size and y is reduced by 5 points.
+     The logic is not applied to top card
+     */
+    
     private func setFrame(forCardView cardView: ProfileView, atIndex index: Int) {
         if index != 0 {
-//            cardView.frame = CGRect(x: 10, y: 5, width: UIScreen.main.bounds.width - 20, height: self.bounds.height - 5.0)
             cardView.frame = CGRect(x: 0, y: 5, width: UIScreen.main.bounds.width, height: self.bounds.height - 5.0)
             cardView.transform = CGAffineTransform(scaleX: (UIScreen.main.bounds.width - 20) / UIScreen.main.bounds.width, y: 1)
         }
@@ -182,6 +196,10 @@ class ProfileCardViewContainer: UIView {
         }
     }
     
+    /*
+     When the top card moves out, the card below takes its place. At the same time a new card is added to the queue from the remaining cards.
+     If no card is left, empty view is presented.
+     */
     fileprivate func handleNextCard(dataSource: ProfileCardViewDataSource) {
         cardViews.remove(at: 0)
         
@@ -193,12 +211,9 @@ class ProfileCardViewContainer: UIView {
         if cardViews.count > 0 {
             let nextView = cardViews[0]
             UIView.animate(withDuration: 0.6, animations: {
-//                nextView.transform = CGAffineTransform(scaleX: UIScreen.main.bounds.width / nextView.bounds.width , y: 1)
                 nextView.transform = CGAffineTransform.identity
-                
                 self.layoutIfNeeded()
             }) { (true) in
-//                nextView.transform = CGAffineTransform.identity
                 nextView.frame = CGRect(x: 0, y: 5.0, width: UIScreen.main.bounds.width, height: self.bounds.height - 5.0)
                 nextView.layoutIfNeeded()
                 
@@ -246,6 +261,10 @@ class ProfileCardViewContainer: UIView {
             handleNextCard(dataSource: dataSource)
         }
     }
+    
+    /*
+     Reset the current card to stack position and bring back the swiped card to the top of the stack.
+     */
     
     private func handleCurrentCard() {
         if cardViews.count > 1 {
@@ -368,7 +387,7 @@ extension ProfileCardViewContainer: ProfileViewDelegate {
     func hasStartedScrolling(isScrollingUp: Bool) {
         if isScrollingUp {
             UIView.animate(withDuration: 0.2) {
-                self.bottomsViewBottomConstraint.constant = 20
+                self.bottomsViewBottomConstraint.constant = -20
                 
                 self.layoutIfNeeded()
             }

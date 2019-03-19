@@ -23,13 +23,15 @@ class ProfileSkillTableViewCell: UITableViewCell {
         blueDotView.layer.cornerRadius = blueDotView.bounds.height / 2
     }
     
-    internal func configure(withUser skill: Skill, index: SkillIndex, isLineHiddden: Bool) {
+    internal func configure(withSkill skill: Skill, index: SkillIndex, isLineHiddden: Bool) {
         nameLbl.text = skill.skillName
         lineView.isHidden = isLineHiddden
         skillIndex = index
         
         applaudsLbl.isHidden = !skill.isSelected
-        blueDotView.isHidden = !skill.isSelected
+        blueDotView.isHidden = (skill.endorsement! == 0)
+        
+        nameLbl.textColor = skill.isSelected ? UIColor(named: Colors.App_Black) : UIColor(named: Colors.App_Grey)
     }
 
 }

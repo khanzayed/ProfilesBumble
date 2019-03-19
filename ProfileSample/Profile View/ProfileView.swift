@@ -294,6 +294,7 @@ extension ProfileView: UITableViewDataSource, UITableViewDelegate {
             return cell
         case .SkillHeaderCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileSkillsHeaderTableViewCell") as! ProfileSkillsHeaderTableViewCell
+            cell.configure()
             
             return cell
         case .SkillSubHeaderCell:
@@ -303,7 +304,7 @@ extension ProfileView: UITableViewDataSource, UITableViewDelegate {
             }
             
             if index != nil {
-                cell.configure(withUser: userObject.skillCategories[index!])
+                cell.configure(category: userObject.skillCategories[index!])
             }
             
             return cell
@@ -316,7 +317,7 @@ extension ProfileView: UITableViewDataSource, UITableViewDelegate {
                 let value = skillIndexes[ind]
                 let skillCategory = userObject.skillCategories[value.0]
                 let skill = skillCategory.skills[value.1]
-                cell.configure(withUser: skill, index: value, isLineHiddden: value.1 == skillCategory.skills.count - 1)
+                cell.configure(withSkill: skill, index: value, isLineHiddden: value.1 == skillCategory.skills.count - 1)
             }
             
             return cell
@@ -357,7 +358,7 @@ extension ProfileView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 50
+        return 80
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

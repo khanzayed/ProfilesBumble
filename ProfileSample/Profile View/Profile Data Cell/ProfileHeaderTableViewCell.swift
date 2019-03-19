@@ -38,10 +38,14 @@ class ProfileHeaderTableViewCell: UITableViewCell {
         isConfigured = true
         
         userNameLbl.text = userObject.fullName ?? ""
+        userNameLbl.addCharacterSpacing(kernValue: 0.7)
+        
         designationLbl.text = userObject.currentDesignation ?? ""
         companyLbl.text = userObject.currentCompany ?? ""
         cityLbl.text = "Bengaluru"
+        
         bluetiePinLbl.text = userObject.btPin ?? ""
+        bluetiePinLbl.addCharacterSpacing(kernValue: 1.5)
     }
     
 }

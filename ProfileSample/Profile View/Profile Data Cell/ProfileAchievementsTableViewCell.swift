@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileAchievementsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     
     private var isConfigured = false
@@ -26,26 +27,16 @@ class ProfileAchievementsTableViewCell: UITableViewCell {
         }
         isConfigured = true
         
+        titleLbl.addCharacterSpacing()
+        
         var contentWidth: CGFloat = 195
         
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: 195, height: scrollViewHeight))
-        headerView.backgroundColor = .white
-        
-        let headerLbl = UILabel(frame: CGRect(x: 30, y: 60, width: 195 - 60, height: 100))
-        headerLbl.font = UIFont.ProximaNovaSemiBold(fontSize: 14)
-        headerLbl.textColor = UIColor(named: Colors.App_Black)
-        headerLbl.numberOfLines = 5
-        headerLbl.setText(text: "Awards, accomplishments & recognition earned over the years", withLineSpacing: 5.0, style: .left)
-        
-        headerView.addSubview(headerLbl)
-        
-        scrollView.addSubview(headerView)
-        
+        var i = 0
         for achievement in userObject.achievements {
             let achievementView = UIView(frame: CGRect(x: contentWidth, y: 0, width: 300, height: scrollViewHeight))
             achievementView.backgroundColor = .white
             achievementView.layer.cornerRadius = 15.0
-            achievementView.backgroundColor = UIColor(named: Colors.App_Light_Grey)
+            achievementView.backgroundColor = (i % 2) == 0 ? UIColor(named: Colors.App_Light_Grey) : UIColor.white
             
             let lbl = UILabel(frame: CGRect(x: 30, y: 30, width: 300 - 60, height: scrollViewHeight - 60))
             lbl.font = UIFont.ProximaNovaSemiBold(fontSize: 14)
@@ -58,6 +49,7 @@ class ProfileAchievementsTableViewCell: UITableViewCell {
             scrollView.addSubview(achievementView)
             
             contentWidth += 300
+            i += 1
         }
         
         scrollView.contentSize = CGSize(width: contentWidth, height: scrollViewHeight)

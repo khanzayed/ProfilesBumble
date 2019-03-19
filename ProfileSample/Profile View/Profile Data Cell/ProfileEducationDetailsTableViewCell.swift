@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileEducationDetailsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var educationDetailsListView: UIView!
     
     private var isConfigured = false
@@ -25,8 +26,9 @@ class ProfileEducationDetailsTableViewCell: UITableViewCell {
         }
         isConfigured = true
         
-        var yView: CGFloat = 0
+        titleLbl.addCharacterSpacing()
         
+        var yView: CGFloat = 0
         for education in userObject.eduDetails {
             let educationView = UIView(frame: CGRect(x: 0, y: yView, width: educationDetailsListView.bounds.width, height: education.height))
             educationView.backgroundColor = .clear

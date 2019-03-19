@@ -1,154 +1,170 @@
 [
-{
-"userID":4394,
-"blueTiePin":"ajinkyak",
-"userFirstName":"Ajinkya",
-"userLastName":"Kulthe",
-"userGender":"male",
-"userImage":"https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4394_1542014761.jpg",
-"thumbnailImage":"https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4394_1542014761.jpg",
-"userCountry":"India",
-"userState":"Maharashtra",
-"userCity":"Mumbai",
-"shareURL":"Ajiy8EA",
-"baseCityID":1,
-"userAge":20,
-"userIndustry":[
-{
-"userIndustryID":4977,
-"industryID":12,
-"industryName":"Information Technology (IT)"
-}
-],
-"objectives":[
-{
-"pLevel":3,
-"objectiveTitle":"Exchange Ideas",
-"description":"Discover & Interact with professionals having similar interests",
-"objectiveID":1
-},
-{
-"pLevel":3,
-"objectiveTitle":"Strategic Partnerships",
-"description":"Meet professionals to collaborate with, for ventures and projects",
-"objectiveID":2
-}
-],
-"fortes": [
     {
-        "name": "Skills acquired",
-        "colorCode":"#0096FF",
-        "value": [
+        "userID":4394,
+        "blueTiePin":"ajinkyak",
+        "userFirstName":"Ajinkya",
+        "userLastName":"Kulthe",
+        "userGender":"male",
+        "userImage":"https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4394_1542014761.jpg",
+        "thumbnailImage":"https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4394_1542014761.jpg",
+        "userCountry":"India",
+        "userState":"Maharashtra",
+        "userCity":"Mumbai",
+        "shareURL":"Ajiy8EA",
+        "baseCityID":1,
+        "userAge":20,
+        "userIndustry":[
             {
-                "skillSets":"Marketing Strategy",
-                "endorsement":0,
-                "subSkillID":417
+                "userIndustryID":4977,
+                "industryID":12,
+                "industryName":"Information Technology (IT)"
             },
             {
-                "skillSets":"Marketing Research",
-                "endorsement":0,
-                "subSkillID":418
+                "userIndustryID": 14057,
+                "industryID": 2,
+                "industryName": "Art, Cultural and Recreational Services"
+            },
+            {
+                "userIndustryID": 14056,
+                "industryID": 1,
+                "industryName": "Airlines and Airport Services"
             }
-        ]
-    },
-    {
-        "name": "Software learned",
-        "colorCode":"#00B377",
-        "value": [
+        ],
+        "objectives":[
             {
-                "skillSets":"HubSpot Marketing Software-Certification",
-                "endorsement":0,
-                "subSkillID":3539
+                "pLevel": 1,
+                "objectiveTitle": "Discover Freelance Opportunities",
+                "description": "Explore freelance opportunities pertaining to your areas of interest",
+                "objectiveID": 5,
+                "matched": false
             },
             {
-                "skillSets":"emfluence Marketing Platform Software",
-                "endorsement":0,
-                "subSkillID":3346
-            },
-            {
-                "skillSets":"Affiliate Marketing and Advertising",
-                "endorsement":0,
-                "subSkillID":2498
+                "pLevel": 1,
+                "objectiveTitle": "Provide Mentorship",
+                "description": "Meet and mentor professionals seeking your guidance",
+                "objectiveID": 7,
+                "matched": true
             }
-        ]
-    },
-    {
-        "name": "Certifications achieved",
-        "colorCode":"#FFCA00",
-        "value": [
+        ],
+        "fortes": [
             {
-                "skillSets":"Marketing Analysis",
-                "endorsement":0,
-                "subSkillID":419
+                "name": "Skills acquired",
+                "colorCode":"#0096FF",
+                "value": [
+                    {
+                        "skillSets":"Marketing Strategy",
+                        "endorsement":5,
+                        "subSkillID":417
+                    },
+                    {
+                        "skillSets":"Marketing Research",
+                        "endorsement":0,
+                        "subSkillID":418
+                    }
+                ]
             },
             {
-                "skillSets":"Rural Marketing",
-                "endorsement":0,
-                "subSkillID":3471
+                "name": "Software learned",
+                "colorCode":"#00B377",
+                "value": [
+                    {
+                        "skillSets":"HubSpot Marketing Software-Certification",
+                        "endorsement":0,
+                        "subSkillID":3539
+                    },
+                    {
+                        "skillSets":"emfluence Marketing Platform Software",
+                        "endorsement":0,
+                        "subSkillID":3346
+                    },
+                    {
+                        "skillSets":"Affiliate Marketing and Advertising",
+                        "endorsement":0,
+                        "subSkillID":2498
+                    }
+                ]
             },
             {
-                "skillSets":"Online Marketing Associate-Certification",
-                "endorsement":0,
-                "subSkillID":3543
+                "name": "Certifications achieved",
+                "colorCode":"#FFCA00",
+                "value": [
+                    {
+                        "skillSets":"Marketing Analysis",
+                        "endorsement":0,
+                        "subSkillID":419
+                    },
+                    {
+                        "skillSets":"Rural Marketing",
+                        "endorsement":0,
+                        "subSkillID":3471
+                    },
+                    {
+                        "skillSets":"Online Marketing Associate-Certification",
+                        "endorsement":0,
+                        "subSkillID":3543
+                    }
+                ]
+            }
+        ],
+        "userWorkHistory":[
+            {
+                "workID":5425,
+                "currentCompany":1,
+                "userDesignation":"Extremely Senior Manager - Finance, Compliance And Administration",
+                "userCompany":"BlueTie",
+                "workFromMonth":null,
+                "workFromYear":null,
+                "workToMonth":null,
+                "workToYear":null,
+                "dateAdded":"2018-11-12T09:26:01.000Z",
+                "dateModified":"2018-11-12T09:26:01.000Z",
+                "status":1
+            },
+            {
+                "workID":5425,
+                "currentCompany":1,
+                "userDesignation":"Sr iOS Developer",
+                "userCompany":"BlueTie",
+                "workFromMonth":null,
+                "workFromYear":null,
+                "workToMonth":null,
+                "workToYear":null,
+                "dateAdded":"2018-11-12T09:26:01.000Z",
+                "dateModified":"2018-11-12T09:26:01.000Z",
+                "status":1
+            }
+        ],
+        "userDegree":[
+            {
+                "educationID":981,
+                "userDegree":"M Tech",
+                "userUniversity":"MIT Pune",
+                "educationYear":2011
+            }
+        ],
+        "userLink":[
+            {
+                "userDocLinkID":1754,
+                "title":"My Search Engine",
+                "linkUrl":"http://www.google.com"
+            }
+        ],
+        "userDocument":[
+            {
+                "userDocLinkID":1768,
+                "title":"whatsapp overview",
+                "linkUrl":"https://s3-ap-south-1.amazonaws.com/bluetie.local.documents/WhatsApp-Security-Whitepaper_1542024579.pdf"
+            }
+        ],
+        "userAchivement":[
+            {
+                "achivementID":904,
+                "achivementTitle":"Google Adwords Certification"
+            },
+            {
+                "achivementID": 904,
+                "achivementTitle": "Google Adwords Certification"
             }
         ]
     }
-],
-"userWorkHistory":[
-{
-    "workID":5425,
-    "currentCompany":1,
-    "userDesignation":"Extremely Senior Manager - Finance, Compliance And Administration",
-    "userCompany":"BlueTie",
-    "workFromMonth":null,
-    "workFromYear":null,
-    "workToMonth":null,
-    "workToYear":null,
-    "dateAdded":"2018-11-12T09:26:01.000Z",
-    "dateModified":"2018-11-12T09:26:01.000Z",
-    "status":1
-},
-{
-    "workID":5425,
-    "currentCompany":1,
-    "userDesignation":"Sr iOS Developer",
-    "userCompany":"BlueTie",
-    "workFromMonth":null,
-    "workFromYear":null,
-    "workToMonth":null,
-    "workToYear":null,
-    "dateAdded":"2018-11-12T09:26:01.000Z",
-    "dateModified":"2018-11-12T09:26:01.000Z",
-    "status":1
-}
-],
-"userDegree":[
-{
-"educationID":981,
-"userDegree":"M Tech",
-"userUniversity":"MIT Pune",
-"educationYear":2011
-}
-],
-"userLink":[
-{
-"userDocLinkID":1754,
-"title":"My Search Engine",
-"linkUrl":"http://www.google.com"
-}
-],
-"userDocument":[
-{
-"userDocLinkID":1768,
-"title":"whatsapp overview",
-"linkUrl":"https://s3-ap-south-1.amazonaws.com/bluetie.local.documents/WhatsApp-Security-Whitepaper_1542024579.pdf"
-}
-],
-"userAchivement":[
-{
-"achivementID":904,
-"achivementTitle":"Google Adwords Certification"
-}
-]
-}
 ]

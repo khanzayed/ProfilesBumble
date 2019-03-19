@@ -17,7 +17,7 @@ class ProfileSkillsSubHeaderTableViewCell: UITableViewCell {
         
     }
     
-    internal func configure(withUser skillsCategory: SkillsCategoryModel) {
+    internal func configure(category skillsCategory: SkillsCategoryModel) {
         nameLbl.text = skillsCategory.name
         nameLbl.textColor = UIColor(rgba: skillsCategory.colorCode!)
     }

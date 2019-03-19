@@ -10,9 +10,16 @@ import UIKit
 
 class ProfileSkillsSubHeaderTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var nameLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
+    }
+    
+    internal func configure(withUser skillsCategory: SkillsCategoryModel) {
+        nameLbl.text = skillsCategory.name
+        nameLbl.textColor = UIColor(rgba: skillsCategory.colorCode!)
     }
 
 }

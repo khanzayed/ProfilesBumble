@@ -6,20 +6,89 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ProximaNova-Regular.otf">
+            <string>ProximaNova-Regular</string>
+        </array>
+        <array key="ProximaNova-Semibold.otf">
+            <string>ProximaNova-Semibold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileSkillTableViewCell" rowHeight="80" id="KGk-i7-Jjw" customClass="ProfileSkillTableViewCell" customModule="ProfileSample" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileSkillTableViewCell" rowHeight="50" id="KGk-i7-Jjw" customClass="ProfileSkillTableViewCell" customModule="ProfileSample" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adobe After Effects" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7i-Yt-vwp">
+                        <rect key="frame" x="30" y="15" width="315" height="17.5"/>
+                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="14"/>
+                        <color key="textColor" name="AppGrey"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28 I Applauds received" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orO-uK-BEL">
+                        <rect key="frame" x="30" y="47.5" width="315" height="15"/>
+                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="12"/>
+                        <color key="textColor" name="PrimaryBlue"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xc0-SG-wxz">
+                        <rect key="frame" x="340" y="22.5" width="5" height="5"/>
+                        <color key="backgroundColor" name="PrimaryBlue"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="5" id="tTn-Fr-joU"/>
+                            <constraint firstAttribute="width" constant="5" id="yDQ-GZ-rHa"/>
+                        </constraints>
+                    </view>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKI-zc-HcB">
+                        <rect key="frame" x="30" y="48.5" width="315" height="1"/>
+                        <color key="backgroundColor" name="AppLightGrey"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="USw-tW-zrB"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="F7i-Yt-vwp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="8kc-uq-6Wc"/>
+                    <constraint firstAttribute="trailing" secondItem="eKI-zc-HcB" secondAttribute="trailing" constant="30" id="DiY-m5-p79"/>
+                    <constraint firstItem="orO-uK-BEL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="E0Q-V1-8al"/>
+                    <constraint firstAttribute="trailing" secondItem="Xc0-SG-wxz" secondAttribute="trailing" constant="30" id="SVD-er-1ao"/>
+                    <constraint firstAttribute="bottom" secondItem="eKI-zc-HcB" secondAttribute="bottom" id="U0w-kZ-mPf"/>
+                    <constraint firstAttribute="trailing" secondItem="orO-uK-BEL" secondAttribute="trailing" constant="30" id="Y7J-JK-gO0"/>
+                    <constraint firstItem="F7i-Yt-vwp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="Yg5-uE-3bT"/>
+                    <constraint firstItem="orO-uK-BEL" firstAttribute="top" secondItem="F7i-Yt-vwp" secondAttribute="bottom" constant="15" id="sV6-L0-V9O"/>
+                    <constraint firstItem="eKI-zc-HcB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="t7k-HE-6TT"/>
+                    <constraint firstAttribute="trailing" secondItem="F7i-Yt-vwp" secondAttribute="trailing" constant="30" id="vK2-k9-KZJ"/>
+                    <constraint firstItem="Xc0-SG-wxz" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xo2-YX-N0x"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="applaudsLbl" destination="orO-uK-BEL" id="SWx-Zd-VaD"/>
+                <outlet property="blueDotView" destination="Xc0-SG-wxz" id="L91-4R-K7R"/>
+                <outlet property="lineView" destination="eKI-zc-HcB" id="96l-Or-89M"/>
+                <outlet property="nameLbl" destination="F7i-Yt-vwp" id="55L-2a-t3H"/>
+            </connections>
+            <point key="canvasLocation" x="-306.39999999999998" y="-45.877061469265371"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="AppGrey">
+            <color red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppLightGrey">
+            <color red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryBlue">
+            <color red="0.0" green="0.58823529411764708" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

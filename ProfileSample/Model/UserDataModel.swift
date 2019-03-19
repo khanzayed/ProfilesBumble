@@ -51,14 +51,14 @@ class UserObject {
     var aboutMeCellHeight: CGFloat = 0
     
     var industries = [IndustryModel]()
-    var industryExpCellHeight: CGFloat = 160
+    var industryExpCellHeight: CGFloat = 170
     
-    var completeSkills = [SkillsModel]()
+    var skillCategories = [SkillsCategoryModel]()
     var skillHeaderCellHeight: CGFloat = 60
     var skillSubHeaderCellHeight: CGFloat = 40
     
     var profileLinks = [ProfileLinkModel]()
-    var profileLinksCellHeight: CGFloat = 110
+    var profileLinksCellHeight: CGFloat = 160
     
     var workDetails = [WorkDetailsModel]()
     var workExpCellHeight: CGFloat = 0
@@ -171,11 +171,11 @@ class UserObject {
         
         if let allAchievements = details["userAchivement"] as? [[String: Any]], allAchievements.count > 0 {
             achievements = allAchievements.map { AchievementsModel(details: $0) }
-            achievementsCellHeight = 400
+            achievementsCellHeight = 430
         }
         
-        if let skillDetails = details["skillwithEndorsement"] as? [[String: Any]], skillDetails.count > 0 {
-            completeSkills = skillDetails.map { SkillsModel(skillDetails: $0) }
+        if let skillDetails = details["fortes"] as? [[String: Any]], skillDetails.count > 0 {
+            skillCategories = skillDetails.map { SkillsCategoryModel(details: $0) }
         }
     }
     
@@ -368,7 +368,26 @@ struct AchievementsModel {
 }
 
 
-struct SkillsModel {
+class SkillsCategoryModel {
+    
+    var name: String?
+    var colorCode: String?
+    var skills = [Skill]()
+    var previousSkillsCount = 0 // Explore UI purpose
+    
+    init(details: [String:Any]) {
+        name = details["name"] as? String ?? "Fortes"
+        colorCode = details["colorCode"] as? String ?? "000000"
+        name = details["name"] as? String ?? "Fortes"
+        
+        if let skills = details["value"] as? [[String: Any]], details.count > 0 {
+            self.skills = skills.map { Skill(details: $0) }
+        }
+    }
+    
+}
+
+class Skill {
     
     var skillId: Int?
     var industryId: Int?
@@ -377,30 +396,24 @@ struct SkillsModel {
     var isMainSkill: Int?
     var skillType: Int? = 0
     var height: CGFloat = 50
+    var isSelected = false
+    var selectedHeight: CGFloat = 50
     
-    init() {
-        
-    }
-    
-    init(skillDetails: [String: Any]) {
-        
-        if let id = skillDetails["subSkillID"] as? String {
+    init(details: [String: Any]) {
+        if let id = details["subSkillID"] as? String {
             skillId = Int(id)
-        } else if let id = skillDetails["subSkillID"] as? Int {
+        } else if let id = details["subSkillID"] as? Int {
             skillId = id
         }
-        if let endorsementString = skillDetails["endorsement"] as? String {
-            endorsement = Int(endorsementString)
-        } else if let endorsementInt = skillDetails["endorsement"] as? Int {
-            endorsement = endorsementInt
-        }
-        skillName = skillDetails["skillSets"] as? String ?? ""
+        endorsement = details["endorsement"] as? Int ?? 0
+        skillName = details["skillSets"] as? String ?? ""
         
-        if let type = skillDetails["type"] as? Int {
+        if let type = details["type"] as? Int {
             skillType = type
         }
         
-        height = skillName!.height(constraintedWidth: UIScreen.main.bounds.width - 80, font: UIFont.ProximaNovaSemiBold(fontSize: 14))
+        height = skillName!.height(constraintedWidth: UIScreen.main.bounds.width - 80, font: UIFont.ProximaNovaSemiBold(fontSize: 14)) + 30
+        selectedHeight = height + 30
     }
+    
 }
-

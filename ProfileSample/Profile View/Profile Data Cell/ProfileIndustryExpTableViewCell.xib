@@ -17,11 +17,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileIndustryExpTableViewCell" rowHeight="300" id="KGk-i7-Jjw" customClass="ProfileIndustryExpTableViewCell" customModule="ProfileSample" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileIndustryExpTableViewCell" rowHeight="280" id="KGk-i7-Jjw" customClass="ProfileIndustryExpTableViewCell" customModule="ProfileSample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="299.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="279.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXA-zd-jnD">
@@ -54,7 +54,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdf-X3-DB5">
-                        <rect key="frame" x="30" y="110" width="315" height="139.5"/>
+                        <rect key="frame" x="30" y="110" width="315" height="109.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </subviews>
@@ -63,7 +63,7 @@
                     <constraint firstItem="hdf-X3-DB5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="3hi-F8-P0m"/>
                     <constraint firstItem="JXA-zd-jnD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="82J-5X-8fj"/>
                     <constraint firstAttribute="trailing" secondItem="JXA-zd-jnD" secondAttribute="trailing" id="OfL-6t-qij"/>
-                    <constraint firstAttribute="bottom" secondItem="hdf-X3-DB5" secondAttribute="bottom" constant="50" id="Oma-Om-xDd"/>
+                    <constraint firstAttribute="bottom" secondItem="hdf-X3-DB5" secondAttribute="bottom" constant="60" id="Oma-Om-xDd"/>
                     <constraint firstItem="JXA-zd-jnD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="prR-uo-aYB"/>
                     <constraint firstItem="hdf-X3-DB5" firstAttribute="top" secondItem="JXA-zd-jnD" secondAttribute="bottom" id="qSy-TN-oTC"/>
                 </constraints>

@@ -25,17 +25,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFk-S6-Lpu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_profile_achievement" translatesAutoresizingMaskIntoConstraints="NO" id="abj-5l-VMy">
-                                <rect key="frame" x="40" y="30" width="78" height="40"/>
+                                <rect key="frame" x="40" y="60" width="78" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="78" id="wZ7-c8-SiX"/>
                                     <constraint firstAttribute="height" constant="40" id="xkS-Ub-nZC"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACHIEVEMENTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLQ-0l-MgM">
-                                <rect key="frame" x="30" y="40" width="90.5" height="15"/>
+                                <rect key="frame" x="30" y="70" width="90.5" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="oZC-kF-0ik"/>
                                 </constraints>
@@ -46,15 +46,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="80" id="4UR-o9-qlk"/>
-                            <constraint firstItem="WLQ-0l-MgM" firstAttribute="top" secondItem="eFk-S6-Lpu" secondAttribute="top" constant="40" id="EWJ-xe-0vQ"/>
+                            <constraint firstAttribute="height" constant="110" id="4UR-o9-qlk"/>
+                            <constraint firstItem="WLQ-0l-MgM" firstAttribute="top" secondItem="eFk-S6-Lpu" secondAttribute="top" constant="70" id="EWJ-xe-0vQ"/>
                             <constraint firstItem="WLQ-0l-MgM" firstAttribute="leading" secondItem="eFk-S6-Lpu" secondAttribute="leading" constant="30" id="KQw-jK-opy"/>
-                            <constraint firstItem="abj-5l-VMy" firstAttribute="top" secondItem="eFk-S6-Lpu" secondAttribute="top" constant="30" id="mb4-mh-DBa"/>
+                            <constraint firstItem="abj-5l-VMy" firstAttribute="top" secondItem="eFk-S6-Lpu" secondAttribute="top" constant="60" id="mb4-mh-DBa"/>
                             <constraint firstItem="abj-5l-VMy" firstAttribute="leading" secondItem="eFk-S6-Lpu" secondAttribute="leading" constant="40" id="rHg-pk-IOX"/>
                         </constraints>
                     </view>
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sy9-Z4-cGz">
-                        <rect key="frame" x="0.0" y="95" width="375" height="275"/>
+                        <rect key="frame" x="0.0" y="125" width="375" height="245"/>
                     </scrollView>
                 </subviews>
                 <constraints>

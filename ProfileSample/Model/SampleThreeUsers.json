@@ -34,47 +34,65 @@
 "objectiveID":2
 }
 ],
-"skillwithEndorsement":[
-{
-"skillSets":"Marketing Strategy",
-"endorsement":0,
-"subSkillID":417
-},
-{
-"skillSets":"Marketing Research",
-"endorsement":0,
-"subSkillID":418
-},
-{
-"skillSets":"Marketing Analysis",
-"endorsement":0,
-"subSkillID":419
-},
-{
-"skillSets":"Rural Marketing",
-"endorsement":0,
-"subSkillID":3471
-},
-{
-"skillSets":"Online Marketing Associate-Certification",
-"endorsement":0,
-"subSkillID":3543
-},
-{
-"skillSets":"HubSpot Marketing Software-Certification",
-"endorsement":0,
-"subSkillID":3539
-},
-{
-"skillSets":"emfluence Marketing Platform Software",
-"endorsement":0,
-"subSkillID":3346
-},
-{
-"skillSets":"Affiliate Marketing and Advertising",
-"endorsement":0,
-"subSkillID":2498
-}
+"fortes": [
+    {
+        "name": "Skills acquired",
+        "colorCode":"#0096FF",
+        "value": [
+            {
+                "skillSets":"Marketing Strategy",
+                "endorsement":0,
+                "subSkillID":417
+            },
+            {
+                "skillSets":"Marketing Research",
+                "endorsement":0,
+                "subSkillID":418
+            }
+        ]
+    },
+    {
+        "name": "Software learned",
+        "colorCode":"#00B377",
+        "value": [
+            {
+                "skillSets":"HubSpot Marketing Software-Certification",
+                "endorsement":0,
+                "subSkillID":3539
+            },
+            {
+                "skillSets":"emfluence Marketing Platform Software",
+                "endorsement":0,
+                "subSkillID":3346
+            },
+            {
+                "skillSets":"Affiliate Marketing and Advertising",
+                "endorsement":0,
+                "subSkillID":2498
+            }
+        ]
+    },
+    {
+        "name": "Certifications achieved",
+        "colorCode":"#FFCA00",
+        "value": [
+            {
+                "skillSets":"Marketing Analysis",
+                "endorsement":0,
+                "subSkillID":419
+            },
+            {
+                "skillSets":"Rural Marketing",
+                "endorsement":0,
+                "subSkillID":3471
+            },
+            {
+                "skillSets":"Online Marketing Associate-Certification",
+                "endorsement":0,
+                "subSkillID":3543
+            }
+        ]
+    }
 ],
 "userWorkHistory":[
 {
@@ -117,11 +135,6 @@
 "userDocLinkID":1754,
 "title":"My Search Engine",
 "linkUrl":"http://www.google.com"
-},
-{
-    "userDocLinkID":1754,
-    "title":"My Search Engine",
-    "linkUrl":"http://www.google.com"
 }
 ],
 "userDocument":[

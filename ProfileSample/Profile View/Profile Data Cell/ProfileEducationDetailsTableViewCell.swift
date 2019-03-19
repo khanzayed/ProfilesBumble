@@ -30,6 +30,7 @@ class ProfileEducationDetailsTableViewCell: UITableViewCell {
         for education in userObject.eduDetails {
             let educationView = UIView(frame: CGRect(x: 0, y: yView, width: educationDetailsListView.bounds.width, height: education.height))
             educationView.backgroundColor = .clear
+            educationView.translatesAutoresizingMaskIntoConstraints = false
             
             educationDetailsListView.addSubview(educationView)
             
@@ -51,8 +52,8 @@ class ProfileEducationDetailsTableViewCell: UITableViewCell {
             
             NSLayoutConstraint.activate([
                 degreeLbl.heightAnchor.constraint(equalToConstant: education.titleHeight),
+                degreeLbl.widthAnchor.constraint(equalToConstant: educationDetailsListView.bounds.width),
                 degreeLbl.leadingAnchor.constraint(equalTo: educationView.leadingAnchor, constant: 0),
-                degreeLbl.trailingAnchor.constraint(equalTo: educationView.trailingAnchor, constant: 0),
                 degreeLbl.topAnchor.constraint(equalTo: educationView.topAnchor, constant: yLabel)
                 ])
             
@@ -67,8 +68,8 @@ class ProfileEducationDetailsTableViewCell: UITableViewCell {
             
             NSLayoutConstraint.activate([
                 collegeLbl.heightAnchor.constraint(equalToConstant: 20),
+                collegeLbl.widthAnchor.constraint(equalToConstant: educationDetailsListView.bounds.width),
                 collegeLbl.leadingAnchor.constraint(equalTo: educationView.leadingAnchor, constant: 0),
-                collegeLbl.trailingAnchor.constraint(equalTo: educationView.trailingAnchor, constant: 0),
                 collegeLbl.topAnchor.constraint(equalTo: educationView.topAnchor, constant: yLabel)
                 ])
             
@@ -83,8 +84,8 @@ class ProfileEducationDetailsTableViewCell: UITableViewCell {
             
             NSLayoutConstraint.activate([
                 durationLbl.heightAnchor.constraint(equalToConstant: 20),
+                durationLbl.widthAnchor.constraint(equalToConstant: educationDetailsListView.bounds.width),
                 durationLbl.leadingAnchor.constraint(equalTo: educationView.leadingAnchor, constant: 0),
-                durationLbl.trailingAnchor.constraint(equalTo: educationView.trailingAnchor, constant: 0),
                 durationLbl.topAnchor.constraint(equalTo: educationView.topAnchor, constant: yLabel)
                 ])
             

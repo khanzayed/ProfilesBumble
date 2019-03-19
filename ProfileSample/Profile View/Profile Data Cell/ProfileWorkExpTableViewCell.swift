@@ -30,7 +30,7 @@ class ProfileWorkExpTableViewCell: UITableViewCell {
         for work in userObject.workDetails {
             let workView = UIView(frame: CGRect(x: 0, y: yView, width: workExpsListView.bounds.width, height: work.height))
             workView.backgroundColor = .clear
-            
+            workView.translatesAutoresizingMaskIntoConstraints = false
             workExpsListView.addSubview(workView)
             
             NSLayoutConstraint.activate([
@@ -51,8 +51,8 @@ class ProfileWorkExpTableViewCell: UITableViewCell {
             
             NSLayoutConstraint.activate([
                 designationLbl.heightAnchor.constraint(equalToConstant: work.titleHeight),
+                designationLbl.widthAnchor.constraint(equalToConstant: workExpsListView.bounds.width),
                 designationLbl.leadingAnchor.constraint(equalTo: workView.leadingAnchor, constant: 0),
-                designationLbl.trailingAnchor.constraint(equalTo: workView.trailingAnchor, constant: 0),
                 designationLbl.topAnchor.constraint(equalTo: workView.topAnchor, constant: yLabel)
                 ])
             
@@ -67,8 +67,8 @@ class ProfileWorkExpTableViewCell: UITableViewCell {
             
             NSLayoutConstraint.activate([
                 companyLbl.heightAnchor.constraint(equalToConstant: 20),
+                companyLbl.widthAnchor.constraint(equalToConstant: workExpsListView.bounds.width),
                 companyLbl.leadingAnchor.constraint(equalTo: workView.leadingAnchor, constant: 0),
-                companyLbl.trailingAnchor.constraint(equalTo: workView.trailingAnchor, constant: 0),
                 companyLbl.topAnchor.constraint(equalTo: workView.topAnchor, constant: yLabel)
                 ])
             
@@ -83,8 +83,8 @@ class ProfileWorkExpTableViewCell: UITableViewCell {
             
             NSLayoutConstraint.activate([
                 durationLbl.heightAnchor.constraint(equalToConstant: 20),
+                durationLbl.widthAnchor.constraint(equalToConstant: workExpsListView.bounds.width),
                 durationLbl.leadingAnchor.constraint(equalTo: workView.leadingAnchor, constant: 0),
-                durationLbl.trailingAnchor.constraint(equalTo: workView.trailingAnchor, constant: 0),
                 durationLbl.topAnchor.constraint(equalTo: workView.topAnchor, constant: yLabel)
                 ])
             

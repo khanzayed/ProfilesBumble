@@ -50,7 +50,6 @@
                             <constraint firstItem="CFZ-gE-GvP" firstAttribute="top" secondItem="7GZ-00-caK" secondAttribute="top" constant="10" id="6JR-v5-NlD"/>
                             <constraint firstItem="CFZ-gE-GvP" firstAttribute="leading" secondItem="7GZ-00-caK" secondAttribute="leading" constant="40" id="NKP-AL-1F6"/>
                             <constraint firstItem="CTe-nZ-juB" firstAttribute="top" secondItem="7GZ-00-caK" secondAttribute="top" constant="20" id="jbc-1F-VeR"/>
-                            <constraint firstAttribute="height" constant="60" id="jhd-aj-SzI"/>
                         </constraints>
                     </view>
                 </subviews>

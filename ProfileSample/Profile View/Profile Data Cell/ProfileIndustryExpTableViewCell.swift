@@ -31,6 +31,7 @@ class ProfileIndustryExpTableViewCell: UITableViewCell {
             let industry = userObject.industries[i]
             
             let industryView = UIView(frame: CGRect(x: 0, y: yView, width: industriesListView.bounds.width, height: 50))
+            industryView.translatesAutoresizingMaskIntoConstraints = false
             industryView.backgroundColor = .clear
             
             industriesListView.addSubview(industryView)

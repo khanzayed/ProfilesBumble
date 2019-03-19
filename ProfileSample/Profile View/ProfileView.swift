@@ -40,8 +40,10 @@ fileprivate enum ProfileCells: Int {
     case ReportCell
 }
 
-class ProfileView: UIView {
+typealias SkillIndex = (Int, Int, Int)
 
+class ProfileView: UIView {
+    
     @IBOutlet var profileView: UIView!
     @IBOutlet weak var profileTableView: UITableView!
     
@@ -50,6 +52,8 @@ class ProfileView: UIView {
     fileprivate var addToPinBox: UIButton!
     fileprivate var isScrollingUp = false
     fileprivate var isScrollingDown = false
+    fileprivate var subHeaderIndexes = [Int]()
+    fileprivate var skillIndexes = [SkillIndex]() //  [Int:[Int]]()
     fileprivate var rows = [ProfileCells]()
     
     internal var delegate: ProfileViewDelegate?
@@ -159,41 +163,52 @@ extension ProfileView: UITableViewDataSource, UITableViewDelegate {
     fileprivate func setupTableView() {
         rows.append(.HeaderCell)
         profileTableView.register(UINib(nibName: "ProfileHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileHeaderTableViewCell")
-        
+
         rows.append(.ObjectiveCell)
         profileTableView.register(UINib(nibName: "ProfileObjectivesTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileObjectivesTableViewCell")
-        
+
         if userObject.aboutMeCellHeight > 0 {
             rows.append(.AboutMeCell)
             profileTableView.register(UINib(nibName: "ProfileAboutMeTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileAboutMeTableViewCell")
         }
-        
+
         rows.append(.IndustryExperienceCell)
         profileTableView.register(UINib(nibName: "ProfileIndustryExpTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileIndustryExpTableViewCell")
         
-        if userObject.completeSkills.count > 0 {
+        if userObject.skillCategories.count > 0 {
             rows.append(.SkillHeaderCell)
+            for skillCategory in userObject.skillCategories {
+                rows.append(.SkillSubHeaderCell)
+                subHeaderIndexes.append(rows.count - 1)
+                
+                var indexInSkillCategory = 0
+                for _ in skillCategory.skills {
+                    rows.append(.SkillCell)
+                    skillIndexes.append((subHeaderIndexes.count - 1, indexInSkillCategory, rows.count - 1))
+                    indexInSkillCategory += 1
+                }
+            }
+
             profileTableView.register(UINib(nibName: "ProfileSkillsHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileSkillsHeaderTableViewCell")
-            
-            rows.append(.SkillSubHeaderCell)
             profileTableView.register(UINib(nibName: "ProfileSkillsSubHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileSkillsSubHeaderTableViewCell")
+            profileTableView.register(UINib(nibName: "ProfileSkillTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileSkillTableViewCell")
         }
         
         if userObject.profileLinks.count > 0 {
             rows.append(.ProfessionalCatalogueCell)
             profileTableView.register(UINib(nibName: "ProfileLinksTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileLinksTableViewCell")
         }
-        
+
         if userObject.workExpCellHeight > 0 {
             rows.append(.WorkExperienceCell)
             profileTableView.register(UINib(nibName: "ProfileWorkExpTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileWorkExpTableViewCell")
         }
-        
+
         if userObject.educationDetailsCellHeight > 0 {
             rows.append(.EducationCell)
             profileTableView.register(UINib(nibName: "ProfileEducationDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileEducationDetailsTableViewCell")
         }
-        
+
         if userObject.achievementsCellHeight > 0 {
             rows.append(.AcheivementCell)
             profileTableView.register(UINib(nibName: "ProfileAchievementsTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileAchievementsTableViewCell")
@@ -228,6 +243,18 @@ extension ProfileView: UITableViewDataSource, UITableViewDelegate {
             return userObject.skillHeaderCellHeight
         case .SkillSubHeaderCell:
             return userObject.skillSubHeaderCellHeight
+        case .SkillCell:
+            let index = skillIndexes.firstIndex(where: { (header, skill, row) -> Bool in
+                return indexPath.row == row
+            })
+            if let ind = index {
+                let value = skillIndexes[ind]
+                let skillCategory = userObject.skillCategories[value.0]
+                let skill = skillCategory.skills[value.1]
+                return skill.isSelected ? skill.selectedHeight : skill.height
+            } else {
+                return 0
+            }
         case .ProfessionalCatalogueCell:
             return userObject.profileLinksCellHeight
         case .WorkExperienceCell:
@@ -271,6 +298,26 @@ extension ProfileView: UITableViewDataSource, UITableViewDelegate {
             return cell
         case .SkillSubHeaderCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileSkillsSubHeaderTableViewCell") as! ProfileSkillsSubHeaderTableViewCell
+            let index = subHeaderIndexes.firstIndex { (ind) -> Bool in
+                return ind == indexPath.row
+            }
+            
+            if index != nil {
+                cell.configure(withUser: userObject.skillCategories[index!])
+            }
+            
+            return cell
+        case .SkillCell:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileSkillTableViewCell") as! ProfileSkillTableViewCell
+            let index = skillIndexes.firstIndex(where: { (header, skill, row) -> Bool in
+                return indexPath.row == row
+            })
+            if let ind = index {
+                let value = skillIndexes[ind]
+                let skillCategory = userObject.skillCategories[value.0]
+                let skill = skillCategory.skills[value.1]
+                cell.configure(withUser: skill, index: value, isLineHiddden: value.1 == skillCategory.skills.count - 1)
+            }
             
             return cell
         case .ProfessionalCatalogueCell:
@@ -315,6 +362,21 @@ extension ProfileView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        if let skillCell = tableView.cellForRow(at: indexPath) as? ProfileSkillTableViewCell {
+            let categoryIndex = skillCell.skillIndex.0
+            let category = userObject.skillCategories[categoryIndex]
+            let skill = category.skills[skillCell.skillIndex.1]
+            
+            if skill.endorsement! > 0 {
+                skill.isSelected = !skill.isSelected
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+        }
     }
     
 }

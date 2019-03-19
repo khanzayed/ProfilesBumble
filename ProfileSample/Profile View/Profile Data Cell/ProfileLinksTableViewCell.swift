@@ -31,6 +31,8 @@ class ProfileLinksTableViewCell: UITableViewCell {
             linkView.translatesAutoresizingMaskIntoConstraints = false
             linkView.backgroundColor = .clear
             
+            linkView.setupLayer()
+            
             linksListView.addSubview(linkView)
             
             NSLayoutConstraint.activate([
@@ -50,8 +52,8 @@ class ProfileLinksTableViewCell: UITableViewCell {
             NSLayoutConstraint.activate([
                 tickImageView.heightAnchor.constraint(equalToConstant: 20),
                 tickImageView.widthAnchor.constraint(equalToConstant: 20),
-                tickImageView.trailingAnchor.constraint(equalTo: linkView.trailingAnchor, constant: 15),
-                tickImageView.bottomAnchor.constraint(equalTo: linkView.bottomAnchor, constant: 15)
+                tickImageView.leadingAnchor.constraint(equalTo: linkView.leadingAnchor, constant: linkView.bounds.width),
+                tickImageView.topAnchor.constraint(equalTo: linkView.topAnchor, constant: 55)
                 ])
 
             let catalogueImageView = UIImageView(frame: CGRect(x: 15, y: 20, width: 50, height: 50))
@@ -72,30 +74,30 @@ class ProfileLinksTableViewCell: UITableViewCell {
             titleLbl.font = UIFont.ProximaNovaSemiBold(fontSize: 14)
             titleLbl.textColor = UIColor(named: Colors.App_Black)
             titleLbl.text = link.title ?? ""
-
+            
             linkView.addSubview(titleLbl)
 
             NSLayoutConstraint.activate([
                 titleLbl.heightAnchor.constraint(equalToConstant: 15),
+                titleLbl.widthAnchor.constraint(equalToConstant: linkView.bounds.width - 80 - 15),
                 titleLbl.leadingAnchor.constraint(equalTo: linkView.leadingAnchor, constant: 80),
-                titleLbl.trailingAnchor.constraint(equalTo: linkView.leadingAnchor, constant: 15),
                 titleLbl.topAnchor.constraint(equalTo: linkView.topAnchor, constant: 30)
                 ])
 
-            let linkLbl = UILabel(frame: CGRect(x: 80, y: 50, width: linkView.bounds.width - 80 - 15, height: 15))
+            let linkLbl = UILabel(frame: CGRect(x: 80, y: 55, width: linkView.bounds.width - 80 - 15, height: 15))
             linkLbl.font = UIFont.ProximaNovaRegular(fontSize: 12)
             linkLbl.textColor = UIColor(named: Colors.App_Grey)
             linkLbl.text = link.link?.absoluteString ?? ""
+            linkLbl.translatesAutoresizingMaskIntoConstraints = false
 
             linkView.addSubview(linkLbl)
 
             NSLayoutConstraint.activate([
-                linkView.leadingAnchor.constraint(equalTo: linkView.leadingAnchor, constant: 80),
-                linkView.trailingAnchor.constraint(equalTo: linkView.leadingAnchor, constant: 15),
-                linkView.topAnchor.constraint(equalTo: titleLbl.bottomAnchor, constant: 0)
+                titleLbl.widthAnchor.constraint(equalToConstant: linkView.bounds.width - 80 - 15),
+                linkLbl.leadingAnchor.constraint(equalTo: linkView.leadingAnchor, constant: 80),
+                linkLbl.trailingAnchor.constraint(equalTo: linkView.trailingAnchor, constant: 15),
+                linkLbl.topAnchor.constraint(equalTo: titleLbl.bottomAnchor, constant: 5)
                 ])
-            
-            linkView.setupLayer()
             
             yView += 105
         }

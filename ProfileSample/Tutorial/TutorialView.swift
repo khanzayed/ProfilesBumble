@@ -178,7 +178,8 @@ class TutorialView: UIView {
                 self.contentScrollView.contentOffset = CGPoint(x: xValue, y: 0)
             }) { (true) in
                 let content = self.contents[nextTag]
-                if nextTag == 1 {
+                switch nextTag {
+                case 1:
                     self.cardContainer.scrollToOffset(CGPoint(x: 0, y: content.contentOffset))
                     
                     UIView.animate(withDuration: 0.4, animations: {
@@ -189,7 +190,7 @@ class TutorialView: UIView {
                             self.isAnimating = false
                         }
                     })
-                } else if nextTag == 2 {
+                case 2:
                     self.cardContainer.scrollToOffset(CGPoint(x: 0, y: content.contentOffset))
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
@@ -197,7 +198,7 @@ class TutorialView: UIView {
                     })
                     
                     self.isAnimating = false
-                } else if nextTag == 3 {
+                case 3:
                     UIView.animate(withDuration: 0.4, animations: {
                         self.cardContainer.scrollToOffset(CGPoint(x: 0, y: 1500))
                         self.cardContainer.frame.origin.y -= 220
@@ -206,10 +207,12 @@ class TutorialView: UIView {
                             self.isAnimating = false
                         }
                     }
-                } else if nextTag == 4 {
+                case 4:
                     self.cardContainer.animatePassButton {
                         self.isAnimating = false
                     }
+                default:
+                    break
                 }
             }
             

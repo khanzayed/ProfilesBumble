@@ -24,6 +24,15 @@ struct TutorialContentAttributes {
     
 }
 
+enum TutorialPoints: Int {
+    case HomeScreen = 0
+    case ObjectivesCell
+    case AppluadsCell
+    case ReachOutButton
+    case PassButton
+    case UndoButton
+}
+
 class TutorialView: UIView {
     
     @IBOutlet var tutorialView: UIView!
@@ -160,7 +169,6 @@ class TutorialView: UIView {
         }
         
         let nextTag = sender.tag + 1
-       
         self.pageControl.currentPage = nextTag - 1
         
         if nextTag < contents.count - 1 {
@@ -170,14 +178,24 @@ class TutorialView: UIView {
                 self.contentScrollView.contentOffset = CGPoint(x: xValue, y: 0)
             }) { (true) in
                 let content = self.contents[nextTag]
-                if nextTag == 1 || nextTag == 2 {
+                if nextTag == 1 {
                     self.cardContainer.scrollToOffset(CGPoint(x: 0, y: content.contentOffset))
                     
-                    if nextTag == 2 {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                            self.cardContainer.tapOnCell()
-                        })
-                    }
+                    UIView.animate(withDuration: 0.4, animations: {
+                        self.blackViewTopConstraint.constant = UIScreen.main.bounds.height - 232
+                        self.layoutIfNeeded()
+                    }, completion: { (true) in
+                        self.cardContainer.animateTickImageForMatchingObjectives {
+                            self.isAnimating = false
+                        }
+                    })
+                } else if nextTag == 2 {
+                    self.cardContainer.scrollToOffset(CGPoint(x: 0, y: content.contentOffset))
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                        self.cardContainer.tapOnCell()
+                    })
+                    
                     self.isAnimating = false
                 } else if nextTag == 3 {
                     UIView.animate(withDuration: 0.4, animations: {
@@ -192,13 +210,6 @@ class TutorialView: UIView {
                     self.cardContainer.animatePassButton {
                         self.isAnimating = false
                     }
-                }
-            }
-            
-            if nextTag == 1 {
-                UIView.animate(withDuration: 0.4) {
-                    self.blackViewTopConstraint.constant = UIScreen.main.bounds.height - 232
-                    self.layoutIfNeeded()
                 }
             }
             

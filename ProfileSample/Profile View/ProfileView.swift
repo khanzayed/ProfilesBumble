@@ -56,6 +56,8 @@ class ProfileView: UIView {
     fileprivate var skillIndexes = [SkillIndex]() //  [Int:[Int]]()
     fileprivate var rows = [ProfileCells]()
     
+    internal var shouldAnimateMatchingObjectiveTickImage = false // Tutorial purpose
+    
     internal var delegate: ProfileViewDelegate?
     internal var userObject: UserObject! {
         didSet {
@@ -280,6 +282,15 @@ extension ProfileView: UITableViewDataSource, UITableViewDelegate {
         case .ObjectiveCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileObjectivesTableViewCell") as! ProfileObjectivesTableViewCell
             cell.configure(withUser: userObject)
+            
+            if shouldAnimateMatchingObjectiveTickImage, let tickImage = cell.viewWithTag(100) as? UIImageView {
+                shouldAnimateMatchingObjectiveTickImage = false
+                UIView.animate(withDuration: 0.5, delay: 0, options: .autoreverse, animations: {
+                    tickImage.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                }) { (true) in
+                    tickImage.transform = CGAffineTransform.identity
+                }
+            }
             
             return cell
         case .AboutMeCell:

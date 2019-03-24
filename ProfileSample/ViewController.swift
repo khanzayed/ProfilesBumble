@@ -11,35 +11,46 @@ import UIKit
 class ViewController: UIViewController {
     
     var cardContainer: ProfileCardViewContainer!
+    var tutorialView: TutorialView!
     var users: [UserObject] = []
-    var shapeLayer: CAShapeLayer!
     
     @IBOutlet weak var pinboxButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        cardContainer = ProfileCardViewContainer(frame: CGRect(x: 0, y: 80.0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 60))
-        cardContainer.delegate = self
-
-        if let path = Bundle.main.path(forResource: "SampleExplore", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                if let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as? [[String : Any]] {
-                    for object in jsonResult {
-                        users.append(UserObject(details: object))
-                    }
-
-                    cardContainer.dataSource = self
-
-                    view.addSubview(cardContainer)
-                    view.sendSubviewToBack(cardContainer)
-                }
-            } catch {
-                // handle error
-            }
-        }
         
+//        var bottomPadding: CGFloat = 0
+//        if #available(iOS 11.0, *) {
+//            bottomPadding = view.safeAreaInsets.bottom
+//        }
+        
+        tutorialView = TutorialView(frame: CGRect(x: 0, y: 0,
+                                            width: UIScreen.main.bounds.width,
+                                            height: UIScreen.main.bounds.height + 40))
+        
+        view.addSubview(tutorialView)
+
+//                cardContainer = ProfileCardViewContainer(frame: CGRect(x: 0, y: 80.0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 60))
+//        cardContainer.delegate = self
+//
+//        if let path = Bundle.main.path(forResource: "SampleThreeUsers", ofType: "json") {
+//            do {
+//                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+//                if let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as? [[String : Any]] {
+//                    for object in jsonResult {
+//                        users.append(UserObject(details: object))
+//                    }
+//
+//                    cardContainer.dataSource = self
+//
+//                    view.addSubview(cardContainer)
+//                    view.sendSubviewToBack(cardContainer)
+//                }
+//            } catch {
+//                // handle error
+//            }
+//        }
+//
 //        view.addSubview(cardContainer)
 //        let subView = UIView(frame: CGRect(x: 50, y: 50, width: 200, height: 200))
 //
@@ -56,7 +67,7 @@ class ViewController: UIViewController {
 //
 //        self.cardContainer.addSubview(subView)
     }
-        
+    
     @IBAction func pinboxButtonTapped(_ sender: UIButton) {
 
     }

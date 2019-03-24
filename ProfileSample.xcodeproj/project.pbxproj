@@ -57,6 +57,8 @@
 		D0595CCF2236CF920061EE3F /* pass@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0595CCE2236CF920061EE3F /* pass@3x.png */; };
 		D0595CD12236CFA00061EE3F /* reachout@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0595CD02236CFA00061EE3F /* reachout@3x.png */; };
 		D0C6E3F92236BB1500707DAF /* RightSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C6E3F82236BB1500707DAF /* RightSwipeViewController.swift */; };
+		D0EF1B9A2247788F00740896 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EF1B992247788F00740896 /* TutorialView.swift */; };
+		D0EF1B9C224778B900740896 /* TutorialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EF1B9B224778B900740896 /* TutorialView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +114,8 @@
 		D0595CCE2236CF920061EE3F /* pass@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pass@3x.png"; sourceTree = "<group>"; };
 		D0595CD02236CFA00061EE3F /* reachout@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "reachout@3x.png"; path = "Assets.xcassets/right_swipe.imageset/reachout@3x.png"; sourceTree = "<group>"; };
 		D0C6E3F82236BB1500707DAF /* RightSwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightSwipeViewController.swift; sourceTree = "<group>"; };
+		D0EF1B992247788F00740896 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		D0EF1B9B224778B900740896 /* TutorialView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +214,7 @@
 				8404A34E2238DC4700631C4A /* Helper.swift */,
 				8404A3502238DDFF00631C4A /* Fonts */,
 				848AC189223272660043643F /* Model */,
+				D0EF1B982247787600740896 /* Tutorial */,
 				848AC17C223243440043643F /* Profile View */,
 				848AC16A223242CB0043643F /* AppDelegate.swift */,
 				848AC16C223242CB0043643F /* ViewController.swift */,
@@ -245,6 +250,15 @@
 				848AC18A223272750043643F /* UserDataModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D0EF1B982247787600740896 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				D0EF1B992247788F00740896 /* TutorialView.swift */,
+				D0EF1B9B224778B900740896 /* TutorialView.xib */,
+			);
+			path = Tutorial;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +349,7 @@
 				848AC172223242CC0043643F /* Assets.xcassets in Resources */,
 				848AC170223242CB0043643F /* Main.storyboard in Resources */,
 				8405578F223B9CA90008D0C8 /* ProfileEducationDetailsTableViewCell.xib in Resources */,
+				D0EF1B9C224778B900740896 /* TutorialView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +374,7 @@
 				8404A3652238EB0E00631C4A /* ProfileHeaderTableViewCell.swift in Sources */,
 				848AC18622325FC20043643F /* ProfileCardViewContainer.swift in Sources */,
 				84055786223A7D7E0008D0C8 /* ProfileLinksTableViewCell.swift in Sources */,
+				D0EF1B9A2247788F00740896 /* TutorialView.swift in Sources */,
 				8405577C223A4AFD0008D0C8 /* ProfileAboutMeTableViewCell.swift in Sources */,
 				848AC17E223243850043643F /* ProfileView.swift in Sources */,
 				84055778223A261F0008D0C8 /* ProfileObjectivesTableViewCell.swift in Sources */,

@@ -100,6 +100,7 @@ class TutorialView: UIView {
                     
                     cardContainer.dataSource = self
                     tutorialView.insertSubview(cardContainer, belowSubview: blackBackground)
+                    cardContainer.undoButton.isSelected = true
                     
                     setupContentView()
                 }

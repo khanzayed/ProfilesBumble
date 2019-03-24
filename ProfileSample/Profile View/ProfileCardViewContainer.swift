@@ -451,7 +451,7 @@ extension ProfileCardViewContainer {
     }
     
     internal func animatePassButton(_ completion: @escaping () -> Void) {
-        UIView.animate(withDuration: 0.3, delay: 0, options: [.autoreverse], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, options: [.autoreverse], animations: {
             self.passButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         }) { (true) in
             self.passButton.transform = CGAffineTransform.identity
@@ -460,7 +460,7 @@ extension ProfileCardViewContainer {
     }
     
     internal func animateReachOutButton(_ completion: @escaping () -> Void) {
-        UIView.animate(withDuration: 0.3, delay: 0, options: [.autoreverse], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, options: [.autoreverse], animations: {
             self.reachOutButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         }) { (true) in
             self.reachOutButton.transform = CGAffineTransform.identity
@@ -469,7 +469,7 @@ extension ProfileCardViewContainer {
     }
     
     internal func animateUndoButton(_ completion: @escaping () -> Void) {
-        UIView.animate(withDuration: 0.3, delay: 0, options: [.autoreverse], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, options: [.autoreverse], animations: {
             self.undoButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         }) { (true) in
             self.undoButton.transform = CGAffineTransform.identity

@@ -434,3 +434,62 @@ class FooterView: UIView {
     }
     
 }
+
+//MARK: For Tutorial purpose only
+extension ProfileCardViewContainer {
+    
+    internal func scrollToOffset(_ offset: CGPoint) {
+        if cardViews.count > 0 {
+            cardViews[0].profileTableView.setContentOffset(offset, animated: true)
+        }
+    }
+    
+    internal func tapOnCell() {
+        let category = cardViews[0].userObject.skillCategories[0]
+        category.skills[0].isSelected = true
+        cardViews[0].profileTableView.reloadRows(at: [IndexPath(row: 5, section: 0)], with: .automatic)
+    }
+    
+    internal func animateTickImageForMatchingObjectives(_ completion: @escaping () -> Void) {
+//        cardViews[0].shouldAnimateMatchingObjectiveTickImage = true
+        if let cell = cardViews[0].profileTableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? ProfileObjectivesTableViewCell {
+            if let tickImage = cell.viewWithTag(100) as? UIImageView {
+                UIView.animate(withDuration: 0.5, delay: 1, options: .autoreverse, animations: {
+                    tickImage.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
+                }) { (true) in
+                    tickImage.transform = CGAffineTransform.identity
+                    completion()
+                }
+            }
+        }
+//        cardViews[0].profileTableView.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .automatic)
+    }
+    
+    internal func animatePassButton(_ completion: @escaping () -> Void) {
+        UIView.animate(withDuration: 0.5, delay: 0, options: [.autoreverse], animations: {
+            self.passButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        }) { (true) in
+            self.passButton.transform = CGAffineTransform.identity
+            completion()
+        }
+    }
+    
+    internal func animateReachOutButton(_ completion: @escaping () -> Void) {
+        UIView.animate(withDuration: 0.5, delay: 0.5, options: [.autoreverse], animations: {
+            self.reachOutButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        }) { (true) in
+            self.reachOutButton.transform = CGAffineTransform.identity
+            completion()
+        }
+    }
+    
+    internal func animateUndoButton(_ completion: @escaping () -> Void) {
+        UIView.animate(withDuration: 0.5, delay: 0, options: [.autoreverse], animations: {
+            self.undoButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        }) { (true) in
+            self.undoButton.transform = CGAffineTransform.identity
+            completion()
+        }
+    }
+    
+}

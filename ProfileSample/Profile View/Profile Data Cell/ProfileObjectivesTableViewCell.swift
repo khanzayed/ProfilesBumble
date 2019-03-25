@@ -29,6 +29,7 @@ class ProfileObjectivesTableViewCell: UITableViewCell {
         titleLbl.addCharacterSpacing()
         
         var yView: CGFloat = 15
+        var i = 0 // TO assign a tag to tick image and animate it in tutorial
         for objective in userObject.completeObjectives {
             let objectiveView = ObjectiveView(frame: CGRect(x: 0, y: yView, width: objectivesListView.bounds.width, height: 60))
             objectiveView.translatesAutoresizingMaskIntoConstraints = false
@@ -45,6 +46,7 @@ class ProfileObjectivesTableViewCell: UITableViewCell {
             let tickImageView = UIImageView(frame: CGRect(x: 20, y: 20, width: 20, height: 20))
             tickImageView.contentMode = .scaleAspectFit
             tickImageView.clipsToBounds = true
+            tickImageView.tag = 100 + i
             tickImageView.image = UIImage(named: objective.isMatching ? "ic_match_objective_tick" : "ic_unmatch_objective_tick")
             
             objectiveView.addSubview(tickImageView)
@@ -58,6 +60,7 @@ class ProfileObjectivesTableViewCell: UITableViewCell {
             objectiveView.addSubview(nameLbl)
             
             yView += 75
+            i += 1
         }
     }
     

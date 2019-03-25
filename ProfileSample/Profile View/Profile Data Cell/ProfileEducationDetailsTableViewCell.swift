@@ -62,7 +62,7 @@ class ProfileEducationDetailsTableViewCell: UITableViewCell {
             yLabel += (education.titleHeight + 5)
             let collegeLbl = UILabel(frame: CGRect(x: 0, y: yLabel, width: educationDetailsListView.bounds.width, height: 20))
             collegeLbl.font = UIFont.ProximaNovaSemiBold(fontSize: 14)
-            collegeLbl.textColor = UIColor(named: Colors.App_Grey)
+            collegeLbl.textColor = UIColor(named: Colors.Secondary_Black)
             collegeLbl.text = education.collegeName
             collegeLbl.numberOfLines = 1
             
@@ -78,7 +78,7 @@ class ProfileEducationDetailsTableViewCell: UITableViewCell {
             yLabel += (20 + 10)
             let durationLbl = UILabel(frame: CGRect(x: 0, y: yLabel, width: educationDetailsListView.bounds.width, height: 20))
             durationLbl.font = UIFont.ProximaNovaSemiBold(fontSize: 14)
-            durationLbl.textColor = UIColor(named: Colors.App_Grey)
+            durationLbl.textColor = UIColor(named: Colors.Secondary_Black)
             durationLbl.text = "Feb | 2010 - Jan | 2012" //FIXME: change to dynamic
             durationLbl.numberOfLines = 1
             

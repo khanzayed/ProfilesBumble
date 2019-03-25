@@ -1,281 +1,136 @@
 [
     {
-        "userID":4394,
-        "blueTiePin":"ajinkyak",
-        "userFirstName":"Ajinkya",
-        "userLastName":"Kulthe",
-        "userGender":"male",
-        "userImage":"https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4394_1542014761.jpg",
-        "thumbnailImage":"https://s3-ap-south-1.amazonaws.com/bluetie.local.users/profile_4394_1542014761.jpg",
-        "userCountry":"India",
-        "userState":"Maharashtra",
-        "userCity":"Mumbai",
-        "shareURL":"Ajiy8EA",
-        "baseCityID":1,
-        "userAge":20,
-        "userIndustry":[
-            {
-                "userIndustryID":4977,
-                "industryID":12,
-                "industryName":"Information Technology (IT)"
-            },
-            {
-                "userIndustryID": 14057,
-                "industryID": 2,
-                "industryName": "Art, Cultural and Recreational Services"
-            },
-            {
-                "userIndustryID": 14056,
-                "industryID": 1,
-                "industryName": "Airlines and Airport Services"
-            }
-        ],
-        "objectives":[
-            {
-                "pLevel": 1,
-                "objectiveTitle": "Discover Freelance Opportunities",
-                "description": "Explore freelance opportunities pertaining to your areas of interest",
-                "objectiveID": 5,
-                "matched": false
-            },
-            {
-                "pLevel": 1,
-                "objectiveTitle": "Provide Mentorship",
-                "description": "Meet and mentor professionals seeking your guidance",
-                "objectiveID": 7,
-                "matched": true
-            }
-        ],
-        "fortes": [
-            {
-                "name": "Skills acquired",
-                "colorCode":"#0096FF",
-                "value": [
-                    {
-                        "skillSets":"Marketing Strategy",
-                        "endorsement":5,
-                        "subSkillID":417
-                    },
-                    {
-                        "skillSets":"Marketing Research",
-                        "endorsement":0,
-                        "subSkillID":418
-                    }
-                ]
-            },
-            {
-                "name": "Software learned",
-                "colorCode":"#00B377",
-                "value": [
-                    {
-                        "skillSets":"HubSpot Marketing Software-Certification",
-                        "endorsement":0,
-                        "subSkillID":3539
-                    },
-                    {
-                        "skillSets":"emfluence Marketing Platform Software",
-                        "endorsement":0,
-                        "subSkillID":3346
-                    },
-                    {
-                        "skillSets":"Affiliate Marketing and Advertising",
-                        "endorsement":0,
-                        "subSkillID":2498
-                    }
-                ]
-            },
-            {
-                "name": "Certifications achieved",
-                "colorCode":"#FFCA00",
-                "value": [
-                    {
-                        "skillSets":"Marketing Analysis",
-                        "endorsement":0,
-                        "subSkillID":419
-                    },
-                    {
-                        "skillSets":"Rural Marketing",
-                        "endorsement":0,
-                        "subSkillID":3471
-                    },
-                    {
-                        "skillSets":"Online Marketing Associate-Certification",
-                        "endorsement":0,
-                        "subSkillID":3543
-                    }
-                ]
-            }
-        ],
-        "userWorkHistory":[
-            {
-                "workID":5425,
-                "currentCompany":1,
-                "userDesignation":"Extremely Senior Manager - Finance, Compliance And Administration",
-                "userCompany":"BlueTie",
-                "workFromMonth":null,
-                "workFromYear":null,
-                "workToMonth":null,
-                "workToYear":null,
-                "dateAdded":"2018-11-12T09:26:01.000Z",
-                "dateModified":"2018-11-12T09:26:01.000Z",
-                "status":1
-            },
-            {
-                "workID":5425,
-                "currentCompany":1,
-                "userDesignation":"Sr iOS Developer",
-                "userCompany":"BlueTie",
-                "workFromMonth":null,
-                "workFromYear":null,
-                "workToMonth":null,
-                "workToYear":null,
-                "dateAdded":"2018-11-12T09:26:01.000Z",
-                "dateModified":"2018-11-12T09:26:01.000Z",
-                "status":1
-            }
-        ],
-        "userDegree":[
-            {
-                "educationID":981,
-                "userDegree":"M Tech",
-                "userUniversity":"MIT Pune",
-                "educationYear":2011
-            }
-        ],
-        "userLink":[
-            {
-                "userDocLinkID":1754,
-                "title":"My Search Engine",
-                "linkUrl":"http://www.google.com"
-            }
-        ],
-        "userDocument":[
-            {
-                "userDocLinkID":1768,
-                "title":"whatsapp overview",
-                "linkUrl":"https://s3-ap-south-1.amazonaws.com/bluetie.local.documents/WhatsApp-Security-Whitepaper_1542024579.pdf"
-            }
-        ],
-        "userAchivement":[
-            {
-                "achivementID":904,
-                "achivementTitle":"Worked closely with a multi disciplinary team in a scrum workflow to create visually compelling websites and streamlined interfaces for mobile applications that redefined the market landscape while ensuring the attainment of client’s business and marketing objectives and brand strategies."
-            },
-            {
-                "achivementID": 904,
-                "achivementTitle": "Google Adwords Certification"
-            },
-            {
-                "achivementID": 904,
-                "achivementTitle": "Google Adwords Certification"
-            }
-        ]
-    },
-    {
-        "userID": 5486,
-        "blueTiePin": "test479",
-        "userFirstName": "Sushil",
-        "userLastName": "Pawarindustry",
+        "userID": 5609,
+        "blueTiePin": "sakship",
+        "userFirstName": "Karun",
+        "userLastName": "Reddy",
         "userGender": "Male",
-        "userImage": "https://s3.ap-south-1.amazonaws.com/bluetie.dev.users/default-male.png",
-        "thumbnailImage": "https://s3.ap-south-1.amazonaws.com/bluetie.dev.users/default-male.png",
+        "userImage": "https://s3.ap-south-1.amazonaws.com/bluetie.local.users/profile_5609_1549096268657.jpg",
+        "thumbnailImage": "https://s3.ap-south-1.amazonaws.com/bluetie.local.users/profile_5609_1549096268657.jpg",
         "userCountry": "India",
-        "userState": "Maharashtra",
-        "userCity": "Mumbai",
-        "userAbout": "An ideator at heart who loves working on innovative ideas. I believe crafting and executing path-breaking ideas is the only way to invent the future. I'm looking for professionals who share my passion and hunger for visionary ideas.",
-        "shareURL": "sus44f6c",
-        "baseCityID": null,
+        "userState": "Karnataka",
+        "userCity": "Bangalore Urban",
+        "userAbout": "",
+        "shareURL": "kary111",
+        "baseCityID": 15,
         "userAge": 19,
         "userIndustry": [
             {
-                "userIndustryID": 14057,
-                "industryID": 2,
-                "industryName": "Art, Cultural and Recreational Services"
+                "userIndustryID": 14701,
+                "industryID": 53,
+                "industryName": "Agriculture and Farming"
             },
             {
-                "userIndustryID": 14056,
+                "userIndustryID": 14700,
+                "industryID": 65,
+                "industryName": "Aerospace and Aircraft Manufacturing"
+            },
+            {
+                "userIndustryID": 14699,
                 "industryID": 1,
                 "industryName": "Airlines and Airport Services"
             }
         ],
         "objectives": [
             {
-                "pLevel": 1,
-                "objectiveTitle": "Discover Freelance Opportunities",
-                "description": "Explore freelance opportunities pertaining to your areas of interest",
-                "objectiveID": 5,
-                "matched": false
+                "pLevel": 3,
+                "objectiveTitle": "Exchange Ideas",
+                "description": "Discover & Interact with professionals having similar interests",
+                "objectiveID": 1,
+                "matched": true
             },
             {
-                "pLevel": 1,
-                "objectiveTitle": "Provide Mentorship",
-                "description": "Meet and mentor professionals seeking your guidance",
-                "objectiveID": 7,
-                "matched": true
+                "pLevel": 3,
+                "objectiveTitle": "Strategic Partnerships",
+                "description": "Meet professionals to collaborate with, for ventures and projects",
+                "objectiveID": 2,
+                "matched": false
             }
         ],
         "skillwithEndorsement": [
             {
                 "values": [
                     {
-                        "skillSets": "Piloting-Aircraft Operations",
+                        "skillSets": "Handicrafts-Craftwork",
                         "endorsement": 0,
-                        "subSkillID": 6,
+                        "subSkillID": 56,
                         "type": 0
                     }
                 ],
                 "name": "Skills acquired",
-                "colourCode": "black "
+                "colourCode": "#0096FF"
+            },
+            {
+                "values": [
+                    {
+                        "skillSets": "SofTest Certified Software Tester Program (CST)-Certification",
+                        "endorsement": 0,
+                        "subSkillID": 14490,
+                        "type": 1
+                    }
+                ],
+                "name": "Certifications achieved",
+                "colourCode": "#FFCA00"
+            },
+            {
+                "values": [
+                    {
+                        "skillSets": "Xandria Software",
+                        "endorsement": 0,
+                        "subSkillID": 7585,
+                        "type": 2
+                    }
+                ],
+                "name": "Software learned",
+                "colourCode": "#00B377"
             }
         ],
         "userWorkHistory": [
             {
-                "workID": 6639,
+                "workID": 6778,
                 "currentCompany": 0,
                 "isSelfEmployed": 0,
-                "userDesignation": "Test",
-                "userCompany": "Suu",
-                "workFromMonth": null,
-                "workFromYear": null,
-                "workToMonth": null,
-                "workToYear": null,
-                "dateAdded": "2019-01-22T09:27:54.000Z",
-                "dateModified": "2019-01-22T09:27:54.000Z",
+                "userDesignation": "Tester",
+                "userCompany": "Bajaj",
+                "workFromMonth": "1",
+                "workFromYear": "2014",
+                "workToMonth": "1",
+                "workToYear": "2019",
+                "dateAdded": "2019-02-02T08:31:09.000Z",
+                "dateModified": "2019-03-13T13:28:18.000Z",
                 "status": 1
             }
         ],
-        "userDegree": [
-            
-        ],
+        "userDegree": [],
         "userLink": [
-            
+            {
+                "userDocLinkID": 2299,
+                "title": "fufufu",
+                "linkUrl": "http://ggog.com"
+            }
         ],
-        "userDocument": [
-            
-        ],
-        "userAchivement": [
-            
-        ],
+        "userDocument": [],
+        "userAchivement": [],
         "isReported": false
     },
     {
-        "userID": 5097,
-        "blueTiePin": "ashh",
-        "userFirstName": "Ashish",
-        "userLastName": "Kk",
+        "userID": 4554,
+        "blueTiePin": "pglg",
+        "userFirstName": "Zio",
+        "userLastName": "X",
         "userGender": "",
-        "userImage": "https://s3.ap-south-1.amazonaws.com/bluetie.local.users/profile_5097_1545825876386.jpg",
-        "thumbnailImage": "https://s3.ap-south-1.amazonaws.com/bluetie.local.users/profile_5097_1545825876386.jpg",
+        "userImage": "https://s3.ap-south-1.amazonaws.com/bluetie.local.users/profile_4554_1543237853618.jpg",
+        "thumbnailImage": "https://s3.ap-south-1.amazonaws.com/bluetie.local.users/profile_4554_1543237853618.jpg",
         "userCountry": "India",
         "userState": "Maharashtra",
         "userCity": "Mumbai",
         "userAbout": null,
-        "shareURL": "ashdiuv",
+        "shareURL": "zionwc5",
         "baseCityID": 1,
         "userAge": 0,
         "userIndustry": [
             {
-                "userIndustryID": 13661,
+                "userIndustryID": 13030,
                 "industryID": 1,
                 "industryName": "Airlines and Airport Services"
             }
@@ -307,74 +162,149 @@
             {
                 "values": [
                     {
-                        "skillSets": "Literature Teaching",
-                        "endorsement": 1,
-                        "subSkillID": 504,
+                        "skillSets": "Site Suitability Analysis Management-EHS",
+                        "endorsement": 0,
+                        "subSkillID": 792,
                         "type": 0
                     },
                     {
-                        "skillSets": "Architectural Photography",
+                        "skillSets": "Literature Teaching",
                         "endorsement": 0,
-                        "subSkillID": 109,
+                        "subSkillID": 504,
                         "type": 0
                     }
                 ],
                 "name": "Skills acquired",
-                "colourCode": "black "
+                "colourCode": "#0096FF"
             },
             {
                 "values": [
                     {
-                        "skillSets": "Sitecore CMS Software",
-                        "endorsement": 1,
-                        "subSkillID": 1811,
-                        "type": 2
-                    },
-                    {
                         "skillSets": "Iterable Software",
-                        "endorsement": 1,
+                        "endorsement": 0,
                         "subSkillID": 3390,
-                        "type": 2
-                    },
-                    {
-                        "skillSets": "GRAITEC Software",
-                        "endorsement": 1,
-                        "subSkillID": 1658,
                         "type": 2
                     }
                 ],
                 "name": "Software learned",
-                "colourCode": "black"
+                "colourCode": "#00B377"
             }
         ],
         "userWorkHistory": [
             {
-                "workID": 6230,
+                "workID": 5622,
                 "currentCompany": 1,
-                "isSelfEmployed": 1,
-                "userDesignation": "Am",
-                "userCompany": "Self Employed",
+                "isSelfEmployed": 0,
+                "userDesignation": "Zeera",
+                "userCompany": "Bugs",
                 "workFromMonth": null,
                 "workFromYear": null,
                 "workToMonth": null,
                 "workToYear": null,
-                "dateAdded": "2018-12-26T12:04:37.000Z",
-                "dateModified": "2018-12-26T12:04:37.000Z",
+                "dateAdded": "2018-11-26T13:10:54.000Z",
+                "dateModified": "2018-11-26T13:10:54.000Z",
                 "status": 1
             }
         ],
-        "userDegree": [
-            
+        "userDegree": [],
+        "userLink": [],
+        "userDocument": [],
+        "userAchivement": [],
+        "isReported": false
+    },
+    {
+        "userID": 5261,
+        "blueTiePin": "vibhavshetye",
+        "userFirstName": "Vibhav",
+        "userLastName": "Shetye",
+        "userGender": "",
+        "userImage": "https://s3.ap-south-1.amazonaws.com/bluetie.local.users/profile_5261_1546938216524.jpg",
+        "thumbnailImage": "https://s3.ap-south-1.amazonaws.com/bluetie.local.users/profile_5261_1546938216524.jpg",
+        "userCountry": "India",
+        "userState": "Maharashtra",
+        "userCity": "Mumbai",
+        "userAbout": null,
+        "shareURL": "vibbok3",
+        "baseCityID": 1,
+        "userAge": 0,
+        "userIndustry": [
+            {
+                "userIndustryID": 13794,
+                "industryID": 3,
+                "industryName": "Banking, Financial Services and Insurance (BFSI)"
+            },
+            {
+                "userIndustryID": 13793,
+                "industryID": 2,
+                "industryName": "Art, Cultural and Recreational Services"
+            },
+            {
+                "userIndustryID": 13792,
+                "industryID": 1,
+                "industryName": "Airlines and Airport Services"
+            }
         ],
-        "userLink": [
-            
+        "objectives": [
+            {
+                "pLevel": 3,
+                "objectiveTitle": "Exchange Ideas",
+                "description": "Discover & Interact with professionals having similar interests",
+                "objectiveID": 1,
+                "matched": true
+            }
         ],
-        "userDocument": [
-            
+        "skillwithEndorsement": [
+            {
+                "values": [
+                    {
+                        "skillSets": "Table Tennis Commentary",
+                        "endorsement": 0,
+                        "subSkillID": 2892,
+                        "type": 0
+                    },
+                    {
+                        "skillSets": "Table Tennis",
+                        "endorsement": 0,
+                        "subSkillID": 2738,
+                        "type": 0
+                    }
+                ],
+                "name": "Skills acquired",
+                "colourCode": "#0096FF"
+            },
+            {
+                "values": [
+                    {
+                        "skillSets": "Tableau Data Analysis Tools",
+                        "endorsement": 0,
+                        "subSkillID": 1377,
+                        "type": 2
+                    }
+                ],
+                "name": "Software learned",
+                "colourCode": "#00B377"
+            }
         ],
-        "userAchivement": [
-            
+        "userWorkHistory": [
+            {
+                "workID": 6394,
+                "currentCompany": 1,
+                "isSelfEmployed": 0,
+                "userDesignation": "Director and CMO",
+                "userCompany": "BlueTie",
+                "workFromMonth": null,
+                "workFromYear": null,
+                "workToMonth": null,
+                "workToYear": null,
+                "dateAdded": "2019-01-08T09:03:41.000Z",
+                "dateModified": "2019-01-08T09:03:41.000Z",
+                "status": 1
+            }
         ],
+        "userDegree": [],
+        "userLink": [],
+        "userDocument": [],
+        "userAchivement": [],
         "isReported": false
     },
     {
@@ -462,7 +392,7 @@
                     }
                 ],
                 "name": "Skills acquired",
-                "colourCode": "black "
+                "colourCode": "#0096FF"
             },
             {
                 "values": [
@@ -474,7 +404,7 @@
                     }
                 ],
                 "name": "Software learned",
-                "colourCode": "black"
+                "colourCode": "#00B377"
             }
         ],
         "userWorkHistory": [
@@ -493,228 +423,10 @@
                 "status": 1
             }
         ],
-        "userDegree": [
-            
-        ],
-        "userLink": [
-            
-        ],
-        "userDocument": [
-            
-        ],
-        "userAchivement": [
-            
-        ],
-        "isReported": false
-    },
-    {
-        "userID": 4554,
-        "blueTiePin": "pglg",
-        "userFirstName": "Zio",
-        "userLastName": "X",
-        "userGender": "",
-        "userImage": "https://s3.ap-south-1.amazonaws.com/bluetie.local.users/profile_4554_1543237853618.jpg",
-        "thumbnailImage": "https://s3.ap-south-1.amazonaws.com/bluetie.local.users/profile_4554_1543237853618.jpg",
-        "userCountry": "India",
-        "userState": "Maharashtra",
-        "userCity": "Mumbai",
-        "userAbout": null,
-        "shareURL": "zionwc5",
-        "baseCityID": 1,
-        "userAge": 0,
-        "userIndustry": [
-            {
-                "userIndustryID": 13030,
-                "industryID": 1,
-                "industryName": "Airlines and Airport Services"
-            }
-        ],
-        "objectives": [
-            {
-                "pLevel": 3,
-                "objectiveTitle": "Exchange Ideas",
-                "description": "Discover & Interact with professionals having similar interests",
-                "objectiveID": 1,
-                "matched": true
-            },
-            {
-                "pLevel": 3,
-                "objectiveTitle": "Strategic Partnerships",
-                "description": "Meet professionals to collaborate with, for ventures and projects",
-                "objectiveID": 2,
-                "matched": false
-            },
-            {
-                "pLevel": 2,
-                "objectiveTitle": "Hire Talent",
-                "description": "Meet & hire individuals who are looking for work opportunities",
-                "objectiveID": 3,
-                "matched": true
-            }
-        ],
-        "skillwithEndorsement": [
-            {
-                "values": [
-                    {
-                        "skillSets": "Site Suitability Analysis Management-EHS",
-                        "endorsement": 0,
-                        "subSkillID": 792,
-                        "type": 0
-                    },
-                    {
-                        "skillSets": "Literature Teaching",
-                        "endorsement": 0,
-                        "subSkillID": 504,
-                        "type": 0
-                    }
-                ],
-                "name": "Skills acquired",
-                "colourCode": "black "
-            },
-            {
-                "values": [
-                    {
-                        "skillSets": "Iterable Software",
-                        "endorsement": 0,
-                        "subSkillID": 3390,
-                        "type": 2
-                    }
-                ],
-                "name": "Software learned",
-                "colourCode": "black"
-            }
-        ],
-        "userWorkHistory": [
-            {
-                "workID": 5622,
-                "currentCompany": 1,
-                "isSelfEmployed": 0,
-                "userDesignation": "Zeera",
-                "userCompany": "Bugs",
-                "workFromMonth": null,
-                "workFromYear": null,
-                "workToMonth": null,
-                "workToYear": null,
-                "dateAdded": "2018-11-26T13:10:54.000Z",
-                "dateModified": "2018-11-26T13:10:54.000Z",
-                "status": 1
-            }
-        ],
-        "userDegree": [
-            
-        ],
-        "userLink": [
-            
-        ],
-        "userDocument": [
-            
-        ],
-        "userAchivement": [
-            
-        ],
-        "isReported": false
-    },
-    {
-        "userID": 5261,
-        "blueTiePin": "vibhavshetye",
-        "userFirstName": "Vibhav",
-        "userLastName": "Shetye",
-        "userGender": "",
-        "userImage": "https://s3.ap-south-1.amazonaws.com/bluetie.local.users/profile_5261_1546938216524.jpg",
-        "thumbnailImage": "https://s3.ap-south-1.amazonaws.com/bluetie.local.users/profile_5261_1546938216524.jpg",
-        "userCountry": "India",
-        "userState": "Maharashtra",
-        "userCity": "Mumbai",
-        "userAbout": null,
-        "shareURL": "vibbok3",
-        "baseCityID": 1,
-        "userAge": 0,
-        "userIndustry": [
-            {
-                "userIndustryID": 13794,
-                "industryID": 3,
-                "industryName": "Banking, Financial Services and Insurance (BFSI)"
-            },
-            {
-                "userIndustryID": 13793,
-                "industryID": 2,
-                "industryName": "Art, Cultural and Recreational Services"
-            },
-            {
-                "userIndustryID": 13792,
-                "industryID": 1,
-                "industryName": "Airlines and Airport Services"
-            }
-        ],
-        "objectives": [
-            {
-                "pLevel": 3,
-                "objectiveTitle": "Exchange Ideas",
-                "description": "Discover & Interact with professionals having similar interests",
-                "objectiveID": 1,
-                "matched": true
-            }
-        ],
-        "skillwithEndorsement": [
-            {
-                "values": [
-                    {
-                        "skillSets": "Table Tennis Commentary",
-                        "endorsement": 0,
-                        "subSkillID": 2892,
-                        "type": 0
-                    },
-                    {
-                        "skillSets": "Table Tennis",
-                        "endorsement": 0,
-                        "subSkillID": 2738,
-                        "type": 0
-                    }
-                ],
-                "name": "Skills acquired",
-                "colourCode": "black "
-            },
-            {
-                "values": [
-                    {
-                        "skillSets": "Tableau Data Analysis Tools",
-                        "endorsement": 0,
-                        "subSkillID": 1377,
-                        "type": 2
-                    }
-                ],
-                "name": "Software learned",
-                "colourCode": "black"
-            }
-        ],
-        "userWorkHistory": [
-            {
-                "workID": 6394,
-                "currentCompany": 1,
-                "isSelfEmployed": 0,
-                "userDesignation": "Director and CMO",
-                "userCompany": "BlueTie",
-                "workFromMonth": null,
-                "workFromYear": null,
-                "workToMonth": null,
-                "workToYear": null,
-                "dateAdded": "2019-01-08T09:03:41.000Z",
-                "dateModified": "2019-01-08T09:03:41.000Z",
-                "status": 1
-            }
-        ],
-        "userDegree": [
-            
-        ],
-        "userLink": [
-            
-        ],
-        "userDocument": [
-            
-        ],
-        "userAchivement": [
-            
-        ],
+        "userDegree": [],
+        "userLink": [],
+        "userDocument": [],
+        "userAchivement": [],
         "isReported": false
     }
 ]

@@ -31,7 +31,7 @@ class ProfileSkillTableViewCell: UITableViewCell {
         applaudsLbl.isHidden = !skill.isSelected
         blueDotView.isHidden = (skill.endorsement! == 0)
         
-        nameLbl.textColor = skill.isSelected ? UIColor(named: Colors.App_Black) : UIColor(named: Colors.App_Grey)
+        nameLbl.textColor = skill.isSelected ? UIColor(named: Colors.App_Black) : UIColor(named: Colors.Secondary_Black)
     }
 
 }

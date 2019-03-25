@@ -13,7 +13,7 @@ struct Colors {
  
     static let App_Light_Grey = "AppLightGrey"
     static let App_Black = "AppBlack"
-    static let App_Grey = "AppGrey"
+    static let Secondary_Black = "secondaryBlack"
     static let Primary_Blue = "PrimaryBlue"
     
 }

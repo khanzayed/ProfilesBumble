@@ -142,6 +142,20 @@
                 "educationYear":2011
             }
         ],
+        "catalogues":[
+            {
+                "identifier": 1,
+                "title":"My Search Engine",
+                "url":"http://www.google.com",
+                "isDocument":false
+            },
+            {
+                "identifier": 1,
+                "title":"whatsapp overview",
+                "url":"https://s3-ap-south-1.amazonaws.com/bluetie.local.documents/WhatsApp-Security-Whitepaper_1542024579.pdf"
+                "isDocument":true
+            }
+        ],
         "userLink":[
             {
                 "userDocLinkID":1754,

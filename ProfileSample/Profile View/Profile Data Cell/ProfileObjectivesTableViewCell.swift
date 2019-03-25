@@ -86,7 +86,7 @@ class ObjectiveView: UIView {
         shadowLayer = CAShapeLayer()
         shadowLayer.path = UIBezierPath(roundedRect: self.bounds, cornerRadius: 30).cgPath
         shadowLayer.fillColor = UIColor.white.cgColor
-        shadowLayer.shadowColor = UIColor(named: Colors.App_Grey)!.cgColor
+        shadowLayer.shadowColor = UIColor(named: Colors.Secondary_Black)!.cgColor
         shadowLayer.shadowOffset = CGSize(width: 1.0, height: 1.0)
         shadowLayer.shadowOpacity = 0.3
         shadowLayer.shadowRadius = 10

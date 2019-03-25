@@ -61,7 +61,7 @@ class ProfileWorkExpTableViewCell: UITableViewCell {
             yLabel += (work.titleHeight + 5)
             let companyLbl = UILabel(frame: CGRect(x: 0, y: yLabel, width: workExpsListView.bounds.width, height: 20))
             companyLbl.font = UIFont.ProximaNovaSemiBold(fontSize: 14)
-            companyLbl.textColor = UIColor(named: Colors.App_Grey)
+            companyLbl.textColor = UIColor(named: Colors.Secondary_Black)
             companyLbl.text = work.companyName
             companyLbl.numberOfLines = 1
             
@@ -77,7 +77,7 @@ class ProfileWorkExpTableViewCell: UITableViewCell {
             yLabel += (20 + 10)
             let durationLbl = UILabel(frame: CGRect(x: 0, y: yLabel, width: workExpsListView.bounds.width, height: 20))
             durationLbl.font = UIFont.ProximaNovaSemiBold(fontSize: 14)
-            durationLbl.textColor = UIColor(named: Colors.App_Grey)
+            durationLbl.textColor = UIColor(named: Colors.Secondary_Black)
             durationLbl.text = "Feb | 2010 - Jan | 2012" //FIXME: change to dynamic
             durationLbl.numberOfLines = 1
             

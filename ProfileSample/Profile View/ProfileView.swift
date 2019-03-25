@@ -174,13 +174,13 @@ extension ProfileView: UITableViewDataSource, UITableViewDelegate {
 
         rows.append(.IndustryExperienceCell)
         profileTableView.register(UINib(nibName: "ProfileIndustryExpTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileIndustryExpTableViewCell")
-        
+
         if userObject.skillCategories.count > 0 {
             rows.append(.SkillHeaderCell)
             for skillCategory in userObject.skillCategories {
                 rows.append(.SkillSubHeaderCell)
                 subHeaderIndexes.append(rows.count - 1)
-                
+
                 var indexInSkillCategory = 0
                 for _ in skillCategory.skills {
                     rows.append(.SkillCell)
@@ -193,7 +193,7 @@ extension ProfileView: UITableViewDataSource, UITableViewDelegate {
             profileTableView.register(UINib(nibName: "ProfileSkillsSubHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileSkillsSubHeaderTableViewCell")
             profileTableView.register(UINib(nibName: "ProfileSkillTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileSkillTableViewCell")
         }
-        
+
         if userObject.profileLinks.count > 0 {
             rows.append(.ProfessionalCatalogueCell)
             profileTableView.register(UINib(nibName: "ProfileLinksTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileLinksTableViewCell")

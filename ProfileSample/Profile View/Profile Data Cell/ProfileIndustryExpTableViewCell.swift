@@ -53,6 +53,13 @@ class ProfileIndustryExpTableViewCell: UITableViewCell {
             
             industryView.addSubview(nameLbl)
             
+            NSLayoutConstraint.activate([
+                nameLbl.heightAnchor.constraint(equalToConstant: industryView.bounds.height),
+                nameLbl.widthAnchor.constraint(equalToConstant: industryView.bounds.width),
+                nameLbl.topAnchor.constraint(equalTo: industryView.topAnchor, constant: 0),
+                nameLbl.leadingAnchor.constraint(equalTo: industryView.leadingAnchor, constant: 0)
+                ])
+            
             if i < userObject.industries.count - 1 {
                 let lineView = UIView(frame: CGRect(x: 0, y: 49, width: industriesListView.bounds.width, height: 1))
                 lineView.backgroundColor = UIColor(named: Colors.App_Light_Grey)
@@ -61,9 +68,9 @@ class ProfileIndustryExpTableViewCell: UITableViewCell {
                 
                 NSLayoutConstraint.activate([
                     lineView.heightAnchor.constraint(equalToConstant: 1),
+                    lineView.widthAnchor.constraint(equalToConstant: industriesListView.bounds.width),
                     lineView.leadingAnchor.constraint(equalTo: industryView.leadingAnchor, constant: 0),
-                    lineView.trailingAnchor.constraint(equalTo: industryView.trailingAnchor, constant: 0),
-                    lineView.bottomAnchor.constraint(equalTo: industryView.bottomAnchor, constant: yView)
+                    lineView.topAnchor.constraint(equalTo: industryView.topAnchor, constant: 49)
                     ])
             }
             

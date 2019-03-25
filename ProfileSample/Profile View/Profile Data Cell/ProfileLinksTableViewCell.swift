@@ -89,7 +89,7 @@ class ProfileLinksTableViewCell: UITableViewCell {
 
             let linkLbl = UILabel(frame: CGRect(x: 80, y: 55, width: linkView.bounds.width - 80 - 15, height: 15))
             linkLbl.font = UIFont.ProximaNovaRegular(fontSize: 12)
-            linkLbl.textColor = UIColor(named: Colors.App_Grey)
+            linkLbl.textColor = UIColor(named: Colors.Secondary_Black)
             linkLbl.text = link.link?.absoluteString ?? ""
             linkLbl.translatesAutoresizingMaskIntoConstraints = false
 
@@ -131,7 +131,7 @@ class CatalogueView: UIView {
         shadowLayer = CAShapeLayer()
         shadowLayer.path = UIBezierPath(roundedRect: self.bounds, cornerRadius: 15).cgPath
         shadowLayer.fillColor = UIColor.white.cgColor
-        shadowLayer.shadowColor = UIColor(named: Colors.App_Grey)!.cgColor
+        shadowLayer.shadowColor = UIColor(named: Colors.Secondary_Black)!.cgColor
         shadowLayer.shadowOffset = CGSize(width: 1.0, height: 1.0)
         shadowLayer.shadowOpacity = 0.3
         shadowLayer.shadowRadius = 10

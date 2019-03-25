@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     
     var cardContainer: ProfileCardViewContainer!
     var users: [UserObject] = []
-    var shapeLayer: CAShapeLayer!
     
     @IBOutlet weak var pinboxButton: UIButton!
     
